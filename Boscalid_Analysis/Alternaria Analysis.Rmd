@@ -1,0 +1,1490 @@
+---
+title: "Alternaria Boscalid Analysis"
+author: "T. Q. Herrmann th589"
+date: "`r Sys.Date()`"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+# 0.5 Working directory
+
+```{r}
+setwd("/Users/taylere/Library/CloudStorage/OneDrive-Personal/R/Alternaria/Boscalid_Analysis")
+```
+
+
+# 1. Libraries
+
+```{r}
+library(tidyverse)
+library(drc)
+library(readxl)
+library(ggrepel)
+#library(FSA)
+#library(rcompanion)
+```
+
+# 2. Load & prep data
+
+```{r}
+data1 <- read_excel("../Data/Boscalid_data.xlsx", sheet = 1, col_names = TRUE)
+```
+
+
+```{r}
+# set correct data types
+data1$Isolate           <- as.factor(data1$Isolate)
+data1$Rep               <- as.factor(data1$Rep)
+data1$Concentration_ppm <- as.numeric(data1$Concentration_ppm)
+data1$Experiment        <- as.factor(data1$Experiment)
+```
+
+```{r}
+# calculate relative growth within each experiment & rep combo
+# each plate is compared to its own experiments controls, not mixed across runs
+
+data1 <- data1 %>%
+  group_by(Isolate, Experiment, Rep) %>%
+  mutate(
+    control_growth = Radial_growth_mm[Concentration_ppm == 0],
+    relgrowth      = Radial_growth_mm / control_growth
+  ) %>%
+  ungroup()
+```
+
+```{r}
+# check that spreadsheet calc & R calc match 
+check <- data1 %>%
+  mutate(diff = abs(relgrowth - Relative_growth)) %>%
+  summarise(max_diff = max(diff, na.rm = TRUE))
+cat("difference b/w R-calculated and spreadsheet Relative_Growth:", check$max_diff, "\n")
+
+nm <- levels(data1$Isolate)
+cat("Number of isolates:", length(nm), "\n")
+```
+
+# 3. Data check - does 50% inhibition occur?
+
+Uses mean across both experiments and all reps
+
+```{r}
+check50 <- data1 %>%
+  filter(Concentration_ppm == 100) %>%
+  group_by(Isolate) %>%
+  summarise(mean_relgrowth = mean(relgrowth, na.rm = TRUE)) %>%
+  mutate(reaches_50pct_inhibition = mean_relgrowth < 0.5)
+
+cat("\n--- 50% inhibition check at 100 ppm ---\n")
+print(check50)
+```
+
+```{r}
+resistant_isolates <- as.character(check50$Isolate[!check50$reaches_50pct_inhibition])
+sensitive_isolates <- as.character(check50$Isolate[ check50$reaches_50pct_inhibition])
+
+cat("Resistant isolates:", resistant_isolates, "\n")
+cat("Sensitive isolates:", sensitive_isolates, "\n")
+```
+
+# 4. Check for hormesis
+
+Low dose = beneficial effect high dose = inhibitory or toxic effect
+
+```{r}
+hormesis_check <- data1 %>%
+  filter(Concentration_ppm == 0.01) %>%
+  group_by(Isolate) %>%
+  summarise(mean_relgrowth_pct = mean(100 * relgrowth, na.rm = TRUE)) %>%
+  mutate(hormetic = mean_relgrowth_pct > 100)
+
+print(hormesis_check)
+```
+
+```{r}
+#list hormetic isolates:
+hormetic_isolates <- as.character(hormesis_check$Isolate[hormesis_check$hormetic])
+cat("Hormetic isolates:", hormetic_isolates, "\n")
+```
+
+## 4.1 Hormesis repeatability check ------------------------------------------
+Question: if an isolate is truly hormetic, it should grow above the control at 0.01 ppm in both exp, not just on average
+
+```{r}
+low_dose <- data1 %>%
+  filter(Concentration_ppm == 0.01)
+
+# average relative growth at 0.01 ppm across isolates
+iso_means <- low_dose %>%
+  group_by(Isolate) %>%
+  summarise(mean_rg = mean(relgrowth, na.rm = TRUE), .groups = "drop")
+
+cat("Mean relative growth at 0.01 ppm across isolates:",
+    round(100 * mean(iso_means$mean_rg), 1), "%\n")
+```
+
+```{r}
+# does Exp 1 predict Exp 2 for the same isolate?
+by_exp <- low_dose %>%
+  group_by(Isolate, Experiment) %>%
+  summarise(mean_rg = mean(relgrowth, na.rm = TRUE), .groups = "drop") %>%
+  tidyr::pivot_wider(names_from = Experiment, values_from = mean_rg,
+                     names_prefix = "Exp")
+
+rep_test <- cor.test(by_exp$Exp1, by_exp$Exp2, method = "spearman", exact = FALSE)
+cat("Spearman rho (Exp1 vs Exp2) =", round(rep_test$estimate, 2),
+    ", P =", round(rep_test$p.value, 2), "\n")
+```
+
+```{r}
+# same hormetic call (>100%) in both experiments?
+print(table(Exp1_above100 = by_exp$Exp1 > 1, Exp2_above100 = by_exp$Exp2 > 1))
+```
+
+```{r}
+# isolates above control in all 6 plates
+# (2 experiments x 3 reps). 
+# By chance alone, P(6 of 6) = 0.5^6 = 1/64.
+consistent <- low_dose %>%
+  group_by(Isolate) %>%
+  summarise(n_plates = n(),
+            n_above  = sum(relgrowth > 1, na.rm = TRUE), .groups = "drop") %>%
+  filter(n_above == n_plates)
+
+cat("Isolates above control in all plates:", nrow(consistent), "\n")
+cat("  ", as.character(consistent$Isolate), "\n")
+cat("Expected by chance:", round(nrow(iso_means) / 64, 1), "\n")
+```
+
+# 5. Compare Exp 1 vs Exp 2
+
+## 5.1 EC50 per experiment (Sensitive isolates)
+
+Fit LL. 4 to Exp 1 and 2 separately for each isolate. Allows us to
+formally compare EC50 values between tests with a t-test. This lets us
+know if the two experiments can be pooled. If EC values from Exp 1 and 2
+are not sig. dif, the experiments can be combined If they are different,
+we report them seperatly and figure out why
+
+```{r include = FALSE, message = FALSE, warning = FALSE}
+EC50.by.exp <- NULL
+
+for (exp in c("1", "2")) {
+  exp_data <- data1[data1$Experiment == exp, ]
+
+  for (i in seq_along(nm)) {
+    iso_data <- exp_data[exp_data$Isolate == nm[[i]], ]
+
+    tryCatch({
+      fit <- drm(
+        100 * relgrowth ~ Concentration_ppm,
+        data      = iso_data,
+        fct       = LL.4(names = c("Slope","Lower","Upper","EC50")),
+        na.action = na.omit
+      )
+
+      EC50.abs <- tryCatch(
+        data.frame(ED(fit, respLev = 50, type = "absolute", interval = "delta")),
+        error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+      )
+
+      row_i <- data.frame(
+        Isolate    = nm[[i]],
+        Experiment = exp,
+        AbsEC50    = round(EC50.abs[1,1], 4),
+        AbsEC50_SE = round(EC50.abs[1,2], 4),
+        stringsAsFactors = FALSE
+      )
+      EC50.by.exp <- rbind(EC50.by.exp, row_i)
+
+    }, error = function(e) {
+      cat("Exp", exp, "| ERROR for", nm[[i]], ":", conditionMessage(e), "\n")
+    })
+  }
+}
+
+write.csv(EC50.by.exp, "EC50_by_experiment.csv", row.names = FALSE)
+```
+
+Note: Isolates that produce 'NA' in the EC50 and EC50SE columns are
+resistant. Isolates that are resistant dont have a calculable EC50 since
+they never drop below 50% growth
+
+When LL.4 fits a curve to the data it fits a mathematical equation to
+all the data points, then extrapolates that equation beyond the tested
+range to find where the curve theoretically crosses 50% inhibition.
+
+When 50% inhibition is not achieved within the tested concentration
+range, you should not report the extrapolated EC50 as a real number.
+Instead classify it as resistant and report the EC50 as greater than the
+highest concentration tested ( \>100ppm) (Noel et al. 2018).
+
+## 5.2 Variance test (Sensitive isolates)
+
+Compare Exp 1 vs Exp 2 per isolate comped() from drc tests whether the
+difference between two EC50 estimates is sig. different from zero p \>
+0.05 = experiments agree --\> safe to combine p \< 0.05 = sig diff
+between runs --\> investigate
+
+```{r include = FALSE}
+variance_test <- NULL
+
+for (i in seq_along(nm)) {
+  sub <- EC50.by.exp[EC50.by.exp$Isolate == nm[[i]], ]
+  exp1 <- sub[sub$Experiment == "1", ]
+  exp2 <- sub[sub$Experiment == "2", ]
+
+  if (nrow(exp1) == 0 || nrow(exp2) == 0 ||
+      is.na(exp1$AbsEC50) || is.na(exp2$AbsEC50)) {
+    next
+  }
+
+  comp <- tryCatch(
+    comped(
+      c(exp1$AbsEC50, exp2$AbsEC50),
+      se       = c(exp1$AbsEC50_SE, exp2$AbsEC50_SE),
+      interval = TRUE,
+      operator = "-",
+      level    = 0.95
+    ),
+    error = function(e) rep(NA, 4)
+  )
+
+  row_i <- data.frame(
+    Isolate       = nm[[i]],
+    EC50_Exp1     = exp1$AbsEC50,
+    EC50_Exp2     = exp2$AbsEC50,
+    Difference    = round(comp[1], 4),
+    Diff_SE       = round(comp[2], 4),
+    CI_Lower      = round(comp[3], 4),
+    CI_Upper      = round(comp[4], 4),
+    # If the 95% CI of the difference overlaps zero, experiments agree
+    Experiments_agree = ifelse(!is.na(comp[3]) & !is.na(comp[4]),
+                               comp[3] <= 0 & comp[4] >= 0,
+                               NA),
+    stringsAsFactors = FALSE
+  )
+  variance_test <- rbind(variance_test, row_i)
+}
+
+write.csv(variance_test, "Variance_test_Exp1_vs_Exp2.csv", row.names = FALSE)
+```
+
+```{r}
+# Summary: how many isolates show significant disagreement between experiments?
+n_disagree <- sum(!variance_test$Experiments_agree, na.rm = TRUE)
+n_agree    <- sum( variance_test$Experiments_agree, na.rm = TRUE)
+cat("\n", n_agree, "isolates: experiments agree (can combine)\n")
+cat("", n_disagree, "isolates: significant difference between experiments\n")
+
+if (n_disagree > 0) {
+  cat("Isolates with disagreement between experiments:\n")
+  print(variance_test[!variance_test$Experiments_agree & !is.na(variance_test$Experiments_agree), ])
+}
+```
+
+Only 1 of the sensitive isolates (21107) had a significant disagreement
+between experiments. The rest agreed and can be combined
+
+```{r}
+print(EC50.by.exp[EC50.by.exp$Isolate == "21107", ])
+```
+
+Note: 21107 included in combined analysis, as both experiments classify
+the isolate as sensitive.
+
+# 6. EC50 Model selection
+
+## 6.1 LL.4 model (combined data, Exp 1&2)
+
+LL.4 parameter = flexible model. Estimates lower lmi, upper limi, slop
+and EC50
+
+```{r include = FALSE, warning = FALSE}
+EC50.ll4 <- NULL
+
+for (i in seq_along(nm)) {
+  iso_data <- data1[data1$Isolate == nm[[i]], ]
+
+  tryCatch({
+    fit.ll4 <- drm(
+      100 * relgrowth ~ Concentration_ppm,
+      data      = iso_data,
+      fct       = LL.4(names = c("Slope", "Lower", "Upper", "EC50")),
+      na.action = na.omit
+    )
+
+    summary.fit  <- data.frame(summary(fit.ll4)[[3]])
+    lower_asymp  <- summary.fit$Estimate[2]
+    upper_asymp  <- summary.fit$Estimate[3]
+    pvalue       <- summary.fit[4, 4][[1]]
+    fit_stats    <- modelFit(fit.ll4)
+    lackfit_p    <- fit_stats[5]$`p value`[2]
+    AIC_val      <- AIC(fit.ll4)
+
+    EC50.rel <- tryCatch(
+      data.frame(ED(fit.ll4, respLev = 50, type = "relative", interval = "delta")),
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+    EC50.abs <- tryCatch(
+      data.frame(ED(fit.ll4, respLev = 50, type = "absolute", interval = "delta")),
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+    EC75.abs <- tryCatch(
+      data.frame(ED(fit.ll4, respLev = 25, type = "absolute", interval = "delta")), #resplev = 25 means 25% growth remaining
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+
+    rel.ec50 <- EC50.rel[1,1];  rel.se  <- EC50.rel[1,2]
+    abs.ec50 <- EC50.abs[1,1];  abs.se  <- EC50.abs[1,2]
+    abs.ec75 <- EC75.abs[1,1];  ec75.se <- EC75.abs[1,2]
+
+    compED <- tryCatch(
+      comped(c(rel.ec50, abs.ec50), se = c(rel.se, abs.se),
+             interval = TRUE, operator = "-", level = 0.95),
+      error = function(e) rep(NA, 4)
+    )
+
+    row_i <- data.frame(
+      Isolate          = nm[[i]],
+      Lower_asymp      = round(lower_asymp, 3),
+      Upper_asymp      = round(upper_asymp, 3),
+      RelEC50          = round(rel.ec50, 4),
+      RelEC50_SE       = round(rel.se, 4),
+      AbsEC50          = round(abs.ec50, 4),
+      AbsEC50_SE       = round(abs.se, 4),
+      AbsEC50_Lower95  = round(EC50.abs[1,3], 4),
+      AbsEC50_Upper95  = round(EC50.abs[1,4], 4),
+      AbsEC75          = round(abs.ec75, 4),
+      AbsEC75_SE       = round(ec75.se, 4),
+      CompED_est       = round(compED[1], 4),
+      CompED_SE        = round(compED[2], 4),
+      CompED_Lower     = round(compED[3], 4),
+      CompED_Upper     = round(compED[4], 4),
+      EC50_pvalue      = round(pvalue, 4),
+      LackFit_pvalue   = round(lackfit_p, 4),
+      AIC              = round(AIC_val, 3),
+      Model            = "LL.4",
+      stringsAsFactors = FALSE
+    )
+
+    EC50.ll4 <- rbind(EC50.ll4, row_i)
+    cat("Done:", nm[[i]], "| AbsEC50 =", round(abs.ec50, 4), "ppm\n")
+
+  }, error = function(e) {
+    cat("ERROR for isolate", nm[[i]], ":", conditionMessage(e), "\n")
+  })
+}
+
+write.csv(EC50.ll4, "EC50_LL4_results.csv", row.names = FALSE)
+```
+
+## 6.2 LL.3 model (combined data, Exp 1&2)
+
+Fixes the loower limit ot exatly zero to estimate 3 parameters
+
+```{r include = FALSE, warning = FALSE}
+EC50.ll3 <- NULL
+
+for (i in seq_along(nm)) {
+  iso_data <- data1[data1$Isolate == nm[[i]], ]
+
+  tryCatch({
+    fit.ll3 <- drm(
+      100 * relgrowth ~ Concentration_ppm,
+      data      = iso_data,
+      fct       = LL.3(names = c("Slope", "Upper", "EC50")),
+      na.action = na.omit
+    )
+
+    summary.fit <- data.frame(summary(fit.ll3)[[3]])
+    pvalue      <- summary.fit[3, 4][[1]]
+    fit_stats   <- modelFit(fit.ll3)
+    lackfit_p   <- fit_stats[5]$`p value`[2]
+    AIC_val     <- AIC(fit.ll3)
+
+    EC50.rel <- tryCatch(
+      data.frame(ED(fit.ll3, respLev=50, type="relative", interval="delta")),
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+    EC50.abs <- tryCatch(
+      data.frame(ED(fit.ll3, respLev=50, type="absolute", interval="delta")),
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+    EC75.abs <- tryCatch(
+      data.frame(ED(fit.ll3, respLev=25, type="absolute", interval="delta")), 
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+
+    rel.ec50 <- EC50.rel[1,1];  rel.se  <- EC50.rel[1,2]
+    abs.ec50 <- EC50.abs[1,1];  abs.se  <- EC50.abs[1,2]
+    abs.ec75 <- EC75.abs[1,1];  ec75.se <- EC75.abs[1,2]
+
+    compED <- tryCatch(
+      comped(c(rel.ec50, abs.ec50), se = c(rel.se, abs.se),
+             interval = TRUE, operator = "-", level = 0.95),
+      error = function(e) rep(NA, 4)
+    )
+
+    row_i <- data.frame(
+      Isolate          = nm[[i]],
+      Lower_asymp      = 0,
+      Upper_asymp      = round(summary.fit$Estimate[2], 3),
+      RelEC50          = round(rel.ec50, 4),
+      RelEC50_SE       = round(rel.se, 4),
+      AbsEC50          = round(abs.ec50, 4),
+      AbsEC50_SE       = round(abs.se, 4),
+      AbsEC50_Lower95  = round(EC50.abs[1,3], 4),
+      AbsEC50_Upper95  = round(EC50.abs[1,4], 4),
+      AbsEC75          = round(abs.ec75, 4),
+      AbsEC75_SE       = round(ec75.se, 4),
+      CompED_est       = round(compED[1], 4),
+      CompED_SE        = round(compED[2], 4),
+      CompED_Lower     = round(compED[3], 4),
+      CompED_Upper     = round(compED[4], 4),
+      EC50_pvalue      = round(pvalue, 4),
+      LackFit_pvalue   = round(lackfit_p, 4),
+      AIC              = round(AIC_val, 3),
+      Model            = "LL.3",
+      stringsAsFactors = FALSE
+    )
+
+    EC50.ll3 <- rbind(EC50.ll3, row_i)
+    cat("Done:", nm[[i]], "| AbsEC50 =", round(abs.ec50, 4), "ppm\n")
+
+  }, error = function(e) {
+    cat("ERROR for isolate", nm[[i]], ":", conditionMessage(e), "\n")
+  })
+}
+
+write.csv(EC50.ll3, "EC50_LL3_results.csv", row.names = FALSE)
+```
+
+## 6.3 BC.4 model (hormetic model) (combined data, Exp 1&2)
+
+Hormesis model stimulatory effect at low dose. add a stimulation
+parameter
+
+```{r, include = FALSE, warning = FALSE}
+EC50.bc4 <- NULL
+
+for (i in seq_along(nm)) {
+  iso_data <- data1[data1$Isolate == nm[[i]], ]
+
+  tryCatch({
+    fit.bc4 <- drm(
+      100 * relgrowth ~ Concentration_ppm,
+      data      = iso_data,
+      fct       = BC.4(names = c("Slope", "Lower", "Upper", "EC50")),
+      na.action = na.omit
+    )
+
+    AIC_val  <- AIC(fit.bc4)
+    ll4_aic  <- EC50.ll4$AIC[EC50.ll4$Isolate == nm[[i]]]
+    aic_diff <- if (length(ll4_aic) > 0 && !is.na(ll4_aic)) AIC_val - ll4_aic else NA
+
+    EC50.abs <- tryCatch(
+      data.frame(ED(fit.bc4, respLev=50, type="absolute", interval="delta")),
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+    EC75.abs <- tryCatch(
+      data.frame(ED(fit.bc4, respLev=25, type="absolute", interval="delta")),
+      error = function(e) data.frame(Estimate=NA, Std..Error=NA, Lower=NA, Upper=NA)
+    )
+
+    row_i <- data.frame(
+      Isolate          = nm[[i]],
+      AbsEC50          = round(EC50.abs[1,1], 4),
+      AbsEC50_SE       = round(EC50.abs[1,2], 4),
+      AbsEC50_Lower95  = round(EC50.abs[1,3], 4),
+      AbsEC50_Upper95  = round(EC50.abs[1,4], 4),
+      AbsEC75          = round(EC75.abs[1,1], 4),
+      AbsEC75_SE       = round(EC75.abs[1,2], 4),
+      AIC              = round(AIC_val, 3),
+      AIC_vs_LL4       = round(aic_diff, 3),
+      Model            = "BC.4",
+      stringsAsFactors = FALSE
+    )
+
+    EC50.bc4 <- rbind(EC50.bc4, row_i)
+    cat("Done:", nm[[i]], "| AIC =", round(AIC_val,2),
+        "| delta vs LL.4:", round(aic_diff,2), "\n")
+
+  }, error = function(e) {
+    cat("ERROR for isolate", nm[[i]], ":", conditionMessage(e), "\n")
+  })
+}
+
+write.csv(EC50.bc4, "EC50_BC4_results.csv", row.names = FALSE)
+```
+
+Note: Generally, in the comparison between BC.4 and LL.4 AIC, negative
+values mean BC.4 fits better, and + means LL.4 fits better.
+
+While the BC4 model does work for a few isolates, a majority of them
+come back with 'NA'.
+
+The isolates it does fit better with are the hormetic isolates. For the
+rest, LL.4 fits better.
+
+## 6.4 LL.4 vs LL.3 AIC
+
+```{r}
+aic_comparison <- merge(
+  EC50.ll4[, c("Isolate", "AIC")],
+  EC50.ll3[, c("Isolate", "AIC")],
+  by = "Isolate",
+  suffixes = c("_LL4", "_LL3")
+)
+aic_comparison$delta_AIC_LL3_vs_LL4 <- aic_comparison$AIC_LL3 - aic_comparison$AIC_LL4
+aic_comparison$Preferred_model <- ifelse(
+  aic_comparison$delta_AIC_LL3_vs_LL4 <= 2,
+  "LL.3 (simpler is fine)",
+  "LL.4 (lower asymptote matters)"
+)
+
+write.csv(aic_comparison, "AIC_comparison_LL3_vs_LL4.csv", row.names = FALSE)
+```
+
+Note: For the majority of the isolates, LL.4 is the preferred model.
+
+# 7. Reclassify isolates into 4 groups
+
+Resistant & hormetic \| Resistant \| Sensitive & hormetic \| Sensitive
+
+```{r}
+check50 <- data1 %>%
+  filter(Concentration_ppm == 100) %>%
+  group_by(Isolate) %>%
+  summarise(mean_rg = mean(relgrowth, na.rm = TRUE), .groups = "drop")
+
+resistant_isolates <- as.character(check50$Isolate[check50$mean_rg >= 0.5])
+sensitive_isolates <- as.character(check50$Isolate[check50$mean_rg <  0.5])
+
+horm_check <- data1 %>%
+  filter(Concentration_ppm == 0.01) %>%
+  group_by(Isolate) %>%
+  summarise(mean_rg = mean(relgrowth, na.rm = TRUE), .groups = "drop")
+
+hormetic_isolates     <- as.character(horm_check$Isolate[horm_check$mean_rg > 1.0])
+hormetic_sensitive    <- intersect(hormetic_isolates, sensitive_isolates)
+hormetic_resistant    <- intersect(hormetic_isolates, resistant_isolates)
+nonhormetic_sensitive <- setdiff(sensitive_isolates, hormetic_isolates)
+nonhormetic_resistant <- setdiff(resistant_isolates, hormetic_isolates)
+
+cat("Four isolate groups:\n")
+cat("  Non-hormetic sensitive:", nonhormetic_sensitive, "\n")
+cat("  Hormetic sensitive    :", hormetic_sensitive, "\n")
+cat("  Non-hormetic resistant:", nonhormetic_resistant, "\n")
+cat("  Hormetic resistant    :", hormetic_resistant, "\n")
+```
+
+# 8. Summary
+
+## 8.1 Sensitive/Resistant, Hormetic/Non-hormetic grouping
+
+```{r}
+summary_table <- merge(
+  EC50.ll4[, c("Isolate","AbsEC50","AbsEC50_SE",
+               "AbsEC50_Lower95","AbsEC50_Upper95",
+               "AbsEC75","Lower_asymp","AIC","LackFit_pvalue")],
+  EC50.ll3[, c("Isolate","AbsEC50","AIC")],
+  by = "Isolate"
+)
+names(summary_table)[names(summary_table) == "AbsEC50.x"] <- "LL4_AbsEC50"
+names(summary_table)[names(summary_table) == "AIC.x"]     <- "AIC_LL4"
+names(summary_table)[names(summary_table) == "AbsEC50.y"] <- "LL3_AbsEC50"
+names(summary_table)[names(summary_table) == "AIC.y"]     <- "AIC_LL3"
+
+summary_table <- merge(
+  summary_table,
+  EC50.bc4[, c("Isolate","AbsEC50","AIC","AIC_vs_LL4")],
+  by = "Isolate", all.x = TRUE
+)
+names(summary_table)[names(summary_table) == "AbsEC50"] <- "BC4_AbsEC50"
+names(summary_table)[names(summary_table) == "AIC"]     <- "AIC_BC4"
+
+bc4_ci <- EC50.bc4[, c("Isolate", "AbsEC50_SE", 
+                        "AbsEC50_Lower95", "AbsEC50_Upper95")]
+names(bc4_ci) <- c("Isolate", "BC4_AbsEC50_SE",
+                   "BC4_AbsEC50_Lower95", "BC4_AbsEC50_Upper95")
+
+summary_table <- merge(summary_table, bc4_ci, by = "Isolate", all.x = TRUE)
+
+summary_table$Group <- case_when(
+  summary_table$Isolate %in% hormetic_sensitive    ~ "Hormetic + Sensitive",
+  summary_table$Isolate %in% hormetic_resistant    ~ "Hormetic + Resistant",
+  summary_table$Isolate %in% nonhormetic_sensitive ~ "Sensitive",
+  summary_table$Isolate %in% nonhormetic_resistant ~ "Resistant",
+  TRUE ~ "Unknown"
+)
+
+summary_table$Recommended_EC50 <- case_when(
+  summary_table$Group %in% c("Resistant","Hormetic + Resistant") ~
+    ">100 ppm (resistant)",
+  summary_table$Group == "Hormetic + Sensitive" ~
+    ifelse(!is.na(summary_table$BC4_AbsEC50),
+           paste0(round(summary_table$BC4_AbsEC50, 4), " ppm (BC.4)"),
+           paste0(round(summary_table$LL4_AbsEC50, 4), " ppm (LL.4 fallback)")),
+  summary_table$Group == "Sensitive" ~
+    paste0(round(summary_table$LL4_AbsEC50, 4), " ppm (LL.4)"),
+  TRUE ~ "Check data"
+)
+
+summary_table$Recommended_SE <- case_when(
+  summary_table$Group %in% c("Resistant", "Hormetic + Resistant") ~
+    NA_real_,
+  
+  summary_table$Group == "Hormetic + Sensitive" ~
+    ifelse(!is.na(summary_table$BC4_AbsEC50),
+           summary_table$BC4_AbsEC50_SE,
+           summary_table$AbsEC50_SE),
+  
+  summary_table$Group == "Sensitive" ~
+    summary_table$AbsEC50_SE,
+  
+  TRUE ~ NA_real_
+)
+
+summary_table$Resistance_flag <- ifelse(
+  grepl("resistant", summary_table$Group, ignore.case = TRUE),
+  "RESISTANT", "Sensitive"
+)
+
+write.csv(summary_table, "EC50_Summary.csv", row.names = FALSE)
+```
+
+## 8.2 Resistance & hormesis frequency summary
+
+```{r}
+## 8.2 Resistance & hormesis frequency summary
+freq_table <- data.frame(
+  Group = c("Sensitive", "Hormetic + Sensitive",
+            "Resistant", "Hormetic + Resistant"),
+  n = c(length(nonhormetic_sensitive), length(hormetic_sensitive),
+        length(nonhormetic_resistant), length(hormetic_resistant))
+) %>%
+  mutate(Percent = round(100 * n / sum(n), 1))
+print(freq_table)
+#write.csv(freq_table, "Resistance_frequency_table.csv", row.names = FALSE)
+```
+
+## 8.3 EC50 and EC75 means
+
+```{r}
+sensitive_ec50_vals <- summary_table %>%
+  filter(Resistance_flag == "Sensitive") %>%
+  mutate(
+    best_EC50 = ifelse(
+      Group == "Hormetic + Sensitive" & !is.na(BC4_AbsEC50),
+      BC4_AbsEC50, LL4_AbsEC50
+    ),
+    # Use BC.4 CI for hormetic-sensitive, LL.4 CI for everyone else
+    best_CI_lower = ifelse(
+      Group == "Hormetic + Sensitive" & !is.na(BC4_AbsEC50),
+      BC4_AbsEC50_Lower95, AbsEC50_Lower95
+    ),
+    best_CI_upper = ifelse(
+      Group == "Hormetic + Sensitive" & !is.na(BC4_AbsEC50),
+      BC4_AbsEC50_Upper95, AbsEC50_Upper95
+    ),
+    best_SE = ifelse(
+      Group == "Hormetic + Sensitive" & !is.na(BC4_AbsEC50),
+      BC4_AbsEC50_SE, AbsEC50_SE
+    )
+  ) %>%
+  filter(!is.na(best_EC50), best_EC50 > 0)
+
+cat("\n--- EC50 distribution: ALL sensitive isolates ---\n")
+cat("n      =", nrow(sensitive_ec50_vals), "\n")
+cat("Mean   =", round(mean(sensitive_ec50_vals$best_EC50), 4), "ppm\n")
+cat("Median =", round(median(sensitive_ec50_vals$best_EC50), 4), "ppm\n")
+cat("Min    =", round(min(sensitive_ec50_vals$best_EC50), 4), "ppm\n")
+cat("Max    =", round(max(sensitive_ec50_vals$best_EC50), 4), "ppm\n")
+cat("Range  =", round(diff(range(sensitive_ec50_vals$best_EC50)), 4), "ppm\n")
+
+cat("\n--- EC75 distribution: ALL sensitive isolates ---\n")
+ec75_vals <- summary_table %>%
+  filter(Resistance_flag == "Sensitive", !is.na(AbsEC75), AbsEC75 > 0)
+cat("n      =", nrow(ec75_vals), "\n")
+cat("Mean   =", round(mean(ec75_vals$AbsEC75), 4), "ppm\n")
+cat("Median =", round(median(ec75_vals$AbsEC75), 4), "ppm\n")
+cat("Min    =", round(min(ec75_vals$AbsEC75), 4), "ppm\n")
+cat("Max    =", round(max(ec75_vals$AbsEC75), 4), "ppm\n")
+```
+
+Note: 37 isolates could have EC50 calculated
+
+36 isolates could have EC75 calculated. This is because the isolate
+23198 is not sensitive enough to acheive and EC75 in the tested
+concentrations. The fitted lower asymptote exceeded 25%, preventing
+extrapolation to 75% inhibition
+
+## 8.4 Normaltity test on log tranformed EC50 values
+
+Justifies using mean as population summary stat p\>0/05 = approx. normla
+on log scale
+
+```{r}
+sw_test <- shapiro.test(log10(sensitive_ec50_vals$best_EC50))
+cat("\n--- Shapiro-Wilk normality test (log10 EC50, sensitive isolates) ---\n")
+cat("W =", round(sw_test$statistic, 4), "\n")
+cat("p =", round(sw_test$p.value, 4), "\n")
+if (sw_test$p.value > 0.05) {
+  cat("Result: approximately normal — mean EC50 is an appropriate summary statistic\n")
+} else {
+  cat("Result: significant departure from normality — consider reporting median instead\n")
+}
+```
+
+## 8.5 Resistance Factor
+
+RF = isolate EC50/ most sensitive isolate EC50 Ratio that expresses how
+much less sensitive one isolate is compared to the most sensitive
+isolate in the dataset. The RF of every other isolate tells you how many
+times more boscalid you'd need to achieve the same 50% inhibition
+compared to 21177. Gives a standardized, unitless way to compare
+senstivie across isolates. Standard metric in Kaur et al. 2025
+
+```{r}
+min_ec50 <- min(sensitive_ec50_vals$best_EC50, na.rm = TRUE)
+most_sensitive_isolate <- sensitive_ec50_vals$Isolate[
+  which.min(sensitive_ec50_vals$best_EC50)
+]
+
+sensitive_ec50_vals$RF <- round(
+  sensitive_ec50_vals$best_EC50 / min_ec50, 1
+)
+
+cat("Most sensitive isolate:", most_sensitive_isolate,
+    "| EC50 =", round(min_ec50, 4), "ppm\n\n")
+print(sensitive_ec50_vals[, c("Isolate", "Group", "best_EC50", "RF")])
+
+write.csv(
+  sensitive_ec50_vals[, c("Isolate", "Group", "best_EC50", "RF")],
+  "Resistance_factors.csv", row.names = FALSE
+)
+```
+
+Note: Sensitive isolates have RF between 1.0 and 4.9, which is a
+relatively narrow range. Suggests sensitive population is relatively
+homogeneous in boscalid sensitive.
+
+# 9. Plots
+
+Note: plots used the combined data set (Exp 1 & 2). Means are averaged
+across both experimetns and all reps
+
+```{r}
+nm <- levels(data1$Isolate)
+
+group_colors <- c(
+  "Sensitive"            = "#5B9BBF",
+  "Hormetic + Sensitive" = "#5A9E7A",
+  "Resistant"            = "#C8593A",
+  "Hormetic + Resistant" = "#A0689A"
+)
+```
+
+## 9.1 Dose reponse curves
+
+```{r include = FALSE, warning = FALSE}
+conc_seq <- exp(seq(log(0.005), log(200), length.out = 300))
+
+pred_list <- list()
+for (i in seq_along(nm)) {
+  iso_data <- data1[data1$Isolate == nm[[i]], ]
+  use_bc4  <- nm[[i]] %in% hormetic_sensitive
+
+  tryCatch({
+    if (use_bc4) {
+      fit <- drm(100 * relgrowth ~ Concentration_ppm, data = iso_data,
+                 fct = BC.4(names = c("Slope","Lower","Upper","EC50")),
+                 na.action = na.omit)
+      model_used <- "BC.4"
+    } else {
+      fit <- drm(100 * relgrowth ~ Concentration_ppm, data = iso_data,
+                 fct = LL.4(names = c("Slope","Lower","Upper","EC50")),
+                 na.action = na.omit)
+      model_used <- "LL.4"
+    }
+    preds <- predict(fit, newdata = data.frame(Concentration_ppm = conc_seq))
+    pred_list[[nm[[i]]]] <- data.frame(
+      Isolate = nm[[i]], conc = conc_seq, pred = preds, Model_used = model_used
+    )
+  }, error = function(e) {
+    tryCatch({
+      fit <- drm(100 * relgrowth ~ Concentration_ppm, data = iso_data,
+                 fct = LL.4(names = c("Slope","Lower","Upper","EC50")),
+                 na.action = na.omit)
+      preds <- predict(fit, newdata = data.frame(Concentration_ppm = conc_seq))
+      pred_list[[nm[[i]]]] <<- data.frame(
+        Isolate = nm[[i]], conc = conc_seq, pred = preds,
+        Model_used = "LL.4 (BC.4 fallback)"
+      )
+    }, error = function(e2) NULL)
+  })
+}
+pred_df <- do.call(rbind, pred_list)
+```
+
+```{r}
+obs_means <- data1 %>%
+  filter(Concentration_ppm > 0) %>%
+  group_by(Isolate, Concentration_ppm) %>%                   
+  summarise(mean_pct = mean(100 * relgrowth, na.rm = TRUE),   
+            .groups = "drop") %>%
+  mutate(Group = case_when(
+    Isolate %in% hormetic_sensitive    ~ "Hormetic + Sensitive",
+    Isolate %in% hormetic_resistant    ~ "Hormetic + Resistant",
+    Isolate %in% nonhormetic_sensitive ~ "Sensitive",
+    TRUE                               ~ "Resistant"
+  ))
+
+pred_df$Group <- case_when(
+  pred_df$Isolate %in% hormetic_sensitive    ~ "Hormetic + Sensitive",
+  pred_df$Isolate %in% hormetic_resistant    ~ "Hormetic + Resistant",
+  pred_df$Isolate %in% nonhormetic_sensitive ~ "Sensitive",
+  TRUE                                       ~ "Resistant"
+)
+
+pred_df$Isolate   <- as.character(pred_df$Isolate)
+obs_means$Isolate <- as.character(obs_means$Isolate)
+```
+
+```{r}
+# Sensitive (non-hormetic): isolate with EC50 closest to group median
+sens_ec50 <- EC50.ll4 %>%
+  filter(Isolate %in% nonhormetic_sensitive, !is.na(AbsEC50)) %>%
+  mutate(dist_to_median = abs(AbsEC50 - median(AbsEC50, na.rm = TRUE))) %>%
+  arrange(dist_to_median)
+rep_sensitive <- as.character(sens_ec50$Isolate[1])
+ 
+# Hormetic + sensitive: same as above
+horm_sens_ec50 <- EC50.bc4 %>%
+  filter(Isolate %in% hormetic_sensitive, !is.na(AbsEC50)) %>%
+  mutate(dist_to_median = abs(AbsEC50 - median(AbsEC50, na.rm = TRUE))) %>%
+  arrange(dist_to_median)
+rep_hormetic_sensitive <- as.character(horm_sens_ec50$Isolate[1])
+ 
+# Resistant (non-hormetic): isolate with mean growth at 100 ppm, closest to group median 
+res_growth <- obs_means %>%
+  filter(Isolate %in% nonhormetic_resistant,
+         Concentration_ppm == 100) %>%
+  mutate(dist_to_median = abs(mean_pct - median(mean_pct, na.rm = TRUE))) %>%
+  arrange(dist_to_median)
+rep_resistant <- as.character(res_growth$Isolate[1])
+ 
+# Hormetic + resistant: same as above
+horm_res_growth <- obs_means %>%
+  filter(Isolate %in% hormetic_resistant,
+         Concentration_ppm == 100) %>%
+  mutate(dist_to_median = abs(mean_pct - median(mean_pct, na.rm = TRUE))) %>%
+  arrange(dist_to_median)
+rep_hormetic_resistant <- as.character(horm_res_growth$Isolate[1])
+# to override selections, replace teh rep_* variables with preferred isolate ID
+```
+
+```{r}
+# four representatives
+reps <- c(rep_sensitive, rep_hormetic_sensitive,
+          rep_resistant, rep_hormetic_resistant)
+ 
+# Filter data to just these 4
+pred_reps <- pred_df[pred_df$Isolate %in% reps, ]
+obs_reps  <- obs_means[obs_means$Isolate %in% reps, ]
+ 
+# panel labels:
+label_map <- c(
+  rep_sensitive           = paste0(rep_sensitive,           "\nSensitive"),
+  rep_hormetic_sensitive  = paste0(rep_hormetic_sensitive,  "\nHormetic + Sensitive"),
+  rep_resistant           = paste0(rep_resistant,           "\nResistant"),
+  rep_hormetic_resistant  = paste0(rep_hormetic_resistant,  "\nHormetic + Resistant")
+)
+names(label_map) <- reps
+ 
+pred_reps$Panel_label <- label_map[pred_reps$Isolate]
+obs_reps$Panel_label  <- label_map[obs_reps$Isolate]
+ 
+# Adjust panel order: sensitive first, then hormetic-sensitive, resistant, hormetic-resistant
+panel_order <- c(
+  label_map[rep_sensitive],
+  label_map[rep_hormetic_sensitive],
+  label_map[rep_resistant],
+  label_map[rep_hormetic_resistant]
+)
+pred_reps$Panel_label <- factor(pred_reps$Panel_label, levels = panel_order)
+obs_reps$Panel_label  <- factor(obs_reps$Panel_label,  levels = panel_order)
+```
+
+```{r}
+p_dose_reps <- ggplot() +
+  geom_line(data  = pred_reps,
+            aes(x = conc, y = pred, color = Group), linewidth = 1) +
+  geom_point(data = obs_reps,
+             aes(x = Concentration_ppm, y = mean_pct, color = Group),
+             size = 2.5, alpha = 0.9) +
+  geom_hline(yintercept = 50, linetype = "dashed",
+             color = "grey40", linewidth = 0.5) +
+  # puts EC50 on senstive panels 
+  geom_vline(
+    data = data.frame(
+      Panel_label = factor(
+        c(label_map[rep_sensitive], label_map[rep_hormetic_sensitive]),
+        levels = panel_order
+      ),
+      xintercept = c(
+        EC50.ll4$AbsEC50[EC50.ll4$Isolate == rep_sensitive],
+        ifelse(!is.na(EC50.bc4$AbsEC50[EC50.bc4$Isolate == rep_hormetic_sensitive]),
+               EC50.bc4$AbsEC50[EC50.bc4$Isolate == rep_hormetic_sensitive],
+               EC50.ll4$AbsEC50[EC50.ll4$Isolate == rep_hormetic_sensitive])
+      )
+    ),
+    aes(xintercept = xintercept),
+    linetype = "dotted", color = "grey20", linewidth = 0.6
+  ) +
+  scale_x_log10(breaks = c(0.01, 0.1, 1, 10, 100),
+                labels = c("0.01", "0.1", "1", "10", "100")) +
+  scale_y_continuous(breaks = c(0, 25, 50, 75, 100, 125),
+                     limits = c(0, 135)) +
+  scale_color_manual(values = group_colors) +
+  facet_wrap(~Panel_label, ncol = 4) +
+  labs(
+    #title    = "Representative Dose-Response Curves by Phenotype",
+    #subtitle = "Dashed line = 50% growth threshold | Dotted vertical line = EC50",
+    x        = "Boscalid concentration (ppm)",
+    y        = "Relative growth (% of control)",
+    color    = "Group"
+  ) +
+  theme_bw(base_size = 12) +
+  theme(
+    strip.background = element_rect(fill = "grey90"),
+    strip.text       = element_text(size = 10, face = "bold"),
+    legend.position  = "none" #top if want legend
+  )
+ 
+print(p_dose_reps)
+ggsave("Plot_DoseResponse_representatives.png", p_dose_reps, dpi = 600, width = 6.5, height = 4.5, units = "in")
+```
+
+Two isolates (21127, 23247) showed no measurable inhibition within the
+tested concentration range and are not show, as no dose reponse curve
+could be fit. BOth were included in downstream calssificaiton and
+fitness cost analyses based on raw frowth data.
+
+## 9.2 EC50 per isolate (do & 95% CI)
+
+```{r}
+ec50_plot_data <- sensitive_ec50_vals %>%
+  mutate(
+    CI_lower = best_CI_lower,
+    CI_upper = best_CI_upper,
+    Isolate  = fct_reorder(Isolate, best_EC50)
+  ) %>%
+  filter(!is.na(best_EC50), best_EC50 > 0)
+
+x_breaks <- c(0.01, 0.05, 0.1, 0.25, 0.5, 1, 2, 5, 10)
+x_breaks <- x_breaks[x_breaks >= min(ec50_plot_data$best_EC50, na.rm=TRUE) * 0.5 &
+                     x_breaks <= max(ec50_plot_data$best_EC50, na.rm=TRUE) * 2]
+
+p_ec50_dotplot <- ggplot(ec50_plot_data,
+                         aes(y = Isolate, x = best_EC50, color = Group)) +
+  geom_point(size = 2) +
+  geom_errorbar(aes(xmin = CI_lower, xmax = CI_upper),
+                width = 0.3, orientation = "y") +
+  scale_x_log10(
+    breaks = c(0.1, 0.25, 0.5, 1.0, 2.0),
+    labels = c("0.1", "0.25", "0.5", "1.0", "2.0"),
+    limits = c(0.08, 2.5)                    
+  ) +
+  scale_color_manual(values = group_colors) +
+  labs(
+    #title = "Absolute EC50 per Sensitive Isolate (95% CI)",
+    x     = "EC50 (ppm)",
+    y     = "Isolate",
+    color = "Group"
+  ) +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "top",
+        axis.text.y=element_text(size=6),
+        legend.title = element_blank(),
+        legend.justification = "left")
+
+print(p_ec50_dotplot)
+ggsave("Plot_EC50_per_isolate.png", p_ec50_dotplot, dpi = 600, width  = 6.5, height = 4.5, units  = "in")
+```
+
+## 9.3 Relative Growth
+
+```{r}
+all_means <- data1 %>%
+  filter(Concentration_ppm > 0) %>%
+  group_by(Isolate, Concentration_ppm) %>%
+  summarise(mean_pct = mean(100 * relgrowth, na.rm = TRUE), .groups = "drop") %>%
+  mutate(Group = case_when(
+    Isolate %in% hormetic_sensitive    ~ "Hormetic + Sensitive",
+    Isolate %in% hormetic_resistant    ~ "Hormetic + Resistant",
+    Isolate %in% nonhormetic_sensitive ~ "Sensitive",
+    TRUE                               ~ "Resistant"
+  ))
+
+p_relgrowth <- ggplot(all_means,
+                      aes(x = Concentration_ppm, y = mean_pct,
+                          group = Isolate, color = Group)) +
+  geom_line(alpha = 0.50, linewidth = 0.7) +
+  geom_point(size = 1.3, alpha = 0.85) +
+  geom_hline(yintercept = 100, linetype = "dashed", color = "grey50", linewidth = 0.5) +
+  geom_hline(yintercept = 50,  linetype = "dotted", color = "grey30", linewidth = 0.5) +
+  scale_x_log10(breaks = c(0.01, 0.1, 1, 10, 100),
+                labels = c("0.01","0.1","1","10","100")) +
+  scale_color_manual(values = group_colors) +
+  labs(#title = "Relative Growth of Alternaria Isolates vs. Boscalid",
+       x     = "Boscalid concentration (ppm, log scale)",
+       y     = "Relative growth (% of control)",
+       color = "Group") +
+  theme_bw(base_size = 11) +
+  theme(legend.position = "top", 
+        legend.title = element_blank(),
+        legend.justification = "left")
+
+print(p_relgrowth)
+ggsave("Plot_RelativeGrowth_fixed.png", p_relgrowth, dpi = 600, width  = 6.5, height = 4.5, units  = "in")
+```
+
+# 10. Fitness cost analysis
+
+Growth vs. boscalid sensitivity classification Extract control (0ppm)
+growth per isolate
+
+```{r}
+control_growth_data <- data1 %>%
+  filter(Concentration_ppm == 0) %>%
+  group_by(Isolate) %>%
+  summarise(mean_control_growth = mean(Radial_growth_mm, na.rm = TRUE), .groups = "drop")
+
+control_growth_data$Group <- case_when(
+  control_growth_data$Isolate %in% hormetic_sensitive    ~ "Hormetic + Sensitive",
+  control_growth_data$Isolate %in% hormetic_resistant    ~ "Hormetic + Resistant",
+  control_growth_data$Isolate %in% nonhormetic_sensitive ~ "Sensitive",
+  control_growth_data$Isolate %in% nonhormetic_resistant ~ "Resistant",
+  TRUE ~ "Unknown"
+)
+
+# collapsed 2-group version, for a secondary/simpler comparison
+control_growth_data$Group2 <- ifelse(
+  grepl("Resistant", control_growth_data$Group), "Resistant", "Sensitive"
+)
+
+cat("N isolates per group:\n")
+print(table(control_growth_data$Group))
+```
+
+## 10.1 Summary stats
+
+```{r}
+#Summary stats
+summary_4group <- control_growth_data %>%
+  group_by(Group) %>%
+  summarise(n = n(),
+            min  = round(min(mean_control_growth, na.rm = TRUE), 2),
+            max  = round(max(mean_control_growth, na.rm = TRUE), 2),
+            mean = round(mean(mean_control_growth, na.rm = TRUE), 2),
+            .groups = "drop")
+print(summary_4group)
+
+summary_2group <- control_growth_data %>%
+  group_by(Group2) %>%
+  summarise(n = n(),
+            min  = round(min(mean_control_growth, na.rm = TRUE), 2),
+            max  = round(max(mean_control_growth, na.rm = TRUE), 2),
+            mean = round(mean(mean_control_growth, na.rm = TRUE), 2),
+            .groups = "drop")
+print(summary_2group)
+```
+
+| Group                | Number of isolates | Min (mm) | Max (mm) | Mean (mm) |
+|----------------------|--------------------|----------|----------|-----------|
+| Hormetic & Resistant | 18                 | 11.7     | 14.4     | 12.8      |
+| Hormetic & Sensitive | 25                 | 11.0     | 17.2     | 14.0      |
+| Resistant            | 20                 | 11.8     | 17.0     | 13.6      |
+| Sensitive            | 12                 | 12.5     | 18.2     | 15.6      |
+
+## 10.2 4 group comparison
+
+```{r}
+shapiro.test(control_growth_data$mean_control_growth)
+
+kw_4group <- kruskal.test(mean_control_growth ~ Group, data = control_growth_data)
+print(kw_4group)
+
+library(FSA)
+if (kw_4group$p.value < 0.05) {
+  dunn_4group <- dunnTest(mean_control_growth ~ Group, data = control_growth_data, method = "bh")
+  print(dunn_4group)
+}
+```
+
+Growth differs sig. across the 4 groups (Kuskal-Wallis x2 df=3, p =
+0.0014) Control data is non-normal (Shapiro WIlk p = 0.0002) so
+Kruskal-Wallis/Dunn is the right test over ANOVA P. adj = bejamini
+Hochberg adjusted p balue that corrects for the fact that we ran 6
+pairwise tests at once.
+
+Pairwise comparisons:
+
+| Group | Group 2 | Adjusted p value | Significance | Faster growth by |
+|---------------|---------------|---------------|---------------|---------------|
+| Hormetic & Resistant | Hormetic & sensitive | 0.0433 | Sig | Hormetic & sensitive |
+| Hormetic & Resistant | Resistant | 0.1739 | Not sig. | NA |
+| Hormetic & Sensitive | Resistant | 0.6730 | Not sig. | NA |
+| Hormetic & Resistant | Sensitive | 0.0006 | Sig | Sensitive |
+| Hormetic & Sensitive | Sensitive | 0.0541 | Not Sig. | NA |
+| Resistant | Sensitive | 0.0222 | Sig. | Sensitive |
+
+Take away:
+
+Non hormetic sensitive isolates are the fastest growers and are
+statistically distinct from both resistant groups.
+
+Non hormetic senstive isolates were also nearly distinct from the
+Hormetic & sensitive group (p=0.054)
+
+The other three groups (hormetic & sensitive, resistant, and hormetic &
+resistant) generally cluster together and don't separate cleanly from
+each other.
+
+Suggests there may be a fitness cost associated with resistance and/or
+hormesis.
+
+## 10.2 Resistance vs hormesis on control growth
+
+```{r}
+library(rcompanion)
+# split the 4-group classification into two independent factors
+control_growth_data <- control_growth_data %>%
+  mutate(
+    Resistance = ifelse(grepl("Resistant", Group), "Resistant", "Sensitive"),
+    Hormesis   = ifelse(grepl("Hormetic", Group), "Hormetic", "Non-hormetic")
+  )
+
+control_growth_data$Resistance <- factor(control_growth_data$Resistance)
+control_growth_data$Hormesis   <- factor(control_growth_data$Hormesis)
+
+# Scheirer-Ray-Hare test: non-parametric two-way ANOVA
+# testing whether each factor matters independly, and whether they interact
+srh_result <- scheirerRayHare(
+  mean_control_growth ~ Resistance * Hormesis,
+  data = control_growth_data
+)
+print(srh_result)
+```
+
+| Group                            | p-value |
+|----------------------------------|---------|
+| Resistance                       | 0.0007  |
+| Hormesis                         | 0.0101  |
+| Resistance: Hormesis interaction | 0.5271  |
+
+Take away:
+
+Resistance and hormesis each independently and significantly reduce
+growth and they don't interact with each other.
+
+This indicates that resistance and hormesis each carry their own
+additive fitness cost.
+
+## 10.3 Plot 4 groups
+
+```{r}
+cld <- cldList(P.adj ~ Comparison, data = dunn_4group$res, threshold = 0.05)
+
+cld$Group <- gsub("Hormetic\\+", "Hormetic + ", cld$Group)
+
+print(cld)
+
+letter_positions <- control_growth_data %>%
+  group_by(Group) %>%
+  summarise(y_pos = max(mean_control_growth) + 1, .groups = "drop") %>%
+  left_join(cld, by = "Group")
+
+print(letter_positions)
+
+p_fitness <- ggplot(control_growth_data, aes(x = Group, y = mean_control_growth, color = Group)) +
+  geom_boxplot(outlier.shape = NA, width = 0.5) +
+  geom_jitter(width = 0.1, size = 2, alpha = 0.8) +
+  geom_text(data = letter_positions, aes(x = Group, y = y_pos, label = Letter),
+            color = "black", size = 4.5, fontface = "bold", inherit.aes = FALSE) +
+  scale_color_manual(values = group_colors) +
+  labs(x = NULL, y = "Radial growth (mm)", color = "Group") +
+  theme_bw(base_size = 12) +
+  theme(legend.position = "none", axis.text.x = element_text(angle = 20, hjust = 1))
+
+print(p_fitness)
+ggsave("Plot_FitnessCost_ControlGrowth.png", p_fitness, dpi = 600, width = 6, height = 5, units = "in")
+```
+
+## 10.4 Plot Resistance x hormesis
+
+```{r}
+p_fitness_2factor <- ggplot(control_growth_data,
+                             aes(x = Resistance, y = mean_control_growth,
+                                 color = Group, group = Group)) +
+  geom_boxplot(outlier.shape = NA, width = 0.6,
+               position = position_dodge(width = 0.75)) +
+  geom_point(position = position_jitterdodge(jitter.width = 0.1, dodge.width = 0.75),
+             size = 2, alpha = 0.8) +
+  scale_color_manual(values = group_colors) +
+  annotate("text", x = 1.5, y = max(control_growth_data$mean_control_growth) + 1.5,
+           label = "Resistance: P < 0.001   |   Hormesis: P = 0.010   |   Interaction: n.s.",
+           size = 3.5, fontface = "italic") +
+  labs(
+    x     = NULL,
+    y     = "Radial growth (mm)",
+    color = NULL
+  ) +
+  theme_bw(base_size = 12) +
+  theme(legend.position = "top") +
+  coord_cartesian(clip = "off")
+
+print(p_fitness_2factor)
+ggsave("Plot_FitnessCost_TwoFactor.png", p_fitness_2factor, dpi = 600, width = 5.5, height = 5, units = "in")
+```
+
+# 11. Resistance patterns
+
+Upload sens_summary file. This file was not created up above, but
+compiled from info above manually
+
+```{r}
+library(readxl)
+library(dplyr)
+
+sens_sum <- read_excel("../Data/Sens_summary.xlsx")
+```
+
+## 11.1 Resistance by year
+
+```{r}
+rxy <- sens_sum %>%
+  group_by(Year) %>%
+  summarise(
+    n_total       = n(),
+    n_resistant   = sum(Resistance == "Resistant"),
+    pct_resistant = round(100 * n_resistant / n_total, 1)
+  )
+print(rxy)
+```
+
+| Year | Total Isolates | Resistant Isolates | Percent Resistant |
+|------|----------------|--------------------|-------------------|
+| 2018 | 1              | 0                  | 0                 |
+| 2021 | 29             | 12                 | 41.4              |
+| 2023 | 45             | 26                 | 57.8              |
+
+Percent of collected isolates that were resistant increased from 2021 to
+2023
+
+In 2021 41.4% of isolates were resistant - In 2023 57.8% of isolates
+were resistant
+
+## 11.2 Resistance by county
+
+```{r}
+rxc <-sens_sum %>%
+  group_by(County) %>%
+  summarise(
+    n_total       = n(),
+    n_resistant   = sum(Resistance == "Resistant"),
+    pct_resistant = round(100 * n_resistant / n_total, 1)
+  ) %>%
+  arrange(desc(pct_resistant))
+print(rxc)
+```
+
+| County  | Total Isolates | Resistant Isolates | Percent Resistant |
+|---------|----------------|--------------------|-------------------|
+| Monroe  | 17             | 14                 | 82.4              |
+| Genesee | 18             | 12                 | 66.7              |
+| Orleans | 12             | 8                  | 66.7              |
+| Erie    | 15             | 4                  | 26.7              |
+| Niagara | 6              | 0                  | 0                 |
+| Ontario | 7              | 0                  | 0                 |
+
+Resistance is not evenly distributed.
+
+Monroe, Genesee, and Orleans county have high resistance rates (over
+66.7%)
+
+Niagra and Ontario have no resistant isoaltes
+
+Curious what the fungicde use history is for the farms in these
+counties.
+
+## 11.3 Hormesis by year
+
+```{r}
+print(table(sens_sum$Year, sens_sum$Hormesis))
+```
+
+## 11.4 Four group breakdown by year
+
+```{r}
+print(table(sens_sum$Year, 
+            paste(sens_sum$Resistance, sens_sum$Hormesis, sep = " + ")))
+```
+
+## 11.5 Four group breakdown by county
+
+```{r}
+print(table(sens_sum$County, 
+            paste(sens_sum$Resistance, sens_sum$Hormesis, sep = " + ")))
+```
+
+# 12. Aggressiveness vs boscalid sensitivty
+
+```{r}
+library(readxl)
+library(dplyr)
+library(ggplot2)
+
+aggr <- read.csv("../Pathogenicity_Analysis/mean_aggressiveness_per_isolate.csv")
+aggr$isolate <- trimws(as.character(aggr$isolate))
+aggr <- aggr %>% rename(Isolate = isolate)
+
+# Load sensitivity data
+sens_sum <- read_excel("../Data/Sens_summary.xlsx") %>%
+  mutate(EC50_numeric = suppressWarnings(as.numeric(`EC50 (ppm)`)))
+sens_sum$Isolate <- as.character(sens_sum$Isolate)
+
+# Merge on overlapping isolates
+combined <- inner_join(aggr, sens_sum, by = "Isolate")
+
+cat("N isolates in correlation:", nrow(combined), "\n")
+cat("Groups represented:\n")
+print(table(combined$Resistance, combined$Hormesis))
+```
+
+## 12.1 Normality test (Shaprio Wilk)
+
+Need to determine if data is normally distributed p\>0.05 = normal
+p\<0.05 not normal
+
+```{r}
+# Create sensitive-only subset for EC50 correlation
+# Only sensitive isolates have a numeric EC50 within tested range
+sensitive_combined <- combined %>%
+  filter(Resistance == "Sensitive")
+
+cat("N sensitive isolates for correlation:", nrow(sensitive_combined), "\n")
+cat("N total isolates for Wilcoxon test:", nrow(combined), "\n\n")
+
+# Test normality of mean disease severity (all isolates)
+cat("--- Shapiro-Wilk: mean disease severity (all isolates) ---\n")
+shapiro.test(combined$mean_disease5)
+
+# Test normality of log10 EC50 (sensitive isolates only)
+cat("\n--- Shapiro-Wilk: log10 EC50 (sensitive isolates) ---\n")
+shapiro.test(log10(sensitive_combined$EC50_numeric))
+```
+
+Mean disease severity --\> p<0.05 (p = 0.001078) --\> not normal
+
+log10EC50
+(sensitive isoltes) --\> p\>0.05 (p = 0.3565) --\> approx normal
+
+Spearman doesnt assume normality --> use 
+
+Spearman is more robust when n is small because it does not assume the relationship between the two variables is perfectly linear. It just asks whether higher EC50 tends to go with higher or lower disease severityusing ranks instead of raw values.
+
+## 12.2 Correlation (Spearman)
+
+Is there a stat sig relationship between aggressiveness and boscalid
+sensitivity
+
+```{r}
+cor_result <- cor.test(
+  sensitive_combined$mean_disease5,
+  sensitive_combined$EC50_numeric,
+  method = "spearman"
+)
+
+cat("--- Spearman correlation: aggressiveness vs EC50 ---\n")
+cat("rho =", round(cor_result$estimate, 3), "\n")
+cat("p   =", round(cor_result$p.value, 3), "\n")
+cat("n   =", nrow(sensitive_combined), "\n")
+```
+
+Rho:
+zero --\> no relationship || 1 --\> perfect relationship || -1
+--\>, perfect neg relationship.
+
+rho = 0.036, very slight post relationship
+p = 0.889. Correlation is not stat. sig.
+
+Takeaway: no significant relationship between how aggressive an isolate
+is and how sensitive it is to boscalid. Resistant isolates are not
+necessarily more or less aggressive than sensitive ones. Suggests
+resistance does not come with an aggressiveness cost or benefit.
+
+## 12.3 Wilcoxon test
+
+Does aggressiveness differ sig. between resistant and sensitive isolates
+overall. Non parametric equivilant of a t test. Ranks all values and
+compares whether ranks cluster different between the two groups.
+
+```{r}
+# Wilcoxon test
+cat("Resistant n =", sum(combined$Resistance == "Resistant"), "\n")
+cat("Sensitive n =", sum(combined$Resistance == "Sensitive"), "\n\n")
+
+wilcox.test(mean_disease5 ~ Resistance, data = combined)
+```
+
+w = 120, p = 0.6315.
+
+Not significant. Resistance and sensitive isolates do not differ
+significantly in their aggressiveness accross all 5 brassica crops.
+
+Takeaway: Resistance to boscalid is not associated with either increased
+or decreased aggressiveness. A resistant isolate is no more or less
+damaging to 5 brassica crops than a sensitive one.
+
+Matches what Kaur et al. (2025) found with spore germ, resistance does
+not appear to carry a meaningful fitness penalty in terms of disease
+causing ability.
+
+Overall takeaway: boscalid resitance and aggressiveness are independent
+of each other in this isolate collection. There is no trade off and no
+advantage. Resistant isolates are just as capable of causing disease as
+sensitives ones.
+
+\*Note n=18 for the correlation and n=30 fo the wilcoxon is small. A
+larger sample size would give us more statistical power to detect a weak
+relationship.
+
+
+# 13. Summary - Fitness vs resistance
+
+1.  Mycelial growth on control plates (kruskal-wallis and
+    scheirer-ray-hair analysisi) Resistant isoaltes grow significantly
+    slower than sensitive ones on unamended media, and resistance and
+    hormesis each independently reduce growth
+
+This is a fitness cost. Resistance comes with a metabolic penalty in
+terms of vegetative growth rate
+
+2.  Aggressiveness vs EC50 correlation (spearman and Welcoxon) No
+    significant relationship between boscalid sensitivity and disease
+    causing ability on tho host.
+
+So, while resistant isolates growth more slowly in the lab, they are
+just as capable of causing disease on broccoli leaves.
+
+3.  The fitness cost of resistance shows up in vegetative growth (in
+    vitro) but not in aggressiveness (in plant). Resistant isolates pay
+    a metabolic cost but it doesn't translate into reduced ability to
+    cause disease.
+
+In terms of management, we cant rely on resistance being selected
+against, in the field because resistant isolates are just as aggressive.
+.

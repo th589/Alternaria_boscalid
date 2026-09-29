@@ -1,0 +1,473 @@
+---
+title: "Pathogencity Analysis"
+author: "Taylere Herrmann"
+date: "`r Sys.Date()`"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# 0.5 Set up
+
+```{r}
+setwd("/Users/taylere/Library/CloudStorage/OneDrive-Personal/R/Alternaria/Pathogenicity_Analysis")
+```
+
+```{r}
+knitr::opts_chunk$set(message = FALSE, warning = FALSE)
+```
+
+# 1. Libraries
+
+```{r}
+library(tidyverse)
+library(lme4)  
+library(lmerTest)
+library(emmeans)  
+library(multcomp)
+library(multcompView)
+```
+
+# 2. Data
+
+```{r}
+assay <- read.csv("../Data/assay_analysis.csv")
+assay$isolate <- trimws(assay$isolate)
+
+assay_clean <- assay %>%
+  mutate(
+    isolate  = as.factor(isolate),
+    crop     = as.factor(crop),
+    rep      = as.factor(rep),
+    cultivar = as.factor(cultivar)
+  )
+
+cat("Isolates:", nlevels(assay_clean$isolate), "\n")
+cat("Crops:", levels(assay_clean$crop), "\n")
+cat("Repetitions:", nlevels(assay_clean$rep), "\n")
+cat("Rows:", nrow(assay_clean), "(120 x 5 x 3 = 1800, fully balanced)\n")
+```
+
+# 3. Pearson correlation
+
+3 dpi vs 5 dpi To deermine which timepoint to use for analysis, disease
+severity at 3 and 5 dpi were compared using Pearson correlation. A
+strong + correlation would justify using only 5 dpi for analysis.
+
+```{r}
+cor_dpi <- cor.test(assay_clean$disease.3, assay_clean$disease.5,
+                    method = "pearson")
+cat("Pearson r =", round(cor_dpi$estimate, 3), "\n")
+cat("p =", format(cor_dpi$p.value, scientific = TRUE), "\n")
+```
+
+Pearson correlation r = 0.71, p essentially zero (p = 9.88 x 10-276)
+Strong positive correlation between disease at 3 and 5 dpi. Confirms
+that ratings at 5 dpi are representative and sufficient, we don't need
+both time points
+
+# 4. Mixed Model, Isolate and Crop effects
+
+Fixed effects: isolate, crop Random effect: (1\|rep) --\>
+accounts for varation between 3 reps Response varaible: disease.5 --\>
+disease severity at 5dpi
+
+## 4.1 Full model with isolate:crop interaction
+
+```{r}
+model_full <- lmer(
+  disease.5 ~ isolate + crop + isolate:crop + (1 | rep),
+  data    = assay_clean,
+  REML    = TRUE,
+  control = lmerControl(optimizer = "bobyqa",
+                        optCtrl   = list(maxfun = 2e5))
+)
+
+print(anova(model_full))
+```
+
+ANOVA with interaction (isolate:crop p=1) The interaction between
+isolate and crop is non significant This means ranking of isolates by
+aggressiveness was consistent regardless of which crop was tested. A
+highly aggressive isolate on broccoli was also highly aggressive on kale
+etc. Important biologically and justifies using the mean across all
+crops
+
+## 4.2 Simpler model without interaction
+
+```{r}
+model_no_int <- lmer(
+  disease.5 ~ isolate + crop + (1 | rep),
+  data    = assay_clean,
+  REML    = TRUE,
+  control = lmerControl(optimizer = "bobyqa",
+                        optCtrl   = list(maxfun = 2e5))
+)
+```
+
+## 4.3 Model comparison
+
+```{r}
+print(anova(model_no_int, model_full))
+```
+
+Model comparison: p = 0.9256 Confirms the model without the intreaction
+term is just as good as the full model. Use the simpler model
+
+```{r}
+# Note: model_final is the untransformed model used only for
+model_final <- model_no_int
+
+print(anova(model_final))
+```
+
+Both isolate (p=2.2 x 10-16) and crop (p\<2.2 x 10-16) are highly sig.
+Isolates sig differ in aggressiveness Crops sig. differ in
+susceptibility
+
+# 5. Residual Checks and Logit Transformation
+
+## 5.1 Untransformed model
+
+```{r}
+residuals_model <- residuals(model_final)
+sw_untransformed <- shapiro.test(residuals_model)
+cat("Shapiro-Wilk (untransformed): W =", round(sw_untransformed$statistic, 4),
+    "| p =", round(sw_untransformed$p.value, 4), "\n")
+
+plot(fitted(model_final), residuals_model,
+     xlab = "Fitted values", ylab = "Residuals",
+     main = "Residuals vs Fitted — Untransformed Model")
+abline(h = 0, col = "red", lty = 2)
+
+qqnorm(residuals_model, main = "Q-Q Plot — Untransformed Model")
+qqline(residuals_model, col = "red")
+```
+
+Shapiro-Wilk on residuals W=0.953 p = 0 residuals are not normally
+distributed Residuals have diagonal banding and fan shape --\>
+heteroscedasticity. In QQ plot the the points deviated substantially
+from the red reference line in both tails. Distribution is to skewed
+compared to normal. Model assumptions are violated
+
+## 5.2 Logit transformation
+
+A logit transformation may be a good fit for bounded proportion data
+(Warton & Hui 2011)
+
+```{r}
+assay_clean <- assay_clean %>%
+  mutate(
+    disease5_logit = log((disease.5 + 0.5) / (100 - disease.5 + 0.5))
+  )
+
+# Fit same model structure on transformed data
+model_logit <- lmer(
+  disease5_logit ~ isolate + crop + (1 | rep),
+  data    = assay_clean,
+  REML    = TRUE,
+  control = lmerControl(optimizer = "bobyqa",
+                        optCtrl   = list(maxfun = 2e5))
+)
+print(anova(model_logit))
+```
+
+## 5.3 Residual checks: logit model
+
+```{r residuals-logit}
+res_logit <- residuals(model_logit)
+sw_logit  <- shapiro.test(res_logit)
+cat("Shapiro-Wilk (logit model): W =", round(sw_logit$statistic, 4),
+    "| p =", round(sw_logit$p.value, 4), "\n")
+cat("Note: with n =", nrow(assay_clean), "Shapiro-Wilk has very high power\n")
+cat("and will detect trivially small deviations. Visual inspection of\n")
+cat("the plots below is more informative than the p-value at this sample size.\n")
+
+plot(fitted(model_logit), res_logit,
+     xlab = "Fitted values (logit scale)", ylab = "Residuals",
+     main = "Residuals vs Fitted — Logit Model")
+abline(h = 0, col = "red", lty = 2)
+
+qqnorm(res_logit, main = "Q-Q Plot — Logit Model")
+qqline(res_logit, col = "red")
+```
+
+Residuals are scattered more evenly above and below zero. QQ plot, the
+points follow the red line closley.
+
+Use logit transformation for data
+
+## 5.4 Comparison: Arcsine square root transformation
+
+```{r}
+assay_clean <- assay_clean %>%
+  mutate(
+    disease5_asin = asin(sqrt(disease.5 / 100))
+  )
+
+# Fit same model structure on arcsine-transformed data
+model_asin <- lmer(
+  disease5_asin ~ isolate + crop + (1 | rep),
+  data    = assay_clean,
+  REML    = TRUE,
+  control = lmerControl(optimizer = "bobyqa",
+                        optCtrl   = list(maxfun = 2e5))
+)
+```
+
+```{r}
+# Check residuals
+res_asin <- residuals(model_asin)
+sw_asin  <- shapiro.test(res_asin)
+cat("Shapiro-Wilk (arcsine model): W =", round(sw_asin$statistic, 4),
+    "| p =", round(sw_asin$p.value, 4), "\n")
+
+plot(fitted(model_asin), res_asin,
+     xlab = "Fitted values (arcsine scale)",
+     ylab = "Residuals",
+     main = "Residuals vs Fitted — Arcsine Model")
+abline(h = 0, col = "red", lty = 2)
+
+qqnorm(res_asin, main = "Q-Q Plot — Arcsine Model")
+qqline(res_asin, col = "red")
+
+# Compare Shapiro-Wilk W values across all three approaches
+cat("\n--- Summary: Shapiro-Wilk W across approaches ---\n")
+cat("Higher W = closer to normal = better\n\n")
+cat("Untransformed: W =", round(sw_untransformed$statistic, 4), "\n")
+cat("Logit:         W =", round(sw_logit$statistic, 4), "\n")
+cat("Arcsine:       W =", round(sw_asin$statistic, 4), "\n")
+```
+
+Higher W = closer to normal = better 
+Untranformed w: 0.953 
+Logit:
+W=0.9906 
+Arcsine: W=0.9734
+
+Logit produced the best residual behavior
+
+# 6. Tukey HSD: Crop Means
+
+Estimated marginal means are calculated on the logit scale and then
+back-transformed to percentage scale
+
+```{r}
+emm_crop_logit   <- emmeans(model_logit, ~ crop)
+tukey_crop_logit <- cld(emm_crop_logit,
+                         Letters = letters,
+                         adjust  = "tukey")
+
+crop_logit_summary <- as.data.frame(tukey_crop_logit) %>%
+  mutate(
+    disease_pct       = exp(emmean)    / (1 + exp(emmean))    * 100,
+    disease_pct_lower = exp(lower.CL)  / (1 + exp(lower.CL))  * 100,
+    disease_pct_upper = exp(upper.CL)  / (1 + exp(upper.CL))  * 100,
+    groups            = trimws(.group)
+  )
+
+# Back-transform SE to percentage scale using the delta method
+crop_logit_summary <- crop_logit_summary %>%
+  mutate(
+    p_prop = exp(emmean) / (1 + exp(emmean)),
+    se_pct = SE * p_prop * (1 - p_prop) * 100
+  )
+
+cat("Crop means (back-transformed to %):\n")
+print(crop_logit_summary[, c("crop", "disease_pct",
+                               "disease_pct_lower",
+                               "disease_pct_upper", "groups")])
+
+write.csv(crop_logit_summary, "tukey_crop_results.csv", row.names = FALSE)
+cat("Saved: tukey_crop_results.csv\n")
+```
+Crop means (back transformed to %)
+
+| Crop        | \% disease | \% disease lower | \% disease upper | groups |
+|-------------|------------|------------------|------------------|--------|
+| Cauliflower | 13.36      | 3.39             | 40.36            | a      |
+| Cabbage     | 13.54      | 3.45             | 40.72            | a      |
+| Kale        | 15.76      | 4.09             | 45.08            | a      |
+| Collard     | 25.45      | 7.22             | 59.96            | b      |
+| Broccoli    | 32.96      | 10.08            | 68.33            | c      |
+
+# 7. Tukey HSD: Isolate Means
+
+```{r}
+emm_iso_logit   <- emmeans(model_logit, ~ isolate)
+tukey_iso_logit <- cld(emm_iso_logit,
+                        Letters = letters,
+                        adjust  = "tukey")
+
+isolate_logit_summary <- as.data.frame(tukey_iso_logit) %>%
+  mutate(
+    disease_pct               = exp(emmean)   / (1 + exp(emmean))   * 100,
+    lower.CL_backtransformed  = exp(lower.CL) / (1 + exp(lower.CL)) * 100,
+    upper.CL_backtransformed  = exp(upper.CL) / (1 + exp(upper.CL)) * 100,
+    groups                    = trimws(.group)
+  )
+
+# Back-transform SE to percentage scale (delta method)
+isolate_logit_summary <- isolate_logit_summary %>%
+  mutate(
+    p_prop = exp(emmean) / (1 + exp(emmean)),
+    se_pct = SE * p_prop * (1 - p_prop) * 100
+  )
+
+cat("Isolate mean range (back-transformed):",
+    round(min(isolate_logit_summary$disease_pct), 1), "to",
+    round(max(isolate_logit_summary$disease_pct), 1), "%\n")
+cat("Overall mean:",
+    round(mean(isolate_logit_summary$disease_pct), 1), "%\n")
+
+write.csv(isolate_logit_summary, "tukey_isolate_results.csv", row.names = FALSE)
+```
+
+Isolate mean range (back transformed to): 3.6 to 52.9%
+
+Overall mean: 21.2%
+
+
+# 8 Aggressiveness by county 
+Kruskal Wallis bc were testing 120 isolates that arnt normally distributed 
+```{r}
+# County only — one row per isolate. Do NOT include year here.
+iso_county <- assay_clean %>%
+  dplyr::select(isolate, county) %>%
+  distinct()
+
+aggr_geo <- isolate_logit_summary %>%
+  left_join(iso_county, by = "isolate")
+
+stopifnot(nrow(aggr_geo) == 120)   # catches the duplication if it recurs
+
+cat("--- Aggressiveness by county ---\n")
+print(aggr_geo %>%
+        group_by(county) %>%
+        summarise(n = n(),
+                  mean_pct = round(mean(disease_pct), 1),
+                  .groups = "drop"))
+
+kruskal.test(disease_pct ~ as.factor(county), data = aggr_geo)
+
+```
+
+p = 0.1529 ; not significant 
+
+# 9. Mean Aggressiveness Per Isolate
+
+Mean aggressiveness --\> mean disease severity at 5dpi averaged across
+the 5 crops and 3 reps Estimated from logit mixed model and back
+transformed to % scale
+
+Using model derived estimates accounts for random effect of rep.
+
+```{r}
+mean_aggressiveness <- isolate_logit_summary %>%
+  dplyr::select(isolate, disease_pct, se_pct, groups) %>%
+  rename(
+    mean_disease5 = disease_pct,
+    SE            = se_pct,
+    tukey_group   = groups
+  )
+
+write.csv(mean_aggressiveness, "mean_aggressiveness_per_isolate.csv",
+          row.names = FALSE)
+cat("Range:", round(min(mean_aggressiveness$mean_disease5), 1),
+    "to", round(max(mean_aggressiveness$mean_disease5), 1), "%\n")
+```
+
+Mean aggressivness range: 3.6 to 52.9%
+
+# 10. Figures
+
+## 10.1 Isolate aggressivenss
+
+```{r}
+median_disease <- median(isolate_logit_summary$disease_pct)
+cat("Median isolate disease severity:", round(median_disease, 1), "%\n")
+
+isolate_logit_summary <- isolate_logit_summary %>%
+  mutate(
+    panel_group = ifelse(disease_pct >= median_disease,
+                         "Higher aggressiveness",
+                         "Lower aggressiveness"),
+    panel_group = factor(panel_group,
+                         levels = c("Higher aggressiveness",
+                                    "Lower aggressiveness"))
+  )
+
+p_isolates <- ggplot(isolate_logit_summary,
+                     aes(x = reorder(isolate, -disease_pct),
+                         y = disease_pct)) +
+  geom_bar(stat = "identity", fill = "darkgray", width = 0.7) +
+  facet_wrap(~ panel_group, scales = "free_x", nrow = 2) +
+  labs(
+    x = "Isolates",
+    y = "Disease percentage"
+  ) +
+  theme_classic() +
+  theme(
+    axis.text.x  = element_text(angle = 90, size = 7, family = "Arial"),
+    strip.text.x = element_blank()
+  )
+
+print(p_isolates)
+ggsave("Figure1_isolate_aggressiveness.tiff", p_isolates,
+       dpi = 600, width = 6.5, height = 4,
+       units = "in", compression = "lzw")
+```
+
+## 10.2 Frequency distribution of aggressiveness/disease severity
+
+```{r }
+p_freq <- ggplot(isolate_logit_summary, aes(x = disease_pct)) +
+  geom_histogram(binwidth = 5, fill = "darkgray",
+                 color = "white", boundary = 0) +
+  scale_x_continuous(breaks = seq(0, 55, by = 10)) +
+  scale_y_continuous(breaks = seq(0, 30, by = 5),
+                     expand = expansion(mult = c(0, 0.05))) +
+  labs(x = "Disease severity (%)", y = "Number of isolates") +
+  theme_classic()
+
+print(p_freq)
+ggsave("Figure2_frequency_distribution.tiff", p_freq,
+       dpi = 600, width = 5, height = 4,
+       units = "in", compression = "lzw")
+```
+
+## 10.3 Crop Susceptibility
+
+Mean disease severity per crop with SE error bars and Tukey HSD
+letters.
+
+```{r}
+p_crops <- ggplot(crop_logit_summary,
+                  aes(x = reorder(crop, -disease_pct),
+                      y = disease_pct)) +
+  geom_bar(stat = "identity", width = 0.5, fill = "gray30") +
+  geom_errorbar(aes(ymin = disease_pct - se_pct,
+                    ymax = disease_pct + se_pct),
+                width = 0.2) +
+  geom_text(aes(label = groups,
+                y     = disease_pct + se_pct),
+            vjust = -0.5, hjust = 0.5, size = 4) +
+  scale_y_continuous(expand = expansion(mult = c(0, 0.15))) +
+  labs(
+    x = "Crop",
+    y = "Disease percentage"
+  ) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(size = 12)
+  )
+
+print(p_crops)
+ggsave("Figure3_crop_susceptibility.tiff", p_crops,
+       dpi = 600, width = 6, height = 4.5,
+       units = "in", compression = "lzw")
+
+```
+
+Bars = SE; letters indicate Tukey HSD groupinbgs 

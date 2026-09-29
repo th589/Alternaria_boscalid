@@ -1,0 +1,1871 @@
+﻿number,rep,date.inoculated,month,year,isolate ,crop,cultivar,disease.3,disease.5,AUDPC
+1001,1,11.12.2021,November,2021,21074,Broccoli,Emrald crown,4,70,74
+1002,1,11.12.2021,November,2021,21074,Cabbage,Bravo,0.5,2,2.5
+1003,1,11.12.2021,November,2021,21074,Cauliflower,Bermo,0.2,3,3.2
+1004,1,11.12.2021,November,2021,21074,Collard,TopBunch,3,80,83
+1005,1,11.12.2021,November,2021,21074,Kale,Darkibor,3,20,23
+1006,1,11.12.2021,November,2021,21075,Broccoli,Emrald crown,0.1,70,70.1
+1007,1,11.12.2021,November,2021,21075,Cabbage,Bravo,0.5,3,3.5
+1008,1,11.12.2021,November,2021,21075,Cauliflower,Bermo,0,1,1
+1009,1,11.12.2021,November,2021,21075,Collard,TopBunch,20,80,100
+1010,1,11.12.2021,November,2021,21075,Kale,Darkibor,10,55,65
+1011,1,11.12.2021,November,2021,21076,Broccoli,Emrald crown,2,99,101
+1012,1,11.12.2021,November,2021,21076,Cabbage,Bravo,2,4,6
+1013,1,11.12.2021,November,2021,21076,Cauliflower,Bermo,1,10,11
+1014,1,11.12.2021,November,2021,21076,Collard,TopBunch,5,50,55
+1015,1,11.12.2021,November,2021,21076,Kale,Darkibor,3,10,13
+1016,1,12.7.2021,December,2021,21077,Broccoli,Emrald crown,25,40,65
+1017,1,12.7.2021,December,2021,21077,Cabbage,Bravo,15,30,45
+1018,1,12.7.2021,December,2021,21077,Cauliflower,Bermo,20,30,50
+1019,1,12.7.2021,December,2021,21077,Collard,TopBunch,20,30,50
+1020,1,12.7.2021,December,2021,21077,Kale,Darkibor,50,60,110
+1021,1,12.7.2021,December,2021,21078,Broccoli,Emrald crown,10,25,35
+1022,1,12.7.2021,December,2021,21078,Cabbage,Bravo,3,5,8
+1023,1,12.7.2021,December,2021,21078,Cauliflower,Bermo,15,15,30
+1024,1,12.7.2021,December,2021,21078,Collard,TopBunch,50,55,105
+1025,1,12.7.2021,December,2021,21078,Kale,Darkibor,35,40,75
+1026,1,12.7.2021,December,2021,21079,Broccoli,Emrald crown,10,15,25
+1027,1,12.7.2021,December,2021,21079,Cabbage,Bravo,7,15,22
+1028,1,12.7.2021,December,2021,21079,Cauliflower,Bermo,4,10,14
+1029,1,12.7.2021,December,2021,21079,Collard,TopBunch,55,50,105
+1030,1,12.7.2021,December,2021,21079,Kale,Darkibor,10,15,25
+1031,1,11.12.2021,November,2021,21080,Broccoli,Emrald crown,5,90,95
+1032,1,11.12.2021,November,2021,21080,Cabbage,Bravo,1,3,4
+1033,1,11.12.2021,November,2021,21080,Cauliflower,Bermo,1,4,5
+1034,1,11.12.2021,November,2021,21080,Collard,TopBunch,8,40,48
+1035,1,11.12.2021,November,2021,21080,Kale,Darkibor,2,5,7
+1036,1,11.12.2021,November,2021,21081,Broccoli,Emrald crown,3,90,93
+1037,1,11.12.2021,November,2021,21081,Cabbage,Bravo,5,10,15
+1038,1,11.12.2021,November,2021,21081,Cauliflower,Bermo,25,35,60
+1039,1,11.12.2021,November,2021,21081,Collard,TopBunch,0.1,65,65.1
+1040,1,11.12.2021,November,2021,21081,Kale,Darkibor,1,2,3
+1041,1,12.7.2021,December,2021,21082,Broccoli,Emrald crown,5,10,15
+1042,1,12.7.2021,December,2021,21082,Cabbage,Bravo,15,15,30
+1043,1,12.7.2021,December,2021,21082,Cauliflower,Bermo,15,15,30
+1044,1,12.7.2021,December,2021,21082,Collard,TopBunch,40,40,80
+1045,1,12.7.2021,December,2021,21082,Kale,Darkibor,30,40,70
+1046,1,11.12.2021,November,2021,21083,Broccoli,Emrald crown,0,60,60
+1047,1,11.12.2021,November,2021,21083,Cabbage,Bravo,3,20,23
+1048,1,11.12.2021,November,2021,21083,Cauliflower,Bermo,0,0,0
+1049,1,11.12.2021,November,2021,21083,Collard,TopBunch,4,97,101
+1050,1,11.12.2021,November,2021,21083,Kale,Darkibor,0.5,3,3.5
+1051,1,12.7.2021,December,2021,21084,Broccoli,Emrald crown,10,30,40
+1052,1,12.7.2021,December,2021,21084,Cabbage,Bravo,12,20,32
+1053,1,12.7.2021,December,2021,21084,Cauliflower,Bermo,10,18,28
+1054,1,12.7.2021,December,2021,21084,Collard,TopBunch,20,25,45
+1055,1,12.7.2021,December,2021,21084,Kale,Darkibor,10,10,20
+1056,1,11.12.2021,November,2021,21085,Broccoli,Emrald crown,3,100,103
+1057,1,11.12.2021,November,2021,21085,Cabbage,Bravo,2,7,9
+1058,1,11.12.2021,November,2021,21085,Cauliflower,Bermo,0.5,5,5.5
+1059,1,11.12.2021,November,2021,21085,Collard,TopBunch,5,65,70
+1060,1,11.12.2021,November,2021,21085,Kale,Darkibor,5,25,30
+1061,1,12.7.2021,December,2021,21086,Broccoli,Emrald crown,70,90,160
+1062,1,12.7.2021,December,2021,21086,Cabbage,Bravo,35,30,65
+1063,1,12.7.2021,December,2021,21086,Cauliflower,Bermo,30,45,75
+1064,1,12.7.2021,December,2021,21086,Collard,TopBunch,40,80,120
+1065,1,12.7.2021,December,2021,21086,Kale,Darkibor,30,30,60
+1066,1,12.7.2021,December,2021,21087,Broccoli,Emrald crown,25,60,85
+1067,1,12.7.2021,December,2021,21087,Cabbage,Bravo,20,25,45
+1068,1,12.7.2021,December,2021,21087,Cauliflower,Bermo,20,40,60
+1069,1,12.7.2021,December,2021,21087,Collard,TopBunch,30,40,70
+1070,1,12.7.2021,December,2021,21087,Kale,Darkibor,30,40,70
+1071,1,11.12.2021,November,2021,21088,Broccoli,Emrald crown,1,80,81
+1072,1,11.12.2021,November,2021,21088,Cabbage,Bravo,3,10,13
+1073,1,11.12.2021,November,2021,21088,Cauliflower,Bermo,0.1,3,3.1
+1074,1,11.12.2021,November,2021,21088,Collard,TopBunch,3,40,43
+1075,1,11.12.2021,November,2021,21088,Kale,Darkibor,10,35,45
+1076,1,11.12.2021,November,2021,21089,Broccoli,Emrald crown,0.1,60,60.1
+1077,1,11.12.2021,November,2021,21089,Cabbage,Bravo,1.5,4,5.5
+1078,1,11.12.2021,November,2021,21089,Cauliflower,Bermo,0.2,2,2.2
+1079,1,11.12.2021,November,2021,21089,Collard,TopBunch,15,70,85
+1080,1,11.12.2021,November,2021,21089,Kale,Darkibor,8,20,28
+1081,1,11.12.2021,November,2021,21090,Broccoli,Emrald crown,4,90,94
+1082,1,11.12.2021,November,2021,21090,Cabbage,Bravo,2,4,6
+1083,1,11.12.2021,November,2021,21090,Cauliflower,Bermo,0.1,0.1,0.2
+1084,1,11.12.2021,November,2021,21090,Collard,TopBunch,4,45,49
+1085,1,11.12.2021,November,2021,21090,Kale,Darkibor,3,20,23
+1086,1,11.12.2021,November,2021,21091,Broccoli,Emrald crown,1,95,96
+1087,1,11.12.2021,November,2021,21091,Cabbage,Bravo,7,50,57
+1088,1,11.12.2021,November,2021,21091,Cauliflower,Bermo,2,4,6
+1089,1,11.12.2021,November,2021,21091,Collard,TopBunch,10,90,100
+1090,1,11.12.2021,November,2021,21091,Kale,Darkibor,2,15,17
+1091,1,11.12.2021,November,2021,21092,Broccoli,Emrald crown,2,80,82
+1092,1,11.12.2021,November,2021,21092,Cabbage,Bravo,15,30,45
+1093,1,11.12.2021,November,2021,21092,Cauliflower,Bermo,0.5,4,4.5
+1094,1,11.12.2021,November,2021,21092,Collard,TopBunch,30,97,127
+1095,1,11.12.2021,November,2021,21092,Kale,Darkibor,1,30,31
+1096,1,12.7.2021,December,2021,21106,Broccoli,Emrald crown,3,30,33
+1097,1,12.7.2021,December,2021,21106,Cabbage,Bravo,2,10,12
+1098,1,12.7.2021,December,2021,21106,Cauliflower,Bermo,10,15,25
+1099,1,12.7.2021,December,2021,21106,Collard,TopBunch,10,25,35
+1100,1,12.7.2021,December,2021,21106,Kale,Darkibor,15,15,30
+1101,1,12.7.2021,December,2021,21107,Broccoli,Emrald crown,10,20,30
+1102,1,12.7.2021,December,2021,21107,Cabbage,Bravo,15,15,30
+1103,1,12.7.2021,December,2021,21107,Cauliflower,Bermo,15,20,35
+1104,1,12.7.2021,December,2021,21107,Collard,TopBunch,60,60,120
+1105,1,12.7.2021,December,2021,21107,Kale,Darkibor,50,80,130
+1106,1,12.7.2021,December,2021,21108,Broccoli,Emrald crown,6,50,56
+1107,1,12.7.2021,December,2021,21108,Cabbage,Bravo,4,10,14
+1108,1,12.7.2021,December,2021,21108,Cauliflower,Bermo,3,15,18
+1109,1,12.7.2021,December,2021,21108,Collard,TopBunch,20,40,60
+1110,1,12.7.2021,December,2021,21108,Kale,Darkibor,35,75,110
+1111,1,12.7.2021,December,2021,21109,Broccoli,Emrald crown,5,40,45
+1112,1,12.7.2021,December,2021,21109,Cabbage,Bravo,5,15,20
+1113,1,12.7.2021,December,2021,21109,Cauliflower,Bermo,35,40,75
+1114,1,12.7.2021,December,2021,21109,Collard,TopBunch,15,30,45
+1115,1,12.7.2021,December,2021,21109,Kale,Darkibor,50,60,110
+1116,1,12.7.2021,December,2021,21110,Broccoli,Emrald crown,5,30,35
+1117,1,12.7.2021,December,2021,21110,Cabbage,Bravo,10,20,30
+1118,1,12.7.2021,December,2021,21110,Cauliflower,Bermo,3,10,13
+1119,1,12.7.2021,December,2021,21110,Collard,TopBunch,30,60,90
+1120,1,12.7.2021,December,2021,21110,Kale,Darkibor,50,75,125
+1121,1,12.10.2021,December,2021,21111,Broccoli,Emrald crown,1,15,16
+1122,1,12.10.2021,December,2021,21111,Cabbage,Bravo,4,13,17
+1123,1,12.10.2021,December,2021,21111,Cauliflower,Bermo,7,14,21
+1124,1,12.10.2021,December,2021,21111,Collard,TopBunch,5,15,20
+1125,1,12.10.2021,December,2021,21111,Kale,Darkibor,2,5,7
+1126,1,12.10.2021,December,2021,21112,Broccoli,Emrald crown,1,7,8
+1127,1,12.10.2021,December,2021,21112,Cabbage,Bravo,0.1,2,2.1
+1128,1,12.10.2021,December,2021,21112,Cauliflower,Bermo,2,10,12
+1129,1,12.10.2021,December,2021,21112,Collard,TopBunch,1,10,11
+1130,1,12.10.2021,December,2021,21112,Kale,Darkibor,3,5,8
+1131,1,12.10.2021,December,2021,21113,Broccoli,Emrald crown,20,25,45
+1132,1,12.10.2021,December,2021,21113,Cabbage,Bravo,3,5,8
+1133,1,12.10.2021,December,2021,21113,Cauliflower,Bermo,0,0.1,0.1
+1134,1,12.10.2021,December,2021,21113,Collard,TopBunch,3,3,6
+1135,1,12.10.2021,December,2021,21113,Kale,Darkibor,0.1,0.1,0.2
+1136,1,12.10.2021,December,2021,21114,Broccoli,Emrald crown,0,10,10
+1137,1,12.10.2021,December,2021,21114,Cabbage,Bravo,10,25,35
+1138,1,12.10.2021,December,2021,21114,Cauliflower,Bermo,5,25,30
+1139,1,12.10.2021,December,2021,21114,Collard,TopBunch,2,5,7
+1140,1,12.10.2021,December,2021,21114,Kale,Darkibor,0.1,1,1.1
+1141,1,12.10.2021,December,2021,21115,Broccoli,Emrald crown,8,18,26
+1142,1,12.10.2021,December,2021,21115,Cabbage,Bravo,3,8,11
+1143,1,12.10.2021,December,2021,21115,Cauliflower,Bermo,10,40,50
+1144,1,12.10.2021,December,2021,21115,Collard,TopBunch,3,6,9
+1145,1,12.10.2021,December,2021,21115,Kale,Darkibor,4,6,10
+1146,1,12.10.2021,December,2021,21116,Broccoli,Emrald crown,20,80,100
+1147,1,12.10.2021,December,2021,21116,Cabbage,Bravo,10,10,20
+1148,1,12.10.2021,December,2021,21116,Cauliflower,Bermo,3,5,8
+1149,1,12.10.2021,December,2021,21116,Collard,TopBunch,2,5,7
+1150,1,12.10.2021,December,2021,21116,Kale,Darkibor,2,1,3
+1151,1,12.10.2021,December,2021,21117,Broccoli,Emrald crown,0,5,5
+1152,1,12.10.2021,December,2021,21117,Cabbage,Bravo,20,40,60
+1153,1,12.10.2021,December,2021,21117,Cauliflower,Bermo,1,1,2
+1154,1,12.10.2021,December,2021,21117,Collard,TopBunch,0.1,5,5.1
+1155,1,12.10.2021,December,2021,21117,Kale,Darkibor,2,5,7
+1156,1,12.10.2021,December,2021,21118,Broccoli,Emrald crown,20,40,60
+1157,1,12.10.2021,December,2021,21118,Cabbage,Bravo,5,25,30
+1158,1,12.10.2021,December,2021,21118,Cauliflower,Bermo,15,50,65
+1159,1,12.10.2021,December,2021,21118,Collard,TopBunch,5,15,20
+1160,1,12.10.2021,December,2021,21118,Kale,Darkibor,1,1,2
+1161,1,12.10.2021,December,2021,21119,Broccoli,Emrald crown,10,30,40
+1162,1,12.10.2021,December,2021,21119,Cabbage,Bravo,1,15,16
+1163,1,12.10.2021,December,2021,21119,Cauliflower,Bermo,7,20,27
+1164,1,12.10.2021,December,2021,21119,Collard,TopBunch,5,8,13
+1165,1,12.10.2021,December,2021,21119,Kale,Darkibor,3,10,13
+1166,1,12.10.2021,December,2021,21120,Broccoli,Emrald crown,20,50,70
+1167,1,12.10.2021,December,2021,21120,Cabbage,Bravo,3,5,8
+1168,1,12.10.2021,December,2021,21120,Cauliflower,Bermo,40,70,110
+1169,1,12.10.2021,December,2021,21120,Collard,TopBunch,1,10,11
+1170,1,12.10.2021,December,2021,21120,Kale,Darkibor,3,10,13
+1171,1,12.10.2021,December,2021,21121,Broccoli,Emrald crown,1,20,21
+1172,1,12.10.2021,December,2021,21121,Cabbage,Bravo,1,1,2
+1173,1,12.10.2021,December,2021,21121,Cauliflower,Bermo,4,5,9
+1174,1,12.10.2021,December,2021,21121,Collard,TopBunch,10,15,25
+1175,1,12.10.2021,December,2021,21121,Kale,Darkibor,0.1,0.1,0.2
+1176,1,12.10.2021,December,2021,21122,Broccoli,Emrald crown,0.1,50,50.1
+1177,1,12.10.2021,December,2021,21122,Cabbage,Bravo,3,10,13
+1178,1,12.10.2021,December,2021,21122,Cauliflower,Bermo,15,20,35
+1179,1,12.10.2021,December,2021,21122,Collard,TopBunch,10,15,25
+1180,1,12.10.2021,December,2021,21122,Kale,Darkibor,2,5,7
+1181,1,12.15.2021,December,2021,21123,Broccoli,Emrald crown,15,70,85
+1182,1,12.15.2021,December,2021,21123,Cabbage,Bravo,0,3,3
+1183,1,12.15.2021,December,2021,21123,Cauliflower,Bermo,0.1,3,3.1
+1184,1,12.15.2021,December,2021,21123,Collard,TopBunch,2,30,32
+1185,1,12.15.2021,December,2021,21123,Kale,Darkibor,0,5,5
+1186,1,12.15.2021,December,2021,21124,Broccoli,Emrald crown,5,30,35
+1187,1,12.15.2021,December,2021,21124,Cabbage,Bravo,0.1,15,15.1
+1188,1,12.15.2021,December,2021,21124,Cauliflower,Bermo,0,20,20
+1189,1,12.15.2021,December,2021,21124,Collard,TopBunch,3,50,53
+1190,1,12.15.2021,December,2021,21124,Kale,Darkibor,2,3,5
+1191,1,12.15.2021,December,2021,21125,Broccoli,Emrald crown,15,50,65
+1192,1,12.15.2021,December,2021,21125,Cabbage,Bravo,3,15,18
+1193,1,12.15.2021,December,2021,21125,Cauliflower,Bermo,0,10,10
+1194,1,12.15.2021,December,2021,21125,Collard,TopBunch,0.1,10,10.1
+1195,1,12.15.2021,December,2021,21125,Kale,Darkibor,0.1,3,3.1
+1196,1,12.17.2021,December,2021,21127,Broccoli,Emrald crown,1,5,6
+1197,1,12.17.2021,December,2021,21127,Cabbage,Bravo,1,2,3
+1198,1,12.17.2021,December,2021,21127,Cauliflower,Bermo,10,30,40
+1199,1,12.17.2021,December,2021,21127,Collard,TopBunch,10,65,75
+1200,1,12.17.2021,December,2021,21127,Kale,Darkibor,30,80,110
+1201,1,12.15.2021,December,2021,21128,Broccoli,Emrald crown,1,70,71
+1202,1,12.15.2021,December,2021,21128,Cabbage,Bravo,0,20,20
+1203,1,12.15.2021,December,2021,21128,Cauliflower,Bermo,0.1,30,30.1
+1204,1,12.15.2021,December,2021,21128,Collard,TopBunch,1,10,11
+1205,1,12.15.2021,December,2021,21128,Kale,Darkibor,1,20,21
+1206,1,12.15.2021,December,2021,21129,Broccoli,Emrald crown,0.1,1,1.1
+1207,1,12.15.2021,December,2021,21129,Cabbage,Bravo,0.1,3,3.1
+1208,1,12.15.2021,December,2021,21129,Cauliflower,Bermo,0.1,15,15.1
+1209,1,12.15.2021,December,2021,21129,Collard,TopBunch,5,50,55
+1210,1,12.15.2021,December,2021,21129,Kale,Darkibor,5,50,55
+1211,1,12.17.2021,December,2021,21130,Broccoli,Emrald crown,15,40,55
+1212,1,12.17.2021,December,2021,21130,Cabbage,Bravo,8,8,16
+1213,1,12.17.2021,December,2021,21130,Cauliflower,Bermo,20,50,70
+1214,1,12.17.2021,December,2021,21130,Collard,TopBunch,2,40,42
+1215,1,12.17.2021,December,2021,21130,Kale,Darkibor,40,60,100
+1216,1,12.15.2021,December,2021,21131,Broccoli,Emrald crown,0,70,70
+1217,1,12.15.2021,December,2021,21131,Cabbage,Bravo,0,0.1,0.1
+1218,1,12.15.2021,December,2021,21131,Cauliflower,Bermo,0.1,8,8.1
+1219,1,12.15.2021,December,2021,21131,Collard,TopBunch,0,5,5
+1220,1,12.15.2021,December,2021,21131,Kale,Darkibor,1,1,2
+1221,1,12.15.2021,December,2021,21132,Broccoli,Emrald crown,0,10,10
+1222,1,12.15.2021,December,2021,21132,Cabbage,Bravo,0,0.1,0.1
+1223,1,12.15.2021,December,2021,21132,Cauliflower,Bermo,0.1,8,8.1
+1224,1,12.15.2021,December,2021,21132,Collard,TopBunch,1,10,11
+1225,1,12.15.2021,December,2021,21132,Kale,Darkibor,7,15,22
+1226,1,12.15.2021,December,2021,21133,Broccoli,Emrald crown,0.1,10,10.1
+1227,1,12.15.2021,December,2021,21133,Cabbage,Bravo,1,40,41
+1228,1,12.15.2021,December,2021,21133,Cauliflower,Bermo,1,20,21
+1229,1,12.15.2021,December,2021,21133,Collard,TopBunch,0,10,10
+1230,1,12.15.2021,December,2021,21133,Kale,Darkibor,0.1,3,3.1
+1231,1,12.15.2021,December,2021,21134,Broccoli,Emrald crown,0,20,20
+1232,1,12.15.2021,December,2021,21134,Cabbage,Bravo,0.1,40,40.1
+1233,1,12.15.2021,December,2021,21134,Cauliflower,Bermo,1,5,6
+1234,1,12.15.2021,December,2021,21134,Collard,TopBunch,5,65,70
+1235,1,12.15.2021,December,2021,21134,Kale,Darkibor,7,55,62
+1236,1,12.15.2021,December,2021,21135,Broccoli,Emrald crown,0,0.1,0.1
+1237,1,12.15.2021,December,2021,21135,Cabbage,Bravo,0,0.1,0.1
+1238,1,12.15.2021,December,2021,21135,Cauliflower,Bermo,0,1,1
+1239,1,12.15.2021,December,2021,21135,Collard,TopBunch,0,3,3
+1240,1,12.15.2021,December,2021,21135,Kale,Darkibor,0.1,8,8.1
+1241,1,12.17.2021,December,2021,21136,Broccoli,Emrald crown,10,70,80
+1242,1,12.17.2021,December,2021,21136,Cabbage,Bravo,8,15,23
+1243,1,12.17.2021,December,2021,21136,Cauliflower,Bermo,15,40,55
+1244,1,12.17.2021,December,2021,21136,Collard,TopBunch,10,40,50
+1245,1,12.17.2021,December,2021,21136,Kale,Darkibor,10,30,40
+1246,1,12.17.2021,December,2021,21137,Broccoli,Emrald crown,30,80,110
+1247,1,12.17.2021,December,2021,21137,Cabbage,Bravo,3,8,11
+1248,1,12.17.2021,December,2021,21137,Cauliflower,Bermo,20,30,50
+1249,1,12.17.2021,December,2021,21137,Collard,TopBunch,8,30,38
+1250,1,12.17.2021,December,2021,21137,Kale,Darkibor,5,10,15
+1251,1,12.17.2021,December,2021,21138,Broccoli,Emrald crown,3,12,15
+1252,1,12.17.2021,December,2021,21138,Cabbage,Bravo,2,7,9
+1253,1,12.17.2021,December,2021,21138,Cauliflower,Bermo,3,12,15
+1254,1,12.17.2021,December,2021,21138,Collard,TopBunch,20,70,90
+1255,1,12.17.2021,December,2021,21138,Kale,Darkibor,10,20,30
+1256,1,12.17.2021,December,2021,21139,Broccoli,Emrald crown,1,4,5
+1257,1,12.17.2021,December,2021,21139,Cabbage,Bravo,1,1,2
+1258,1,12.17.2021,December,2021,21139,Cauliflower,Bermo,5,15,20
+1259,1,12.17.2021,December,2021,21139,Collard,TopBunch,8,30,38
+1260,1,12.17.2021,December,2021,21139,Kale,Darkibor,2,5,7
+1261,1,12.17.2021,December,2021,21140,Broccoli,Emrald crown,1,10,11
+1262,1,12.17.2021,December,2021,21140,Cabbage,Bravo,5,12,17
+1263,1,12.17.2021,December,2021,21140,Cauliflower,Bermo,3,12,15
+1264,1,12.17.2021,December,2021,21140,Collard,TopBunch,4,20,24
+1265,1,12.17.2021,December,2021,21140,Kale,Darkibor,2,8,10
+1266,1,12.17.2021,December,2021,21141,Broccoli,Emrald crown,2,20,22
+1267,1,12.17.2021,December,2021,21141,Cabbage,Bravo,3,5,8
+1268,1,12.17.2021,December,2021,21141,Cauliflower,Bermo,3,10,13
+1269,1,12.17.2021,December,2021,21141,Collard,TopBunch,15,80,95
+1270,1,12.17.2021,December,2021,21141,Kale,Darkibor,10,15,25
+1271,1,12.17.2021,December,2021,21142,Broccoli,Emrald crown,1,5,6
+1272,1,12.17.2021,December,2021,21142,Cabbage,Bravo,3,8,11
+1273,1,12.17.2021,December,2021,21142,Cauliflower,Bermo,5,5,10
+1274,1,12.17.2021,December,2021,21142,Collard,TopBunch,1,5,6
+1275,1,12.17.2021,December,2021,21142,Kale,Darkibor,2,4,6
+1276,1,12.17.2021,December,2021,21143,Broccoli,Emrald crown,0.1,2,2.1
+1277,1,12.17.2021,December,2021,21143,Cabbage,Bravo,1,3,4
+1278,1,12.17.2021,December,2021,21143,Cauliflower,Bermo,2,2,4
+1279,1,12.17.2021,December,2021,21143,Collard,TopBunch,15,30,45
+1280,1,12.17.2021,December,2021,21143,Kale,Darkibor,1,5,6
+1281,1,12.17.2021,December,2021,21144,Broccoli,Emrald crown,3,10,13
+1282,1,12.17.2021,December,2021,21144,Cabbage,Bravo,7,15,22
+1283,1,12.17.2021,December,2021,21144,Cauliflower,Bermo,30,60,90
+1284,1,12.17.2021,December,2021,21144,Collard,TopBunch,25,80,105
+1285,1,12.17.2021,December,2021,21144,Kale,Darkibor,15,50,65
+1286,1,12.17.2021,December,2021,21145,Broccoli,Emrald crown,5,55,60
+1287,1,12.17.2021,December,2021,21145,Cabbage,Bravo,8,50,58
+1288,1,12.17.2021,December,2021,21145,Cauliflower,Bermo,8,25,33
+1289,1,12.17.2021,December,2021,21145,Collard,TopBunch,5,20,25
+1290,1,12.17.2021,December,2021,21145,Kale,Darkibor,20,80,100
+1291,1,1.7.2022,January,2022,21150,Broccoli,Emrald crown,0,7,7
+1292,1,1.7.2022,January,2022,21150,Cabbage,Bravo,3,5,8
+1293,1,1.7.2022,January,2022,21150,Cauliflower,Bermo,5,5,10
+1294,1,1.7.2022,January,2022,21150,Collard,TopBunch,15,65,80
+1295,1,1.7.2022,January,2022,21150,Kale,Darkibor,10,25,35
+1296,1,1.7.2022,January,2022,21151,Broccoli,Emrald crown,4,75,79
+1297,1,1.7.2022,January,2022,21151,Cabbage,Bravo,1,5,6
+1298,1,1.7.2022,January,2022,21151,Cauliflower,Bermo,1,10,11
+1299,1,1.7.2022,January,2022,21151,Collard,TopBunch,2,70,72
+1300,1,1.7.2022,January,2022,21151,Kale,Darkibor,3,35,38
+1301,1,1.7.2022,January,2022,21152,Broccoli,Emrald crown,1,20,21
+1302,1,1.7.2022,January,2022,21152,Cabbage,Bravo,2,10,12
+1303,1,1.7.2022,January,2022,21152,Cauliflower,Bermo,2,15,17
+1304,1,1.7.2022,January,2022,21152,Collard,TopBunch,3,20,23
+1305,1,1.7.2022,January,2022,21152,Kale,Darkibor,3,10,13
+1306,1,1.7.2022,January,2022,21153,Broccoli,Emrald crown,0.1,30,30.1
+1307,1,1.7.2022,January,2022,21153,Cabbage,Bravo,1,5,6
+1308,1,1.7.2022,January,2022,21153,Cauliflower,Bermo,1,3,4
+1309,1,1.7.2022,January,2022,21153,Collard,TopBunch,1,5,6
+1310,1,1.7.2022,January,2022,21153,Kale,Darkibor,10,50,60
+1311,1,1.7.2022,January,2022,21154,Broccoli,Emrald crown,13,70,83
+1312,1,1.7.2022,January,2022,21154,Cabbage,Bravo,0.1,3,3.1
+1313,1,1.7.2022,January,2022,21154,Cauliflower,Bermo,0.1,1,1.1
+1314,1,1.7.2022,January,2022,21154,Collard,TopBunch,15,70,85
+1315,1,1.7.2022,January,2022,21154,Kale,Darkibor,5,5,10
+1316,1,1.7.2022,January,2022,21155,Broccoli,Emrald crown,1,20,21
+1317,1,1.7.2022,January,2022,21155,Cabbage,Bravo,0.1,1,1.1
+1318,1,1.7.2022,January,2022,21155,Cauliflower,Bermo,2,2,4
+1319,1,1.7.2022,January,2022,21155,Collard,TopBunch,2,10,12
+1320,1,1.7.2022,January,2022,21155,Kale,Darkibor,10,30,40
+1321,1,1.7.2022,January,2022,21156,Broccoli,Emrald crown,1,7,8
+1322,1,1.7.2022,January,2022,21156,Cabbage,Bravo,1,1,2
+1323,1,1.7.2022,January,2022,21156,Cauliflower,Bermo,0.1,4,4.1
+1324,1,1.7.2022,January,2022,21156,Collard,TopBunch,7,30,37
+1325,1,1.7.2022,January,2022,21156,Kale,Darkibor,15,40,55
+1326,1,1.7.2022,January,2022,21157,Broccoli,Emrald crown,2,45,47
+1327,1,1.7.2022,January,2022,21157,Cabbage,Bravo,0.1,3,3.1
+1328,1,1.7.2022,January,2022,21157,Cauliflower,Bermo,1,2,3
+1329,1,1.7.2022,January,2022,21157,Collard,TopBunch,3,20,23
+1330,1,1.7.2022,January,2022,21157,Kale,Darkibor,5,12,17
+1331,1,1.7.2022,January,2022,21158,Broccoli,Emrald crown,2,10,12
+1332,1,1.7.2022,January,2022,21158,Cabbage,Bravo,3,5,8
+1333,1,1.7.2022,January,2022,21158,Cauliflower,Bermo,2,2,4
+1334,1,1.7.2022,January,2022,21158,Collard,TopBunch,1,3,4
+1335,1,1.7.2022,January,2022,21158,Kale,Darkibor,5,7,12
+1336,1,1.7.2022,January,2022,21159,Broccoli,Emrald crown,5,40,45
+1337,1,1.7.2022,January,2022,21159,Cabbage,Bravo,5,20,25
+1338,1,1.7.2022,January,2022,21159,Cauliflower,Bermo,0.1,4,4.1
+1339,1,1.7.2022,January,2022,21159,Collard,TopBunch,3,20,23
+1340,1,1.7.2022,January,2022,21159,Kale,Darkibor,10,20,30
+1341,1,1.7.2022,January,2022,21160,Broccoli,Emrald crown,1,15,16
+1342,1,1.7.2022,January,2022,21160,Cabbage,Bravo,3,7,10
+1343,1,1.7.2022,January,2022,21160,Cauliflower,Bermo,2,3,5
+1344,1,1.7.2022,January,2022,21160,Collard,TopBunch,1,15,16
+1345,1,1.7.2022,January,2022,21160,Kale,Darkibor,30,60,90
+1346,1,1.7.2022,January,2022,21161,Broccoli,Emrald crown,15,80,95
+1347,1,1.7.2022,January,2022,21161,Cabbage,Bravo,3,5,8
+1348,1,1.7.2022,January,2022,21161,Cauliflower,Bermo,1,3,4
+1349,1,1.7.2022,January,2022,21161,Collard,TopBunch,3,50,53
+1350,1,1.7.2022,January,2022,21161,Kale,Darkibor,10,25,35
+1351,1,1.10.2022,January,2022,21162,Broccoli,Emrald crown,1,30,31
+1352,1,1.10.2022,January,2022,21162,Cabbage,Bravo,0,2,2
+1353,1,1.10.2022,January,2022,21162,Cauliflower,Bermo,2,5,7
+1354,1,1.10.2022,January,2022,21162,Collard,TopBunch,1,3,4
+1355,1,1.10.2022,January,2022,21162,Kale,Darkibor,10,20,30
+1356,1,1.10.2022,January,2022,21163,Broccoli,Emrald crown,1,20,21
+1357,1,1.10.2022,January,2022,21163,Cabbage,Bravo,0,1,1
+1358,1,1.10.2022,January,2022,21163,Cauliflower,Bermo,0,3,3
+1359,1,1.10.2022,January,2022,21163,Collard,TopBunch,0,3,3
+1360,1,1.10.2022,January,2022,21163,Kale,Darkibor,1,10,11
+1361,1,1.10.2022,January,2022,21164,Broccoli,Emrald crown,1,5,6
+1362,1,1.10.2022,January,2022,21164,Cabbage,Bravo,5,10,15
+1363,1,1.10.2022,January,2022,21164,Cauliflower,Bermo,0.1,2,2.1
+1364,1,1.10.2022,January,2022,21164,Collard,TopBunch,3,20,23
+1365,1,1.10.2022,January,2022,21164,Kale,Darkibor,4,7,11
+1366,1,1.10.2022,January,2022,21165,Broccoli,Emrald crown,1,10,11
+1367,1,1.10.2022,January,2022,21165,Cabbage,Bravo,5,20,25
+1368,1,1.10.2022,January,2022,21165,Cauliflower,Bermo,1,2,3
+1369,1,1.10.2022,January,2022,21165,Collard,TopBunch,3,5,8
+1370,1,1.10.2022,January,2022,21165,Kale,Darkibor,2,5,7
+1371,1,1.10.2022,January,2022,21166,Broccoli,Emrald crown,5,65,70
+1372,1,1.10.2022,January,2022,21166,Cabbage,Bravo,7,30,37
+1373,1,1.10.2022,January,2022,21166,Cauliflower,Bermo,3,5,8
+1374,1,1.10.2022,January,2022,21166,Collard,TopBunch,3,7,10
+1375,1,1.10.2022,January,2022,21166,Kale,Darkibor,3,5,8
+1376,1,1.10.2022,January,2022,21175,Broccoli,Emrald crown,10,30,40
+1377,1,1.10.2022,January,2022,21175,Cabbage,Bravo,2,4,6
+1378,1,1.10.2022,January,2022,21175,Cauliflower,Bermo,1,7,8
+1379,1,1.10.2022,January,2022,21175,Collard,TopBunch,5,20,25
+1380,1,1.10.2022,January,2022,21175,Kale,Darkibor,5,20,25
+1381,1,1.10.2022,January,2022,21176,Broccoli,Emrald crown,5,30,35
+1382,1,1.10.2022,January,2022,21176,Cabbage,Bravo,3,8,11
+1383,1,1.10.2022,January,2022,21176,Cauliflower,Bermo,2,10,12
+1384,1,1.10.2022,January,2022,21176,Collard,TopBunch,1,5,6
+1385,1,1.10.2022,January,2022,21176,Kale,Darkibor,1,5,6
+1386,1,1.10.2022,January,2022,21177,Broccoli,Emrald crown,7,40,47
+1387,1,1.10.2022,January,2022,21177,Cabbage,Bravo,3,30,33
+1388,1,1.10.2022,January,2022,21177,Cauliflower,Bermo,3,20,23
+1389,1,1.10.2022,January,2022,21177,Collard,TopBunch,0,10,10
+1390,1,1.10.2022,January,2022,21177,Kale,Darkibor,1,5,6
+1391,1,1.10.2022,January,2022,21178,Broccoli,Emrald crown,1,5,6
+1392,1,1.10.2022,January,2022,21178,Cabbage,Bravo,2,3,5
+1393,1,1.10.2022,January,2022,21178,Cauliflower,Bermo,0,1,1
+1394,1,1.10.2022,January,2022,21178,Collard,TopBunch,2,3,5
+1395,1,1.10.2022,January,2022,21178,Kale,Darkibor,5,5,10
+1396,1,1.10.2022,January,2022,21179,Broccoli,Emrald crown,5,20,25
+1397,1,1.10.2022,January,2022,21179,Cabbage,Bravo,3,7,10
+1398,1,1.10.2022,January,2022,21179,Cauliflower,Bermo,2,3,5
+1399,1,1.10.2022,January,2022,21179,Collard,TopBunch,3,5,8
+1400,1,1.10.2022,January,2022,21179,Kale,Darkibor,3,5,8
+1401,1,1.10.2022,January,2022,21180,Broccoli,Emrald crown,50,80,130
+1402,1,1.10.2022,January,2022,21180,Cabbage,Bravo,7,15,22
+1403,1,1.10.2022,January,2022,21180,Cauliflower,Bermo,1,10,11
+1404,1,1.10.2022,January,2022,21180,Collard,TopBunch,20,70,90
+1405,1,1.10.2022,January,2022,21180,Kale,Darkibor,10,25,35
+1406,1,1.10.2022,January,2022,21181,Broccoli,Emrald crown,30,80,110
+1407,1,1.10.2022,January,2022,21181,Cabbage,Bravo,25,30,55
+1408,1,1.10.2022,January,2022,21181,Cauliflower,Bermo,10,14,24
+1409,1,1.10.2022,January,2022,21181,Collard,TopBunch,5,10,15
+1410,1,1.10.2022,January,2022,21181,Kale,Darkibor,30,40,70
+1411,1,1.14.2022,January,2022,21188,Broccoli,Emrald crown,1,20,21
+1412,1,1.14.2022,January,2022,21188,Cabbage,Bravo,2,2,4
+1413,1,1.14.2022,January,2022,21188,Cauliflower,Bermo,1,2,3
+1414,1,1.14.2022,January,2022,21188,Collard,TopBunch,0,0.1,0.1
+1415,1,1.14.2022,January,2022,21188,Kale,Darkibor,0.1,1,1.1
+1416,1,1.14.2022,January,2022,21189,Broccoli,Emrald crown,5,80,85
+1417,1,1.14.2022,January,2022,21189,Cabbage,Bravo,5,20,25
+1418,1,1.14.2022,January,2022,21189,Cauliflower,Bermo,3,3,6
+1419,1,1.14.2022,January,2022,21189,Collard,TopBunch,5,10,15
+1420,1,1.14.2022,January,2022,21189,Kale,Darkibor,2,3,5
+1421,1,1.14.2022,January,2022,21190,Broccoli,Emrald crown,0.1,20,20.1
+1422,1,1.14.2022,January,2022,21190,Cabbage,Bravo,1,5,6
+1423,1,1.14.2022,January,2022,21190,Cauliflower,Bermo,0,1,1
+1424,1,1.14.2022,January,2022,21190,Collard,TopBunch,1,3,4
+1425,1,1.14.2022,January,2022,21190,Kale,Darkibor,3,5,8
+1426,1,1.14.2022,January,2022,21191,Broccoli,Emrald crown,10,90,100
+1427,1,1.14.2022,January,2022,21191,Cabbage,Bravo,12,20,32
+1428,1,1.14.2022,January,2022,21191,Cauliflower,Bermo,5,5,10
+1429,1,1.14.2022,January,2022,21191,Collard,TopBunch,1,5,6
+1430,1,1.14.2022,January,2022,21191,Kale,Darkibor,5,5,10
+1431,1,1.14.2022,January,2022,21192,Broccoli,Emrald crown,30,60,90
+1432,1,1.14.2022,January,2022,21192,Cabbage,Bravo,1,3,4
+1433,1,1.14.2022,January,2022,21192,Cauliflower,Bermo,2,2,4
+1434,1,1.14.2022,January,2022,21192,Collard,TopBunch,5,7,12
+1435,1,1.14.2022,January,2022,21192,Kale,Darkibor,3,5,8
+1436,1,1.14.2022,January,2022,21193,Broccoli,Emrald crown,15,80,95
+1437,1,1.14.2022,January,2022,21193,Cabbage,Bravo,5,15,20
+1438,1,1.14.2022,January,2022,21193,Cauliflower,Bermo,5,10,15
+1439,1,1.14.2022,January,2022,21193,Collard,TopBunch,10,30,40
+1440,1,1.14.2022,January,2022,21193,Kale,Darkibor,1,2,3
+1441,1,1.14.2022,January,2022,21194,Broccoli,Emrald crown,2,5,7
+1442,1,1.14.2022,January,2022,21194,Cabbage,Bravo,0.5,5,5.5
+1443,1,1.14.2022,January,2022,21194,Cauliflower,Bermo,1,2,3
+1444,1,1.14.2022,January,2022,21194,Collard,TopBunch,3,5,8
+1445,1,1.14.2022,January,2022,21194,Kale,Darkibor,2,3,5
+1446,1,1.14.2022,January,2022,21195,Broccoli,Emrald crown,1,6,7
+1447,1,1.14.2022,January,2022,21195,Cabbage,Bravo,1,3,4
+1448,1,1.14.2022,January,2022,21195,Cauliflower,Bermo,0.1,1,1.1
+1449,1,1.14.2022,January,2022,21195,Collard,TopBunch,3,3,6
+1450,1,1.14.2022,January,2022,21195,Kale,Darkibor,4,2,6
+1451,1,1.14.2022,January,2022,21196,Broccoli,Emrald crown,15,70,85
+1452,1,1.14.2022,January,2022,21196,Cabbage,Bravo,1,3,4
+1453,1,1.14.2022,January,2022,21196,Cauliflower,Bermo,0.1,0.1,0.2
+1454,1,1.14.2022,January,2022,21196,Collard,TopBunch,1,1,2
+1455,1,1.14.2022,January,2022,21196,Kale,Darkibor,1,1,2
+1456,1,1.14.2022,January,2022,21197,Broccoli,Emrald crown,0,0,0
+1457,1,1.14.2022,January,2022,21197,Cabbage,Bravo,0,0,0
+1458,1,1.14.2022,January,2022,21197,Cauliflower,Bermo,0.1,0.1,0.2
+1459,1,1.14.2022,January,2022,21197,Collard,TopBunch,1,1,2
+1460,1,1.14.2022,January,2022,21197,Kale,Darkibor,0,0,0
+1461,1,1.14.2022,January,2022,21198,Broccoli,Emrald crown,10,20,30
+1462,1,1.14.2022,January,2022,21198,Cabbage,Bravo,5,5,10
+1463,1,1.14.2022,January,2022,21198,Cauliflower,Bermo,5,5,10
+1464,1,1.14.2022,January,2022,21198,Collard,TopBunch,3,5,8
+1465,1,1.14.2022,January,2022,21198,Kale,Darkibor,4,10,14
+1466,1,1.14.2022,January,2022,21199,Broccoli,Emrald crown,5,25,30
+1467,1,1.14.2022,January,2022,21199,Cabbage,Bravo,10,10,20
+1468,1,1.14.2022,January,2022,21199,Cauliflower,Bermo,2,5,7
+1469,1,1.14.2022,January,2022,21199,Collard,TopBunch,5,8,13
+1470,1,1.14.2022,January,2022,21199,Kale,Darkibor,5,10,15
+1471,1,1.14.2022,January,2022,21200,Broccoli,Emrald crown,1,1,2
+1472,1,1.14.2022,January,2022,21200,Cabbage,Bravo,1,7,8
+1473,1,1.14.2022,January,2022,21200,Cauliflower,Bermo,2,8,10
+1474,1,1.14.2022,January,2022,21200,Collard,TopBunch,4,15,19
+1475,1,1.14.2022,January,2022,21200,Kale,Darkibor,2,10,12
+1476,1,1.14.2022,January,2022,21201,Broccoli,Emrald crown,20,30,50
+1477,1,1.14.2022,January,2022,21201,Cabbage,Bravo,2,1,3
+1478,1,1.14.2022,January,2022,21201,Cauliflower,Bermo,2,1,3
+1479,1,1.14.2022,January,2022,21201,Collard,TopBunch,5,10,15
+1480,1,1.14.2022,January,2022,21201,Kale,Darkibor,0.1,1,1.1
+1481,1,1.14.2022,January,2022,21206,Broccoli,Emrald crown,1,10,11
+1482,1,1.14.2022,January,2022,21206,Cabbage,Bravo,2,10,12
+1483,1,1.14.2022,January,2022,21206,Cauliflower,Bermo,1,2,3
+1484,1,1.14.2022,January,2022,21206,Collard,TopBunch,1,5,6
+1485,1,1.14.2022,January,2022,21206,Kale,Darkibor,0,2,2
+1486,1,1.14.2022,January,2022,21207,Broccoli,Emrald crown,1,3,4
+1487,1,1.14.2022,January,2022,21207,Cabbage,Bravo,0.1,0.1,0.2
+1488,1,1.14.2022,January,2022,21207,Cauliflower,Bermo,3,4,7
+1489,1,1.14.2022,January,2022,21207,Collard,TopBunch,2,7,9
+1490,1,1.14.2022,January,2022,21207,Kale,Darkibor,4,7,11
+1491,1,1.14.2022,January,2022,21227,Broccoli,Emrald crown,10,10,20
+1492,1,1.14.2022,January,2022,21227,Cabbage,Bravo,1,10,11
+1493,1,1.14.2022,January,2022,21227,Cauliflower,Bermo,20,50,70
+1494,1,1.14.2022,January,2022,21227,Collard,TopBunch,1,15,16
+1495,1,1.14.2022,January,2022,21227,Kale,Darkibor,4,30,34
+1496,1,1.14.2022,January,2022,21228,Broccoli,Emrald crown,3,8,11
+1497,1,1.14.2022,January,2022,21228,Cabbage,Bravo,0,0.1,0.1
+1498,1,1.14.2022,January,2022,21228,Cauliflower,Bermo,5,10,15
+1499,1,1.14.2022,January,2022,21228,Collard,TopBunch,3,3,6
+1500,1,1.14.2022,January,2022,21228,Kale,Darkibor,10,10,20
+1501,1,1.14.2022,January,2022,21229,Broccoli,Emrald crown,3,15,18
+1502,1,1.14.2022,January,2022,21229,Cabbage,Bravo,5,10,15
+1503,1,1.14.2022,January,2022,21229,Cauliflower,Bermo,0,5,5
+1504,1,1.14.2022,January,2022,21229,Collard,TopBunch,4,10,14
+1505,1,1.14.2022,January,2022,21229,Kale,Darkibor,5,15,20
+1506,1,1.14.2022,January,2022,21230,Broccoli,Emrald crown,4,25,29
+1507,1,1.14.2022,January,2022,21230,Cabbage,Bravo,4,17,21
+1508,1,1.14.2022,January,2022,21230,Cauliflower,Bermo,4,16,20
+1509,1,1.14.2022,January,2022,21230,Collard,TopBunch,5,50,55
+1510,1,1.14.2022,January,2022,21230,Kale,Darkibor,15,60,75
+1511,1,1.14.2022,January,2022,21231,Broccoli,Emrald crown,3,7,10
+1512,1,1.14.2022,January,2022,21231,Cabbage,Bravo,2,2,4
+1513,1,1.14.2022,January,2022,21231,Cauliflower,Bermo,3,3,6
+1514,1,1.14.2022,January,2022,21231,Collard,TopBunch,3,2,5
+1515,1,1.14.2022,January,2022,21231,Kale,Darkibor,0,0.1,0.1
+1516,1,1.14.2022,January,2022,21232,Broccoli,Emrald crown,10,40,50
+1517,1,1.14.2022,January,2022,21232,Cabbage,Bravo,15,30,45
+1518,1,1.14.2022,January,2022,21232,Cauliflower,Bermo,30,70,100
+1519,1,1.14.2022,January,2022,21232,Collard,TopBunch,25,40,65
+1520,1,1.14.2022,January,2022,21232,Kale,Darkibor,35,35,70
+1521,1,1.14.2022,January,2022,21233,Broccoli,Emrald crown,4,7,11
+1522,1,1.14.2022,January,2022,21233,Cabbage,Bravo,3,10,13
+1523,1,1.14.2022,January,2022,21233,Cauliflower,Bermo,0,0.1,0.1
+1524,1,1.14.2022,January,2022,21233,Collard,TopBunch,4,5,9
+1525,1,1.14.2022,January,2022,21233,Kale,Darkibor,0,0.1,0.1
+1526,1,1.14.2022,January,2022,21234,Broccoli,Emrald crown,2,4,6
+1527,1,1.14.2022,January,2022,21234,Cabbage,Bravo,1,1,2
+1528,1,1.14.2022,January,2022,21234,Cauliflower,Bermo,0,1,1
+1529,1,1.14.2022,January,2022,21234,Collard,TopBunch,2,4,6
+1530,1,1.14.2022,January,2022,21234,Kale,Darkibor,5,10,15
+1531,1,12.15.2021,January,2021,21124A,Broccoli,Emrald crown,0.1,2,2.1
+1532,1,12.15.2021,January,2021,21124A,Cabbage,Bravo,2,2,4
+1533,1,12.15.2021,January,2021,21124A,Cauliflower,Bermo,0.1,3,3.1
+1534,1,12.15.2021,January,2021,21124A,Collard,TopBunch,1,3,4
+1535,1,12.15.2021,January,2021,21124A,Kale,Darkibor,4,4,8
+1536,1,12.15.2021,January,2021,21125A,Broccoli,Emrald crown,0.1,60,60.1
+1537,1,12.15.2021,January,2021,21125A,Cabbage,Bravo,0.1,40,40.1
+1538,1,12.15.2021,January,2021,21125A,Cauliflower,Bermo,0.1,3,3.1
+1539,1,12.15.2021,January,2021,21125A,Collard,TopBunch,1,30,31
+1540,1,12.15.2021,January,2021,21125A,Kale,Darkibor,3,20,23
+1541,1,1.24.2022,January,2022,21182,Broccoli,Emrald crown,0,3,3
+1542,1,1.24.2022,January,2022,21182,Cabbage,Bravo,3,5,8
+1543,1,1.24.2022,January,2022,21182,Cauliflower,Bermo,0,1,1
+1544,1,1.24.2022,January,2022,21182,Collard,TopBunch,1,4,5
+1545,1,1.24.2022,January,2022,21182,Kale,Darkibor,2,10,12
+1546,1,1.24.2022,January,2022,21183,Broccoli,Emrald crown,3,10,13
+1547,1,1.24.2022,January,2022,21183,Cabbage,Bravo,10,40,50
+1548,1,1.24.2022,January,2022,21183,Cauliflower,Bermo,2,4,6
+1549,1,1.24.2022,January,2022,21183,Collard,TopBunch,3,30,33
+1550,1,1.24.2022,January,2022,21183,Kale,Darkibor,8,40,48
+1551,1,1.24.2022,January,2022,21184,Broccoli,Emrald crown,2,10,12
+1552,1,1.24.2022,January,2022,21184,Cabbage,Bravo,2,5,7
+1553,1,1.24.2022,January,2022,21184,Cauliflower,Bermo,0.1,0.1,0.2
+1554,1,1.24.2022,January,2022,21184,Collard,TopBunch,2,10,12
+1555,1,1.24.2022,January,2022,21184,Kale,Darkibor,6,25,31
+1556,1,1.24.2022,January,2022,21185,Broccoli,Emrald crown,1,10,11
+1557,1,1.24.2022,January,2022,21185,Cabbage,Bravo,3,20,23
+1558,1,1.24.2022,January,2022,21185,Cauliflower,Bermo,2,5,7
+1559,1,1.24.2022,January,2022,21185,Collard,TopBunch,1,50,51
+1560,1,1.24.2022,January,2022,21185,Kale,Darkibor,3,20,23
+1561,1,1.24.2022,January,2022,21186,Broccoli,Emrald crown,0.1,10,10.1
+1562,1,1.24.2022,January,2022,21186,Cabbage,Bravo,4,7,11
+1563,1,1.24.2022,January,2022,21186,Cauliflower,Bermo,1,1,2
+1564,1,1.24.2022,January,2022,21186,Collard,TopBunch,4,20,24
+1565,1,1.24.2022,January,2022,21186,Kale,Darkibor,2,10,12
+1566,1,1.24.2022,January,2022,21187,Broccoli,Emrald crown,4,20,24
+1567,1,1.24.2022,January,2022,21187,Cabbage,Bravo,1,5,6
+1568,1,1.24.2022,January,2022,21187,Cauliflower,Bermo,0,0,0
+1569,1,1.24.2022,January,2022,21187,Collard,TopBunch,1,2,3
+1570,1,1.24.2022,January,2022,21187,Kale,Darkibor,10,50,60
+1571,1,1.24.2022,January,2022,21235,Broccoli,Emrald crown,4,50,54
+1572,1,1.24.2022,January,2022,21235,Cabbage,Bravo,10,30,40
+1573,1,1.24.2022,January,2022,21235,Cauliflower,Bermo,2,5,7
+1574,1,1.24.2022,January,2022,21235,Collard,TopBunch,5,10,15
+1575,1,1.24.2022,January,2022,21235,Kale,Darkibor,5,60,65
+1576,1,1.24.2022,January,2022,21236,Broccoli,Emrald crown,1,10,11
+1577,1,1.24.2022,January,2022,21236,Cabbage,Bravo,3,5,8
+1578,1,1.24.2022,January,2022,21236,Cauliflower,Bermo,0,1,1
+1579,1,1.24.2022,January,2022,21236,Collard,TopBunch,4,10,14
+1580,1,1.24.2022,January,2022,21236,Kale,Darkibor,4,10,14
+1581,1,1.24.2022,January,2022,21237,Broccoli,Emrald crown,1,20,21
+1582,1,1.24.2022,January,2022,21237,Cabbage,Bravo,1,5,6
+1583,1,1.24.2022,January,2022,21237,Cauliflower,Bermo,0,1,1
+1584,1,1.24.2022,January,2022,21237,Collard,TopBunch,1,3,4
+1585,1,1.24.2022,January,2022,21237,Kale,Darkibor,7,10,17
+1586,1,1.24.2022,January,2022,21238,Broccoli,Emrald crown,5,40,45
+1587,1,1.24.2022,January,2022,21238,Cabbage,Bravo,10,75,85
+1588,1,1.24.2022,January,2022,21238,Cauliflower,Bermo,10,30,40
+1589,1,1.24.2022,January,2022,21238,Collard,TopBunch,5,30,35
+1590,1,1.24.2022,January,2022,21238,Kale,Darkibor,7,30,37
+1591,1,1.24.2022,January,2022,21239,Broccoli,Emrald crown,4,50,54
+1592,1,1.24.2022,January,2022,21239,Cabbage,Bravo,5,30,35
+1593,1,1.24.2022,January,2022,21239,Cauliflower,Bermo,2,20,22
+1594,1,1.24.2022,January,2022,21239,Collard,TopBunch,3,25,28
+1595,1,1.24.2022,January,2022,21239,Kale,Darkibor,5,20,25
+1596,1,1.24.2022,January,2022,18062,Broccoli,Emrald crown,3,40,43
+1597,1,1.24.2022,January,2022,18062,Cabbage,Bravo,2,7,9
+1598,1,1.24.2022,January,2022,18062,Cauliflower,Bermo,3,3,6
+1599,1,1.24.2022,January,2022,18062,Collard,TopBunch,10,60,70
+1600,1,1.24.2022,January,2022,18062,Kale,Darkibor,10,40,50
+1601,1,1.25.2022,January,2022,21258,Broccoli,Emrald crown,0,0,0
+1602,1,1.25.2022,January,2022,21258,Cabbage,Bravo,0,0,0
+1603,1,1.25.2022,January,2022,21258,Cauliflower,Bermo,0,0,0
+1604,1,1.25.2022,January,2022,21258,Collard,TopBunch,0,0,0
+1605,1,1.25.2022,January,2022,21258,Kale,Darkibor,0.1,0.1,0.2
+1606,1,1.25.2022,January,2022,21259,Broccoli,Emrald crown,0,0,0
+1607,1,1.25.2022,January,2022,21259,Cabbage,Bravo,0,0,0
+1608,1,1.25.2022,January,2022,21259,Cauliflower,Bermo,0,0,0
+1609,1,1.25.2022,January,2022,21259,Collard,TopBunch,0,0,0
+1610,1,1.25.2022,January,2022,21259,Kale,Darkibor,0,0,0
+1611,1,1.25.2022,January,2022,18062S,Broccoli,Emrald crown,1,5,6
+1612,1,1.25.2022,January,2022,18062S,Cabbage,Bravo,2,2,4
+1613,1,1.25.2022,January,2022,18062S,Cauliflower,Bermo,3,15,18
+1614,1,1.25.2022,January,2022,18062S,Collard,TopBunch,1,10,11
+1615,1,1.25.2022,January,2022,18062S,Kale,Darkibor,3,10,13
+1616,1,1.25.2022,January,2022,18062F,Broccoli,Emrald crown,2,15,17
+1617,1,1.25.2022,January,2022,18062F,Cabbage,Bravo,4,5,9
+1618,1,1.25.2022,January,2022,18062F,Cauliflower,Bermo,10,10,20
+1619,1,1.25.2022,January,2022,18062F,Collard,TopBunch,5,10,15
+1620,1,1.25.2022,January,2022,18062F,Kale,Darkibor,10,15,25
+2001,2,2.21.2022,February,2022,21085,Broccoli,Emrald crown,7,40,47
+2002,2,2.21.2022,February,2022,21085,Cabbage,Bravo,5,35,40
+2003,2,2.21.2022,February,2022,21085,Cauliflower,Bermo,1,15,16
+2004,2,2.21.2022,February,2022,21085,Collard,TopBunch,2,30,32
+2005,2,2.21.2022,February,2022,21085,Kale,Darkibor,10,40,50
+2006,2,2.21.2022,February,2022,21086,Broccoli,Emrald crown,2,60,62
+2007,2,2.21.2022,February,2022,21086,Cabbage,Bravo,1,20,21
+2008,2,2.21.2022,February,2022,21086,Cauliflower,Bermo,10,45,55
+2009,2,2.21.2022,February,2022,21086,Collard,TopBunch,30,60,90
+2010,2,2.21.2022,February,2022,21086,Kale,Darkibor,10,10,20
+2011,2,2.21.2022,February,2022,21089,Broccoli,Emrald crown,10,40,50
+2012,2,2.21.2022,February,2022,21089,Cabbage,Bravo,10,40,50
+2013,2,2.21.2022,February,2022,21089,Cauliflower,Bermo,1,10,11
+2014,2,2.21.2022,February,2022,21089,Collard,TopBunch,20,50,70
+2015,2,2.21.2022,February,2022,21089,Kale,Darkibor,1,30,31
+2016,2,2.21.2022,February,2022,21091,Broccoli,Emrald crown,30,65,95
+2017,2,2.21.2022,February,2022,21091,Cabbage,Bravo,7,30,37
+2018,2,2.21.2022,February,2022,21091,Cauliflower,Bermo,5,5,10
+2019,2,2.21.2022,February,2022,21091,Collard,TopBunch,40,80,120
+2020,2,2.21.2022,February,2022,21091,Kale,Darkibor,20,30,50
+2021,2,2.21.2022,February,2022,21120,Broccoli,Emrald crown,1,30,31
+2022,2,2.21.2022,February,2022,21120,Cabbage,Bravo,5,20,25
+2023,2,2.21.2022,February,2022,21120,Cauliflower,Bermo,10,20,30
+2024,2,2.21.2022,February,2022,21120,Collard,TopBunch,5,60,65
+2025,2,2.21.2022,February,2022,21120,Kale,Darkibor,4,10,14
+2026,2,2.21.2022,February,2022,21135,Broccoli,Emrald crown,10,60,70
+2027,2,2.21.2022,February,2022,21135,Cabbage,Bravo,1,30,31
+2028,2,2.21.2022,February,2022,21135,Cauliflower,Bermo,0,1,1
+2029,2,2.21.2022,February,2022,21135,Collard,TopBunch,2,25,27
+2030,2,2.21.2022,February,2022,21135,Kale,Darkibor,0.1,1,1.1
+2031,2,2.21.2022,February,2022,21180,Broccoli,Emrald crown,,30,30
+2032,2,2.21.2022,February,2022,21180,Cabbage,Bravo,,20,20
+2033,2,2.21.2022,February,2022,21180,Cauliflower,Bermo,,15,15
+2034,2,2.21.2022,February,2022,21180,Collard,TopBunch,,30,30
+2035,2,2.21.2022,February,2022,21180,Kale,Darkibor,,10,10
+2036,2,2.21.2022,February,2022,21197,Broccoli,Emrald crown,30,80,110
+2037,2,2.21.2022,February,2022,21197,Cabbage,Bravo,1,5,6
+2038,2,2.21.2022,February,2022,21197,Cauliflower,Bermo,1,10,11
+2039,2,2.21.2022,February,2022,21197,Collard,TopBunch,0.1,5,5.1
+2040,2,2.21.2022,February,2022,21197,Kale,Darkibor,10,10,20
+2041,2,2.21.2022,February,2022,21124A,Broccoli,Emrald crown,5,15,20
+2042,2,2.21.2022,February,2022,21124A,Cabbage,Bravo,2,20,22
+2043,2,2.21.2022,February,2022,21124A,Cauliflower,Bermo,1,8,9
+2044,2,2.21.2022,February,2022,21124A,Collard,TopBunch,10,50,60
+2045,2,2.21.2022,February,2022,21124A,Kale,Darkibor,10,60,70
+2046,2,2.21.2022,February,2022,21235,Broccoli,Emrald crown,5,65,70
+2047,2,2.21.2022,February,2022,21235,Cabbage,Bravo,10,30,40
+2048,2,2.21.2022,February,2022,21235,Cauliflower,Bermo,1,15,16
+2049,2,2.21.2022,February,2022,21235,Collard,TopBunch,30,60,90
+2050,2,2.21.2022,February,2022,21235,Kale,Darkibor,30,60,90
+2051,2,2.21.2022,February,2022,18062,Broccoli,Emrald crown,2,5,7
+2052,2,2.21.2022,February,2022,18062,Cabbage,Bravo,5,15,20
+2053,2,2.21.2022,February,2022,18062,Cauliflower,Bermo,3,20,23
+2054,2,2.21.2022,February,2022,18062,Collard,TopBunch,5,40,45
+2055,2,2.21.2022,February,2022,18062,Kale,Darkibor,3,10,13
+2056,2,2.21.2022,February,2022,21259,Broccoli,Emrald crown,0,0,0
+2057,2,2.21.2022,February,2022,21259,Cabbage,Bravo,0,0,0
+2058,2,2.21.2022,February,2022,21259,Cauliflower,Bermo,0,0,0
+2059,2,2.21.2022,February,2022,21259,Collard,TopBunch,0,0,0
+2060,2,2.21.2022,February,2022,21259,Kale,Darkibor,0,0,0
+2061,2,2.21.2022,February,2022,no spray,Broccoli,Emrald crown,0,0,0
+2062,2,2.21.2022,February,2022,no spray,Cabbage,Bravo,0,0,0
+2063,2,2.21.2022,February,2022,no spray,Cauliflower,Bermo,0,0,0
+2064,2,2.21.2022,February,2022,no spray,Collard,TopBunch,0,0,0
+2065,2,2.21.2022,February,2022,no spray,Kale,Darkibor,0,0,0
+2066,2,3.22.2022,March,2022,21233,Broccoli,Emrald crown,3,10,13
+2067,2,3.22.2022,March,2022,21233,Cabbage,Bravo,2,2,4
+2068,2,3.22.2022,March,2022,21233,Cauliflower,Bermo,2,2,4
+2069,2,3.22.2022,March,2022,21233,Collard,TopBunch,1,10,11
+2070,2,3.22.2022,March,2022,21233,Kale,Darkibor,4,7,11
+2071,2,3.21.2022,March,2022,21227,Broccoli,Emrald crown,1,5,6
+2072,2,3.21.2022,March,2022,21227,Cabbage,Bravo,1,5,6
+2073,2,3.21.2022,March,2022,21227,Cauliflower,Bermo,0.1,10,10.1
+2074,2,3.21.2022,March,2022,21227,Collard,TopBunch,60,60,120
+2075,2,3.21.2022,March,2022,21227,Kale,Darkibor,3,5,8
+2076,2,3.22.2022,March,2022,21198,Broccoli,Emrald crown,1,55,56
+2077,2,3.22.2022,March,2022,21198,Cabbage,Bravo,5,10,15
+2078,2,3.22.2022,March,2022,21198,Cauliflower,Bermo,1,2,3
+2079,2,3.22.2022,March,2022,21198,Collard,TopBunch,60,80,140
+2080,2,3.22.2022,March,2022,21198,Kale,Darkibor,5,40,45
+2081,2,3.21.2022,March,2022,21130,Broccoli,Emrald crown,3,8,11
+2082,2,3.21.2022,March,2022,21130,Cabbage,Bravo,3,7,10
+2083,2,3.21.2022,March,2022,21130,Cauliflower,Bermo,1,20,21
+2084,2,3.21.2022,March,2022,21130,Collard,TopBunch,6,40,46
+2085,2,3.21.2022,March,2022,21130,Kale,Darkibor,0,1,1
+2086,2,3.21.2022,March,2022,21155,Broccoli,Emrald crown,1,6,7
+2087,2,3.21.2022,March,2022,21155,Cabbage,Bravo,5,30,35
+2088,2,3.21.2022,March,2022,21155,Cauliflower,Bermo,0.1,50,50.1
+2089,2,3.21.2022,March,2022,21155,Collard,TopBunch,5,60,65
+2090,2,3.21.2022,March,2022,21155,Kale,Darkibor,10,60,70
+2091,2,3.21.2022,March,2022,21108,Broccoli,Emrald crown,10,65,75
+2092,2,3.21.2022,March,2022,21108,Cabbage,Bravo,10,60,70
+2093,2,3.21.2022,March,2022,21108,Cauliflower,Bermo,2,56,58
+2094,2,3.21.2022,March,2022,21108,Collard,TopBunch,5,70,75
+2095,2,3.21.2022,March,2022,21108,Kale,Darkibor,1,50,51
+2096,2,3.21.2022,March,2022,21232,Broccoli,Emrald crown,5,20,25
+2097,2,3.21.2022,March,2022,21232,Cabbage,Bravo,1,20,21
+2098,2,3.21.2022,March,2022,21232,Cauliflower,Bermo,3,30,33
+2099,2,3.21.2022,March,2022,21232,Collard,TopBunch,1,2,3
+2100,2,3.21.2022,March,2022,21232,Kale,Darkibor,0,1,1
+2101,2,3.21.2022,March,2022,21109,Broccoli,Emrald crown,1,5,6
+2102,2,3.21.2022,March,2022,21109,Cabbage,Bravo,5,25,30
+2103,2,3.21.2022,March,2022,21109,Cauliflower,Bermo,2,7,9
+2104,2,3.21.2022,March,2022,21109,Collard,TopBunch,10,60,70
+2105,2,3.21.2022,March,2022,21109,Kale,Darkibor,5,13,18
+2106,2,3.21.2022,March,2022,21092,Broccoli,Emrald crown,5,10,15
+2107,2,3.21.2022,March,2022,21092,Cabbage,Bravo,2,15,17
+2108,2,3.21.2022,March,2022,21092,Cauliflower,Bermo,1,5,6
+2109,2,3.21.2022,March,2022,21092,Collard,TopBunch,1,6,7
+2110,2,3.21.2022,March,2022,21092,Kale,Darkibor,5,12,17
+2111,2,3.21.2022,March,2022,21075,Broccoli,Emrald crown,0,10,10
+2112,2,3.21.2022,March,2022,21075,Cabbage,Bravo,0.1,7,7.1
+2113,2,3.21.2022,March,2022,21075,Cauliflower,Bermo,1,4,5
+2114,2,3.21.2022,March,2022,21075,Collard,TopBunch,3,5,8
+2115,2,3.21.2022,March,2022,21075,Kale,Darkibor,1,3,4
+2116,2,3.22.2022,March,2022,21141,Broccoli,Emrald crown,0.1,3,3.1
+2117,2,3.22.2022,March,2022,21141,Cabbage,Bravo,1,4,5
+2118,2,3.22.2022,March,2022,21141,Cauliflower,Bermo,1,7,8
+2119,2,3.22.2022,March,2022,21141,Collard,TopBunch,5,40,45
+2120,2,3.22.2022,March,2022,21141,Kale,Darkibor,0,1,1
+2121,2,3.22.2022,March,2022,21157,Broccoli,Emrald crown,20,70,90
+2122,2,3.22.2022,March,2022,21157,Cabbage,Bravo,15,15,30
+2123,2,3.22.2022,March,2022,21157,Cauliflower,Bermo,15,70,85
+2124,2,3.22.2022,March,2022,21157,Collard,TopBunch,10,30,40
+2125,2,3.22.2022,March,2022,21157,Kale,Darkibor,7,40,47
+2126,2,3.22.2022,March,2022,21236,Broccoli,Emrald crown,3,40,43
+2127,2,3.22.2022,March,2022,21236,Cabbage,Bravo,4,7,11
+2128,2,3.22.2022,March,2022,21236,Cauliflower,Bermo,5,14,19
+2129,2,3.22.2022,March,2022,21236,Collard,TopBunch,1,5,6
+2130,2,3.22.2022,March,2022,21236,Kale,Darkibor,15,50,65
+2131,2,3.22.2022,March,2022,21165,Broccoli,Emrald crown,3,30,33
+2132,2,3.22.2022,March,2022,21165,Cabbage,Bravo,3,10,13
+2133,2,3.22.2022,March,2022,21165,Cauliflower,Bermo,2,7,9
+2134,2,3.22.2022,March,2022,21165,Collard,TopBunch,3,25,28
+2135,2,3.22.2022,March,2022,21165,Kale,Darkibor,3,4,7
+2136,2,3.22.2022,March,2022,21192,Broccoli,Emrald crown,2,40,42
+2137,2,3.22.2022,March,2022,21192,Cabbage,Bravo,3,15,18
+2138,2,3.22.2022,March,2022,21192,Cauliflower,Bermo,2,30,32
+2139,2,3.22.2022,March,2022,21192,Collard,TopBunch,4,30,34
+2140,2,3.22.2022,March,2022,21192,Kale,Darkibor,6,45,51
+2141,2,3.22.2022,March,2022,21125,Broccoli,Emrald crown,5,30,35
+2142,2,3.22.2022,March,2022,21125,Cabbage,Bravo,1,5,6
+2143,2,3.22.2022,March,2022,21125,Cauliflower,Bermo,3,30,33
+2144,2,3.22.2022,March,2022,21125,Collard,TopBunch,50,70,120
+2145,2,3.22.2022,March,2022,21125,Kale,Darkibor,7,15,22
+2146,2,3.22.2022,March,2022,21076,Broccoli,Emrald crown,3,50,53
+2147,2,3.22.2022,March,2022,21076,Cabbage,Bravo,4,7,11
+2148,2,3.22.2022,March,2022,21076,Cauliflower,Bermo,1,1,2
+2149,2,3.22.2022,March,2022,21076,Collard,TopBunch,0,3,3
+2150,2,3.22.2022,March,2022,21076,Kale,Darkibor,10,60,70
+2151,2,3.21.2022,March,2022,21143,Broccoli,Emrald crown,1,25,26
+2152,2,3.21.2022,March,2022,21143,Cabbage,Bravo,1,10,11
+2153,2,3.21.2022,March,2022,21143,Cauliflower,Bermo,0.1,1,1.1
+2154,2,3.21.2022,March,2022,21143,Collard,TopBunch,0.1,1,1.1
+2155,2,3.21.2022,March,2022,21143,Kale,Darkibor,0.1,1,1.1
+2156,2,3.21.2022,March,2022,21195,Broccoli,Emrald crown,0.1,20,20.1
+2157,2,3.21.2022,March,2022,21195,Cabbage,Bravo,7,40,47
+2158,2,3.21.2022,March,2022,21195,Cauliflower,Bermo,10,50,60
+2159,2,3.21.2022,March,2022,21195,Collard,TopBunch,65,70,135
+2160,2,3.21.2022,March,2022,21195,Kale,Darkibor,5,25,30
+2161,2,3.22.2022,March,2022,21125A,Broccoli,Emrald crown,3,10,13
+2162,2,3.22.2022,March,2022,21125A,Cabbage,Bravo,0,1,1
+2163,2,3.22.2022,March,2022,21125A,Cauliflower,Bermo,1,5,6
+2164,2,3.22.2022,March,2022,21125A,Collard,TopBunch,0.1,3,3.1
+2165,2,3.22.2022,March,2022,21125A,Kale,Darkibor,1,4,5
+2166,2,3.22.2022,March,2022,21121,Broccoli,Emrald crown,2,20,22
+2167,2,3.22.2022,March,2022,21121,Cabbage,Bravo,10,30,40
+2168,2,3.22.2022,March,2022,21121,Cauliflower,Bermo,0,5,5
+2169,2,3.22.2022,March,2022,21121,Collard,TopBunch,2,10,12
+2170,2,3.22.2022,March,2022,21121,Kale,Darkibor,2,7,9
+2171,2,3.21.2022,March,2022,21106,Broccoli,Emrald crown,0.1,5,5.1
+2172,2,3.21.2022,March,2022,21106,Cabbage,Bravo,1,6,7
+2173,2,3.21.2022,March,2022,21106,Cauliflower,Bermo,0,50,50
+2174,2,3.21.2022,March,2022,21106,Collard,TopBunch,1,65,66
+2175,2,3.21.2022,March,2022,21106,Kale,Darkibor,3,7,10
+2176,2,3.22.2022,March,2022,21112,Broccoli,Emrald crown,0.1,60,60.1
+2177,2,3.22.2022,March,2022,21112,Cabbage,Bravo,2,5,7
+2178,2,3.22.2022,March,2022,21112,Cauliflower,Bermo,4,50,54
+2179,2,3.22.2022,March,2022,21112,Collard,TopBunch,30,75,105
+2180,2,3.22.2022,March,2022,21112,Kale,Darkibor,5,25,30
+2181,2,3.21.2022,March,2022,21153,Broccoli,Emrald crown,1,7,8
+2182,2,3.21.2022,March,2022,21153,Cabbage,Bravo,0.5,20,20.5
+2183,2,3.21.2022,March,2022,21153,Cauliflower,Bermo,1,4,5
+2184,2,3.21.2022,March,2022,21153,Collard,TopBunch,45,60,105
+2185,2,3.21.2022,March,2022,21153,Kale,Darkibor,2,10,12
+2186,2,4.1.2022,April,2022,21237,Broccoli,Emrald crown,10,60,70
+2187,2,4.1.2022,April,2022,21237,Cabbage,Bravo,1,4,5
+2188,2,4.1.2022,April,2022,21237,Cauliflower,Bermo,20,45,65
+2189,2,4.1.2022,April,2022,21237,Collard,TopBunch,0.1,1,1.1
+2190,2,4.1.2022,April,2022,21237,Kale,Darkibor,8,25,33
+2191,2,4.1.2022,April,2022,21199,Broccoli,Emrald crown,0,10,10
+2192,2,4.1.2022,April,2022,21199,Cabbage,Bravo,0,0,0
+2193,2,4.1.2022,April,2022,21199,Cauliflower,Bermo,1,5,6
+2194,2,4.1.2022,April,2022,21199,Collard,TopBunch,5,15,20
+2195,2,4.1.2022,April,2022,21199,Kale,Darkibor,3,12,15
+2196,2,4.1.2022,April,2022,21129,Broccoli,Emrald crown,15,45,60
+2197,2,4.1.2022,April,2022,21129,Cabbage,Bravo,1,4,5
+2198,2,4.1.2022,April,2022,21129,Cauliflower,Bermo,0.1,0.1,0.2
+2199,2,4.1.2022,April,2022,21129,Collard,TopBunch,0,0.1,0.1
+2200,2,4.1.2022,April,2022,21129,Kale,Darkibor,3,10,13
+2201,2,4.1.2022,April,2022,21090,Broccoli,Emrald crown,0.1,5,5.1
+2202,2,4.1.2022,April,2022,21090,Cabbage,Bravo,0,0,0
+2203,2,4.1.2022,April,2022,21090,Cauliflower,Bermo,1,30,31
+2204,2,4.1.2022,April,2022,21090,Collard,TopBunch,0.1,4,4.1
+2205,2,4.1.2022,April,2022,21090,Kale,Darkibor,0,0,0
+2206,2,4.1.2022,April,2022,21182,Broccoli,Emrald crown,0,10,10
+2207,2,4.1.2022,April,2022,21182,Cabbage,Bravo,1,5,6
+2208,2,4.1.2022,April,2022,21182,Cauliflower,Bermo,0,0,0
+2209,2,4.1.2022,April,2022,21182,Collard,TopBunch,0,4,4
+2210,2,4.1.2022,April,2022,21182,Kale,Darkibor,0.1,20,20.1
+2211,2,4.1.2022,April,2022,21187,Broccoli,Emrald crown,1,30,31
+2212,2,4.1.2022,April,2022,21187,Cabbage,Bravo,3,20,23
+2213,2,4.1.2022,April,2022,21187,Cauliflower,Bermo,30,70,100
+2214,2,4.1.2022,April,2022,21187,Collard,TopBunch,1,30,31
+2215,2,4.1.2022,April,2022,21187,Kale,Darkibor,7,30,37
+2216,2,4.1.2022,April,2022,21118,Broccoli,Emrald crown,5,30,35
+2217,2,4.1.2022,April,2022,21118,Cabbage,Bravo,0,0,0
+2218,2,4.1.2022,April,2022,21118,Cauliflower,Bermo,3,30,33
+2219,2,4.1.2022,April,2022,21118,Collard,TopBunch,3,7,10
+2220,2,4.1.2022,April,2022,21118,Kale,Darkibor,5,5,10
+2221,2,4.1.2022,April,2022,21166,Broccoli,Emrald crown,1,5,6
+2222,2,4.1.2022,April,2022,21166,Cabbage,Bravo,0,0,0
+2223,2,4.1.2022,April,2022,21166,Cauliflower,Bermo,0,0.1,0.1
+2224,2,4.1.2022,April,2022,21166,Collard,TopBunch,1,5,6
+2225,2,4.1.2022,April,2022,21166,Kale,Darkibor,0.1,1,1.1
+2226,2,4.1.2022,April,2022,21138,Broccoli,Emrald crown,0,5,5
+2227,2,4.1.2022,April,2022,21138,Cabbage,Bravo,4,10,14
+2228,2,4.1.2022,April,2022,21138,Cauliflower,Bermo,1,2,3
+2229,2,4.1.2022,April,2022,21138,Collard,TopBunch,3,4,7
+2230,2,4.1.2022,April,2022,21138,Kale,Darkibor,3,10,13
+2231,2,4.1.2022,April,2022,21201,Broccoli,Emrald crown,3,30,33
+2232,2,4.1.2022,April,2022,21201,Cabbage,Bravo,8,30,38
+2233,2,4.1.2022,April,2022,21201,Cauliflower,Bermo,4,20,24
+2234,2,4.1.2022,April,2022,21201,Collard,TopBunch,0.1,1,1.1
+2235,2,4.1.2022,April,2022,21201,Kale,Darkibor,1,5,6
+2236,2,4.1.2022,April,2022,21229,Broccoli,Emrald crown,1,5,6
+2237,2,4.1.2022,April,2022,21229,Cabbage,Bravo,0.1,1,1.1
+2238,2,4.1.2022,April,2022,21229,Cauliflower,Bermo,1,2,3
+2239,2,4.1.2022,April,2022,21229,Collard,TopBunch,0.1,5,5.1
+2240,2,4.1.2022,April,2022,21229,Kale,Darkibor,15,20,35
+2241,2,4.1.2022,April,2022,21124,Broccoli,Emrald crown,1,10,11
+2242,2,4.1.2022,April,2022,21124,Cabbage,Bravo,5,20,25
+2243,2,4.1.2022,April,2022,21124,Cauliflower,Bermo,2,5,7
+2244,2,4.1.2022,April,2022,21124,Collard,TopBunch,2,20,22
+2245,2,4.1.2022,April,2022,21124,Kale,Darkibor,50,75,125
+2246,2,4.5.2022,April,2022,21158,Broccoli,Emrald crown,8,30,38
+2247,2,4.5.2022,April,2022,21158,Cabbage,Bravo,5,7,12
+2248,2,4.5.2022,April,2022,21158,Cauliflower,Bermo,1,2,3
+2249,2,4.5.2022,April,2022,21158,Collard,TopBunch,3,10,13
+2250,2,4.5.2022,April,2022,21158,Kale,Darkibor,2,7,9
+2251,2,4.5.2022,April,2022,21142,Broccoli,Emrald crown,1,20,21
+2252,2,4.5.2022,April,2022,21142,Cabbage,Bravo,0.1,1,1.1
+2253,2,4.5.2022,April,2022,21142,Cauliflower,Bermo,4,10,14
+2254,2,4.5.2022,April,2022,21142,Collard,TopBunch,3,10,13
+2255,2,4.5.2022,April,2022,21142,Kale,Darkibor,1,2,3
+2256,2,4.5.2022,April,2022,18062F,Broccoli,Emrald crown,5,30,35
+2257,2,4.5.2022,April,2022,18062F,Cabbage,Bravo,2,15,17
+2258,2,4.5.2022,April,2022,18062F,Cauliflower,Bermo,1,5,6
+2259,2,4.5.2022,April,2022,18062F,Collard,TopBunch,0,2,2
+2260,2,4.5.2022,April,2022,18062F,Kale,Darkibor,0.1,2,2.1
+2261,2,4.5.2022,April,2022,21181,Broccoli,Emrald crown,5,35,40
+2262,2,4.5.2022,April,2022,21181,Cabbage,Bravo,3,20,23
+2263,2,4.5.2022,April,2022,21181,Cauliflower,Bermo,2,10,12
+2264,2,4.5.2022,April,2022,21181,Collard,TopBunch,5,15,20
+2265,2,4.5.2022,April,2022,21181,Kale,Darkibor,4,5,9
+2266,2,4.5.2022,April,2022,21083,Broccoli,Emrald crown,0,3,3
+2267,2,4.5.2022,April,2022,21083,Cabbage,Bravo,2,10,12
+2268,2,4.5.2022,April,2022,21083,Cauliflower,Bermo,1,2,3
+2269,2,4.5.2022,April,2022,21083,Collard,TopBunch,0,2,2
+2270,2,4.5.2022,April,2022,21083,Kale,Darkibor,1,5,6
+2271,2,4.5.2022,April,2022,21161,Broccoli,Emrald crown,20,55,75
+2272,2,4.5.2022,April,2022,21161,Cabbage,Bravo,2,4,6
+2273,2,4.5.2022,April,2022,21161,Cauliflower,Bermo,3,3,6
+2274,2,4.5.2022,April,2022,21161,Collard,TopBunch,0.1,3,3.1
+2275,2,4.5.2022,April,2022,21161,Kale,Darkibor,4,5,9
+2276,2,4.5.2022,April,2022,21196,Broccoli,Emrald crown,10,80,90
+2277,2,4.5.2022,April,2022,21196,Cabbage,Bravo,2,3,5
+2278,2,4.5.2022,April,2022,21196,Cauliflower,Bermo,10,50,60
+2279,2,4.5.2022,April,2022,21196,Collard,TopBunch,0.1,5,5.1
+2280,2,4.5.2022,April,2022,21196,Kale,Darkibor,2,7,9
+2281,2,4.5.2022,April,2022,21184,Broccoli,Emrald crown,5,30,35
+2282,2,4.5.2022,April,2022,21184,Cabbage,Bravo,8,50,58
+2283,2,4.5.2022,April,2022,21184,Cauliflower,Bermo,30,85,115
+2284,2,4.5.2022,April,2022,21184,Collard,TopBunch,2,40,42
+2285,2,4.5.2022,April,2022,21184,Kale,Darkibor,7,10,17
+2286,2,4.5.2022,April,2022,21228,Broccoli,Emrald crown,2,90,92
+2287,2,4.5.2022,April,2022,21228,Cabbage,Bravo,4,4,8
+2288,2,4.5.2022,April,2022,21228,Cauliflower,Bermo,20,50,70
+2289,2,4.5.2022,April,2022,21228,Collard,TopBunch,3,50,53
+2290,2,4.5.2022,April,2022,21228,Kale,Darkibor,4,3,7
+2291,2,4.5.2022,April,2022,21140,Broccoli,Emrald crown,25,95,120
+2292,2,4.5.2022,April,2022,21140,Cabbage,Bravo,15,30,45
+2293,2,4.5.2022,April,2022,21140,Cauliflower,Bermo,50,90,140
+2294,2,4.5.2022,April,2022,21140,Collard,TopBunch,30,90,120
+2295,2,4.5.2022,April,2022,21140,Kale,Darkibor,15,25,40
+2296,2,4.5.2022,April,2022,21231,Broccoli,Emrald crown,20,90,110
+2297,2,4.5.2022,April,2022,21231,Cabbage,Bravo,40,70,110
+2298,2,4.5.2022,April,2022,21231,Cauliflower,Bermo,30,50,80
+2299,2,4.5.2022,April,2022,21231,Collard,TopBunch,3,90,93
+2300,2,4.5.2022,April,2022,21231,Kale,Darkibor,7,30,37
+2301,2,4.5.2022,April,2022,21191,Broccoli,Emrald crown,8,60,68
+2302,2,4.5.2022,April,2022,21191,Cabbage,Bravo,5,45,50
+2303,2,4.5.2022,April,2022,21191,Cauliflower,Bermo,4,45,49
+2304,2,4.5.2022,April,2022,21191,Collard,TopBunch,6,85,91
+2305,2,4.5.2022,April,2022,21191,Kale,Darkibor,3,40,43
+2306,2,4.13.2022,April,2022,21151,Broccoli,Emrald crown,20,85,105
+2307,2,4.13.2022,April,2022,21151,Cabbage,Bravo,15,80,95
+2308,2,4.13.2022,April,2022,21151,Cauliflower,Bermo,7,20,27
+2309,2,4.13.2022,April,2022,21151,Collard,TopBunch,4,15,19
+2310,2,4.13.2022,April,2022,21151,Kale,Darkibor,1,8,9
+2311,2,4.13.2022,April,2022,21186,Broccoli,Emrald crown,35,85,120
+2312,2,4.13.2022,April,2022,21186,Cabbage,Bravo,15,80,95
+2313,2,4.13.2022,April,2022,21186,Cauliflower,Bermo,8,10,18
+2314,2,4.13.2022,April,2022,21186,Collard,TopBunch,0,15,15
+2315,2,4.13.2022,April,2022,21186,Kale,Darkibor,25,50,75
+2316,2,4.13.2022,April,2022,21134,Broccoli,Emrald crown,4,25,29
+2317,2,4.13.2022,April,2022,21134,Cabbage,Bravo,0,15,15
+2318,2,4.13.2022,April,2022,21134,Cauliflower,Bermo,0,1,1
+2319,2,4.13.2022,April,2022,21134,Collard,TopBunch,0,3,3
+2320,2,4.13.2022,April,2022,21134,Kale,Darkibor,1,1,2
+2321,2,4.13.2022,April,2022,21238,Broccoli,Emrald crown,25,90,115
+2322,2,4.13.2022,April,2022,21238,Cabbage,Bravo,1,5,6
+2323,2,4.13.2022,April,2022,21238,Cauliflower,Bermo,4,3,7
+2324,2,4.13.2022,April,2022,21238,Collard,TopBunch,2,30,32
+2325,2,4.13.2022,April,2022,21238,Kale,Darkibor,1,5,6
+2326,2,4.13.2022,April,2022,21137,Broccoli,Emrald crown,3,30,33
+2327,2,4.13.2022,April,2022,21137,Cabbage,Bravo,6,50,56
+2328,2,4.13.2022,April,2022,21137,Cauliflower,Bermo,1,2,3
+2329,2,4.13.2022,April,2022,21137,Collard,TopBunch,2,20,22
+2330,2,4.13.2022,April,2022,21137,Kale,Darkibor,2,3,5
+2331,2,4.13.2022,April,2022,21183,Broccoli,Emrald crown,1,5,6
+2332,2,4.13.2022,April,2022,21183,Cabbage,Bravo,1,1,2
+2333,2,4.13.2022,April,2022,21183,Cauliflower,Bermo,3,3,6
+2334,2,4.13.2022,April,2022,21183,Collard,TopBunch,1,5,6
+2335,2,4.13.2022,April,2022,21183,Kale,Darkibor,15,35,50
+2336,2,4.13.2022,April,2022,21074,Broccoli,Emrald crown,1,5,6
+2337,2,4.13.2022,April,2022,21074,Cabbage,Bravo,12,30,42
+2338,2,4.13.2022,April,2022,21074,Cauliflower,Bermo,12,40,52
+2339,2,4.13.2022,April,2022,21074,Collard,TopBunch,12,30,42
+2340,2,4.13.2022,April,2022,21074,Kale,Darkibor,4,7,11
+2341,2,4.13.2022,April,2022,21207,Broccoli,Emrald crown,1,15,16
+2342,2,4.13.2022,April,2022,21207,Cabbage,Bravo,3,3,6
+2343,2,4.13.2022,April,2022,21207,Cauliflower,Bermo,4,10,14
+2344,2,4.13.2022,April,2022,21207,Collard,TopBunch,5,40,45
+2345,2,4.13.2022,April,2022,21207,Kale,Darkibor,0,1,1
+2346,2,4.13.2022,April,2022,21080,Broccoli,Emrald crown,5,30,35
+2347,2,4.13.2022,April,2022,21080,Cabbage,Bravo,8,30,38
+2348,2,4.13.2022,April,2022,21080,Cauliflower,Bermo,8,35,43
+2349,2,4.13.2022,April,2022,21080,Collard,TopBunch,12,40,52
+2350,2,4.13.2022,April,2022,21080,Kale,Darkibor,20,35,55
+2351,2,4.13.2022,April,2022,21185,Broccoli,Emrald crown,5,55,60
+2352,2,4.13.2022,April,2022,21185,Cabbage,Bravo,5,35,40
+2353,2,4.13.2022,April,2022,21185,Cauliflower,Bermo,3,5,8
+2354,2,4.13.2022,April,2022,21185,Collard,TopBunch,50,95,145
+2355,2,4.13.2022,April,2022,21185,Kale,Darkibor,15,35,50
+2356,2,4.13.2022,April,2022,21189,Broccoli,Emrald crown,5,40,45
+2357,2,4.13.2022,April,2022,21189,Cabbage,Bravo,10,50,60
+2358,2,4.13.2022,April,2022,21189,Cauliflower,Bermo,20,85,105
+2359,2,4.13.2022,April,2022,21189,Collard,TopBunch,60,85,145
+2360,2,4.13.2022,April,2022,21189,Kale,Darkibor,35,50,85
+2361,2,4.13.2022,April,2022,21123,Broccoli,Emrald crown,5,25,30
+2362,2,4.13.2022,April,2022,21123,Cabbage,Bravo,20,50,70
+2363,2,4.13.2022,April,2022,21123,Cauliflower,Bermo,10,25,35
+2364,2,4.13.2022,April,2022,21123,Collard,TopBunch,20,65,85
+2365,2,4.13.2022,April,2022,21123,Kale,Darkibor,50,85,135
+2366,2,4.19.2022,April,2022,21163,Broccoli,Emrald crown,30,95,125
+2367,2,4.19.2022,April,2022,21163,Cabbage,Bravo,7,80,87
+2368,2,4.19.2022,April,2022,21163,Cauliflower,Bermo,3,15,18
+2369,2,4.19.2022,April,2022,21163,Collard,TopBunch,1,30,31
+2370,2,4.19.2022,April,2022,21163,Kale,Darkibor,2,25,27
+2371,2,4.19.2022,April,2022,21194,Broccoli,Emrald crown,1,60,61
+2372,2,4.19.2022,April,2022,21194,Cabbage,Bravo,2,60,62
+2373,2,4.19.2022,April,2022,21194,Cauliflower,Bermo,2,15,17
+2374,2,4.19.2022,April,2022,21194,Collard,TopBunch,10,50,60
+2375,2,4.19.2022,April,2022,21194,Kale,Darkibor,1,7,8
+2376,2,4.19.2022,April,2022,21078,Broccoli,Emrald crown,40,100,140
+2377,2,4.19.2022,April,2022,21078,Cabbage,Bravo,8,10,18
+2378,2,4.19.2022,April,2022,21078,Cauliflower,Bermo,3,50,53
+2379,2,4.19.2022,April,2022,21078,Collard,TopBunch,3,70,73
+2380,2,4.19.2022,April,2022,21078,Kale,Darkibor,5,40,45
+2381,2,4.19.2022,April,2022,21107,Broccoli,Emrald crown,3,10,13
+2382,2,4.19.2022,April,2022,21107,Cabbage,Bravo,6,70,76
+2383,2,4.19.2022,April,2022,21107,Cauliflower,Bermo,6,25,31
+2384,2,4.19.2022,April,2022,21107,Collard,TopBunch,2,40,42
+2385,2,4.19.2022,April,2022,21107,Kale,Darkibor,3,20,23
+2386,2,4.19.2022,April,2022,21136,Broccoli,Emrald crown,4,40,44
+2387,2,4.19.2022,April,2022,21136,Cabbage,Bravo,5,30,35
+2388,2,4.19.2022,April,2022,21136,Cauliflower,Bermo,0,10,10
+2389,2,4.19.2022,April,2022,21136,Collard,TopBunch,1,5,6
+2390,2,4.19.2022,April,2022,21136,Kale,Darkibor,1,5,6
+2391,2,4.19.2022,April,2022,18062S,Broccoli,Emrald crown,4,80,84
+2392,2,4.19.2022,April,2022,18062S,Cabbage,Bravo,5,50,55
+2393,2,4.19.2022,April,2022,18062S,Cauliflower,Bermo,2,6,8
+2394,2,4.19.2022,April,2022,18062S,Collard,TopBunch,3,35,38
+2395,2,4.19.2022,April,2022,18062S,Kale,Darkibor,5,30,35
+2396,2,4.19.2022,April,2022,21082,Broccoli,Emrald crown,3,80,83
+2397,2,4.19.2022,April,2022,21082,Cabbage,Bravo,10,50,60
+2398,2,4.19.2022,April,2022,21082,Cauliflower,Bermo,2,25,27
+2399,2,4.19.2022,April,2022,21082,Collard,TopBunch,5,90,95
+2400,2,4.19.2022,April,2022,21082,Kale,Darkibor,4,70,74
+2401,2,4.19.2022,April,2022,21113,Broccoli,Emrald crown,7,70,77
+2402,2,4.19.2022,April,2022,21113,Cabbage,Bravo,5,35,40
+2403,2,4.19.2022,April,2022,21113,Cauliflower,Bermo,3,15,18
+2404,2,4.19.2022,April,2022,21113,Collard,TopBunch,2,65,67
+2405,2,4.19.2022,April,2022,21113,Kale,Darkibor,2,10,12
+2406,2,4.19.2022,April,2022,21139,Broccoli,Emrald crown,30,90,120
+2407,2,4.19.2022,April,2022,21139,Cabbage,Bravo,3,35,38
+2408,2,4.19.2022,April,2022,21139,Cauliflower,Bermo,5,30,35
+2409,2,4.19.2022,April,2022,21139,Collard,TopBunch,30,45,75
+2410,2,4.19.2022,April,2022,21139,Kale,Darkibor,10,70,80
+2411,2,4.19.2022,April,2022,21156,Broccoli,Emrald crown,8,55,63
+2412,2,4.19.2022,April,2022,21156,Cabbage,Bravo,10,70,80
+2413,2,4.19.2022,April,2022,21156,Cauliflower,Bermo,2,4,6
+2414,2,4.19.2022,April,2022,21156,Collard,TopBunch,15,70,85
+2415,2,4.19.2022,April,2022,21156,Kale,Darkibor,2,20,22
+2416,2,4.19.2022,April,2022,21159,Broccoli,Emrald crown,4,80,84
+2417,2,4.19.2022,April,2022,21159,Cabbage,Bravo,8,60,68
+2418,2,4.19.2022,April,2022,21159,Cauliflower,Bermo,30,60,90
+2419,2,4.19.2022,April,2022,21159,Collard,TopBunch,3,50,53
+2420,2,4.19.2022,April,2022,21159,Kale,Darkibor,1,15,16
+2421,2,4.19.2022,April,2022,21178,Broccoli,Emrald crown,3,80,83
+2422,2,4.19.2022,April,2022,21178,Cabbage,Bravo,20,25,45
+2423,2,4.19.2022,April,2022,21178,Cauliflower,Bermo,15,20,35
+2424,2,4.19.2022,April,2022,21178,Collard,TopBunch,8,70,78
+2425,2,4.19.2022,April,2022,21178,Kale,Darkibor,8,8,16
+2426,2,5.16.2022,May,2022,21162,Broccoli,Emrald crown,20,40,60
+2427,2,5.16.2022,May,2022,21162,Cabbage,Bravo,25,35,60
+2428,2,5.16.2022,May,2022,21162,Cauliflower,Bermo,15,30,45
+2429,2,5.16.2022,May,2022,21162,Collard,TopBunch,25,35,60
+2430,2,5.16.2022,May,2022,21162,Kale,Darkibor,15,20,35
+2431,2,5.16.2022,May,2022,21200,Broccoli,Emrald crown,40,65,105
+2432,2,5.16.2022,May,2022,21200,Cabbage,Bravo,30,50,80
+2433,2,5.16.2022,May,2022,21200,Cauliflower,Bermo,50,70,120
+2434,2,5.16.2022,May,2022,21200,Collard,TopBunch,25,50,75
+2435,2,5.16.2022,May,2022,21200,Kale,Darkibor,5,15,20
+2436,2,5.16.2022,May,2022,21175,Broccoli,Emrald crown,30,50,80
+2437,2,5.16.2022,May,2022,21175,Cabbage,Bravo,25,35,60
+2438,2,5.16.2022,May,2022,21175,Cauliflower,Bermo,1,5,6
+2439,2,5.16.2022,May,2022,21175,Collard,TopBunch,30,60,90
+2440,2,5.16.2022,May,2022,21175,Kale,Darkibor,5,5,10
+2441,2,5.16.2022,May,2022,21122,Broccoli,Emrald crown,20,30,50
+2442,2,5.16.2022,May,2022,21122,Cabbage,Bravo,25,45,70
+2443,2,5.16.2022,May,2022,21122,Cauliflower,Bermo,25,30,55
+2444,2,5.16.2022,May,2022,21122,Collard,TopBunch,50,70,120
+2445,2,5.16.2022,May,2022,21122,Kale,Darkibor,20,25,45
+2446,2,5.16.2022,May,2022,21088,Broccoli,Emrald crown,15,30,45
+2447,2,5.16.2022,May,2022,21088,Cabbage,Bravo,17,30,47
+2448,2,5.16.2022,May,2022,21088,Cauliflower,Bermo,5,20,25
+2449,2,5.16.2022,May,2022,21088,Collard,TopBunch,7,25,32
+2450,2,5.16.2022,May,2022,21088,Kale,Darkibor,5,5,10
+2451,2,5.16.2022,May,2022,21110,Broccoli,Emrald crown,30,35,65
+2452,2,5.16.2022,May,2022,21110,Cabbage,Bravo,7,35,42
+2453,2,5.16.2022,May,2022,21110,Cauliflower,Bermo,40,55,95
+2454,2,5.16.2022,May,2022,21110,Collard,TopBunch,25,30,55
+2455,2,5.16.2022,May,2022,21110,Kale,Darkibor,30,30,60
+2456,2,5.16.2022,May,2022,21190,Broccoli,Emrald crown,55,75,130
+2457,2,5.16.2022,May,2022,21190,Cabbage,Bravo,40,60,100
+2458,2,5.16.2022,May,2022,21190,Cauliflower,Bermo,10,15,25
+2459,2,5.16.2022,May,2022,21190,Collard,TopBunch,15,30,45
+2460,2,5.16.2022,May,2022,21190,Kale,Darkibor,45,50,95
+2461,2,5.16.2022,May,2022,21117,Broccoli,Emrald crown,10,35,45
+2462,2,5.16.2022,May,2022,21117,Cabbage,Bravo,25,30,55
+2463,2,5.16.2022,May,2022,21117,Cauliflower,Bermo,7,20,27
+2464,2,5.16.2022,May,2022,21117,Collard,TopBunch,6,20,26
+2465,2,5.16.2022,May,2022,21117,Kale,Darkibor,10,20,30
+2466,2,5.16.2022,May,2022,21131,Broccoli,Emrald crown,40,65,105
+2467,2,5.16.2022,May,2022,21131,Cabbage,Bravo,40,65,105
+2468,2,5.16.2022,May,2022,21131,Cauliflower,Bermo,70,90,160
+2469,2,5.16.2022,May,2022,21131,Collard,TopBunch,35,50,85
+2470,2,5.16.2022,May,2022,21131,Kale,Darkibor,30,40,70
+2471,2,5.16.2022,May,2022,21081,Broccoli,Emrald crown,1,10,11
+2472,2,5.16.2022,May,2022,21081,Cabbage,Bravo,15,20,35
+2473,2,5.16.2022,May,2022,21081,Cauliflower,Bermo,25,15,40
+2474,2,5.16.2022,May,2022,21081,Collard,TopBunch,20,30,50
+2475,2,5.16.2022,May,2022,21081,Kale,Darkibor,6,7,13
+2476,2,5.16.2022,May,2022,21230,Broccoli,Emrald crown,1,5,6
+2477,2,5.16.2022,May,2022,21230,Cabbage,Bravo,15,15,30
+2478,2,5.16.2022,May,2022,21230,Cauliflower,Bermo,8,10,18
+2479,2,5.16.2022,May,2022,21230,Collard,TopBunch,5,7,12
+2480,2,5.16.2022,May,2022,21230,Kale,Darkibor,4,5,9
+2481,2,5.16.2022,May,2022,21132,Broccoli,Emrald crown,1,5,6
+2482,2,5.16.2022,May,2022,21132,Cabbage,Bravo,2,6,8
+2483,2,5.16.2022,May,2022,21132,Cauliflower,Bermo,3,40,43
+2484,2,5.16.2022,May,2022,21132,Collard,TopBunch,1,10,11
+2485,2,5.16.2022,May,2022,21132,Kale,Darkibor,5,7,12
+2486,2,5.17.2022,May,2022,21114,Broccoli,Emrald crown,70,85,155
+2487,2,5.17.2022,May,2022,21114,Cabbage,Bravo,7,30,37
+2488,2,5.17.2022,May,2022,21114,Cauliflower,Bermo,40,60,100
+2489,2,5.17.2022,May,2022,21114,Collard,TopBunch,5,10,15
+2490,2,5.17.2022,May,2022,21114,Kale,Darkibor,3,5,8
+2491,2,5.17.2022,May,2022,21111,Broccoli,Emrald crown,1,30,31
+2492,2,5.17.2022,May,2022,21111,Cabbage,Bravo,5,10,15
+2493,2,5.17.2022,May,2022,21111,Cauliflower,Bermo,7,15,22
+2494,2,5.17.2022,May,2022,21111,Collard,TopBunch,5,15,20
+2495,2,5.17.2022,May,2022,21111,Kale,Darkibor,7,15,22
+2496,2,5.17.2022,May,2022,21084,Broccoli,Emrald crown,50,80,130
+2497,2,5.17.2022,May,2022,21084,Cabbage,Bravo,6,10,16
+2498,2,5.17.2022,May,2022,21084,Cauliflower,Bermo,5,30,35
+2499,2,5.17.2022,May,2022,21084,Collard,TopBunch,5,15,20
+2500,2,5.17.2022,May,2022,21084,Kale,Darkibor,1,10,11
+2501,2,5.17.2022,May,2022,21115,Broccoli,Emrald crown,1,15,16
+2502,2,5.17.2022,May,2022,21115,Cabbage,Bravo,1,20,21
+2503,2,5.17.2022,May,2022,21115,Cauliflower,Bermo,1,5,6
+2504,2,5.17.2022,May,2022,21115,Collard,TopBunch,6,10,16
+2505,2,5.17.2022,May,2022,21115,Kale,Darkibor,0.1,5,5.1
+2506,2,5.17.2022,May,2022,21188,Broccoli,Emrald crown,0,5,5
+2507,2,5.17.2022,May,2022,21188,Cabbage,Bravo,0,5,5
+2508,2,5.17.2022,May,2022,21188,Cauliflower,Bermo,4,10,14
+2509,2,5.17.2022,May,2022,21188,Collard,TopBunch,1,10,11
+2510,2,5.17.2022,May,2022,21188,Kale,Darkibor,0,5,5
+2511,2,5.17.2022,May,2022,21145,Broccoli,Emrald crown,15,20,35
+2512,2,5.17.2022,May,2022,21145,Cabbage,Bravo,10,20,30
+2513,2,5.17.2022,May,2022,21145,Cauliflower,Bermo,3,10,13
+2514,2,5.17.2022,May,2022,21145,Collard,TopBunch,1,3,4
+2515,2,5.17.2022,May,2022,21145,Kale,Darkibor,20,35,55
+2516,2,5.17.2022,May,2022,21127,Broccoli,Emrald crown,0,5,5
+2517,2,5.17.2022,May,2022,21127,Cabbage,Bravo,0.1,5,5.1
+2518,2,5.17.2022,May,2022,21127,Cauliflower,Bermo,7,15,22
+2519,2,5.17.2022,May,2022,21127,Collard,TopBunch,15,30,45
+2520,2,5.17.2022,May,2022,21127,Kale,Darkibor,10,35,45
+2521,2,5.17.2022,May,2022,21154,Broccoli,Emrald crown,4,15,19
+2522,2,5.17.2022,May,2022,21154,Cabbage,Bravo,70,90,160
+2523,2,5.17.2022,May,2022,21154,Cauliflower,Bermo,40,80,120
+2524,2,5.17.2022,May,2022,21154,Collard,TopBunch,25,65,90
+2525,2,5.17.2022,May,2022,21154,Kale,Darkibor,35,60,95
+2526,2,5.17.2022,May,2022,21128,Broccoli,Emrald crown,10,30,40
+2527,2,5.17.2022,May,2022,21128,Cabbage,Bravo,45,60,105
+2528,2,5.17.2022,May,2022,21128,Cauliflower,Bermo,30,40,70
+2529,2,5.17.2022,May,2022,21128,Collard,TopBunch,35,60,95
+2530,2,5.17.2022,May,2022,21128,Kale,Darkibor,30,60,90
+2531,2,5.17.2022,May,2022,21152,Broccoli,Emrald crown,60,80,140
+2532,2,5.17.2022,May,2022,21152,Cabbage,Bravo,5,5,10
+2533,2,5.17.2022,May,2022,21152,Cauliflower,Bermo,10,20,30
+2534,2,5.17.2022,May,2022,21152,Collard,TopBunch,20,35,55
+2535,2,5.17.2022,May,2022,21152,Kale,Darkibor,5,10,15
+2536,2,5.17.2022,May,2022,21239,Broccoli,Emrald crown,45,65,110
+2537,2,5.17.2022,May,2022,21239,Cabbage,Bravo,7,30,37
+2538,2,5.17.2022,May,2022,21239,Cauliflower,Bermo,5,30,35
+2539,2,5.17.2022,May,2022,21239,Collard,TopBunch,7,30,37
+2540,2,5.17.2022,May,2022,21239,Kale,Darkibor,4,20,24
+2541,2,5.17.2022,May,2022,21160,Broccoli,Emrald crown,35,55,90
+2542,2,5.17.2022,May,2022,21160,Cabbage,Bravo,25,60,85
+2543,2,5.17.2022,May,2022,21160,Cauliflower,Bermo,50,80,130
+2544,2,5.17.2022,May,2022,21160,Collard,TopBunch,35,60,95
+2545,2,5.17.2022,May,2022,21160,Kale,Darkibor,35,40,75
+2546,2,5.26.2022,May,2022,21258,Broccoli,Emrald crown,0,0,0
+2547,2,5.26.2022,May,2022,21258,Cabbage,Bravo,0,0,0
+2548,2,5.26.2022,May,2022,21258,Cauliflower,Bermo,0,0,0
+2549,2,5.26.2022,May,2022,21258,Collard,TopBunch,0,0,0
+2550,2,5.26.2022,May,2022,21258,Kale,Darkibor,0,0,0
+2551,2,5.26.2022,May,2022,21193,Broccoli,Emrald crown,0,5,5
+2552,2,5.26.2022,May,2022,21193,Cabbage,Bravo,2,15,17
+2553,2,5.26.2022,May,2022,21193,Cauliflower,Bermo,3,5,8
+2554,2,5.26.2022,May,2022,21193,Collard,TopBunch,1,30,31
+2555,2,5.26.2022,May,2022,21193,Kale,Darkibor,10,40,50
+2556,2,5.26.2022,May,2022,21087,Broccoli,Emrald crown,10,60,70
+2557,2,5.26.2022,May,2022,21087,Cabbage,Bravo,5,20,25
+2558,2,5.26.2022,May,2022,21087,Cauliflower,Bermo,2,15,17
+2559,2,5.26.2022,May,2022,21087,Collard,TopBunch,2,30,32
+2560,2,5.26.2022,May,2022,21087,Kale,Darkibor,0.1,3,3.1
+2561,2,5.26.2022,May,2022,21116,Broccoli,Emrald crown,1,30,31
+2562,2,5.26.2022,May,2022,21116,Cabbage,Bravo,0,3,3
+2563,2,5.26.2022,May,2022,21116,Cauliflower,Bermo,1,3,4
+2564,2,5.26.2022,May,2022,21116,Collard,TopBunch,0,8,8
+2565,2,5.26.2022,May,2022,21116,Kale,Darkibor,5,35,40
+2566,2,5.26.2022,May,2022,21234,Broccoli,Emrald crown,5,25,30
+2567,2,5.26.2022,May,2022,21234,Cabbage,Bravo,10,30,40
+2568,2,5.26.2022,May,2022,21234,Cauliflower,Bermo,2,7,9
+2569,2,5.26.2022,May,2022,21234,Collard,TopBunch,5,35,40
+2570,2,5.26.2022,May,2022,21234,Kale,Darkibor,5,25,30
+2571,2,5.26.2022,May,2022,21077,Broccoli,Emrald crown,15,40,55
+2572,2,5.26.2022,May,2022,21077,Cabbage,Bravo,2,15,17
+2573,2,5.26.2022,May,2022,21077,Cauliflower,Bermo,3,10,13
+2574,2,5.26.2022,May,2022,21077,Collard,TopBunch,4,15,19
+2575,2,5.26.2022,May,2022,21077,Kale,Darkibor,10,35,45
+2576,2,5.26.2022,May,2022,21176,Broccoli,Emrald crown,5,15,20
+2577,2,5.26.2022,May,2022,21176,Cabbage,Bravo,5,15,20
+2578,2,5.26.2022,May,2022,21176,Cauliflower,Bermo,2,40,42
+2579,2,5.26.2022,May,2022,21176,Collard,TopBunch,3,25,28
+2580,2,5.26.2022,May,2022,21176,Kale,Darkibor,2,20,22
+2581,2,5.26.2022,May,2022,21133,Broccoli,Emrald crown,15,60,75
+2582,2,5.26.2022,May,2022,21133,Cabbage,Bravo,50,75,125
+2583,2,5.26.2022,May,2022,21133,Cauliflower,Bermo,5,15,20
+2584,2,5.26.2022,May,2022,21133,Collard,TopBunch,65,90,155
+2585,2,5.26.2022,May,2022,21133,Kale,Darkibor,25,30,55
+2586,2,5.26.2022,May,2022,21179,Broccoli,Emrald crown,50,75,125
+2587,2,5.26.2022,May,2022,21179,Cabbage,Bravo,45,80,125
+2588,2,5.26.2022,May,2022,21179,Cauliflower,Bermo,55,90,145
+2589,2,5.26.2022,May,2022,21179,Collard,TopBunch,25,50,75
+2590,2,5.26.2022,May,2022,21179,Kale,Darkibor,40,60,100
+2591,2,5.26.2022,May,2022,21177,Broccoli,Emrald crown,10,15,25
+2592,2,5.26.2022,May,2022,21177,Cabbage,Bravo,25,35,60
+2593,2,5.26.2022,May,2022,21177,Cauliflower,Bermo,15,20,35
+2594,2,5.26.2022,May,2022,21177,Collard,TopBunch,10,50,60
+2595,2,5.26.2022,May,2022,21177,Kale,Darkibor,15,30,45
+2596,2,5.26.2022,May,2022,21164,Broccoli,Emrald crown,10,60,70
+2597,2,5.26.2022,May,2022,21164,Cabbage,Bravo,30,40,70
+2598,2,5.26.2022,May,2022,21164,Cauliflower,Bermo,35,60,95
+2599,2,5.26.2022,May,2022,21164,Collard,TopBunch,35,70,105
+2600,2,5.26.2022,May,2022,21164,Kale,Darkibor,40,85,125
+2601,2,5.26.2022,May,2022,21150,Broccoli,Emrald crown,10,20,30
+2602,2,5.26.2022,May,2022,21150,Cabbage,Bravo,60,65,125
+2603,2,5.26.2022,May,2022,21150,Cauliflower,Bermo,30,35,65
+2604,2,5.26.2022,May,2022,21150,Collard,TopBunch,25,60,85
+2605,2,5.26.2022,May,2022,21150,Kale,Darkibor,30,65,95
+2606,2,5.29.2022,May,2022,21206,Broccoli,Emrald crown,0,1,1
+2607,2,5.29.2022,May,2022,21206,Cabbage,Bravo,1,8,9
+2608,2,5.29.2022,May,2022,21206,Cauliflower,Bermo,0.1,20,20.1
+2609,2,5.29.2022,May,2022,21206,Collard,TopBunch,5,30,35
+2610,2,5.29.2022,May,2022,21206,Kale,Darkibor,15,45,60
+2611,2,5.29.2022,May,2022,21119,Broccoli,Emrald crown,10,30,40
+2612,2,5.29.2022,May,2022,21119,Cabbage,Bravo,10,35,45
+2613,2,5.29.2022,May,2022,21119,Cauliflower,Bermo,7,30,37
+2614,2,5.29.2022,May,2022,21119,Collard,TopBunch,12,50,62
+2615,2,5.29.2022,May,2022,21119,Kale,Darkibor,17,40,57
+2616,2,5.29.2022,May,2022,21144,Broccoli,Emrald crown,8,40,48
+2617,2,5.29.2022,May,2022,21144,Cabbage,Bravo,4,15,19
+2618,2,5.29.2022,May,2022,21144,Cauliflower,Bermo,20,35,55
+2619,2,5.29.2022,May,2022,21144,Collard,TopBunch,12,25,37
+2620,2,5.29.2022,May,2022,21144,Kale,Darkibor,3,17,20
+2621,2,5.29.2022,May,2022,21079,Broccoli,Emrald crown,3,7,10
+2622,2,5.29.2022,May,2022,21079,Cabbage,Bravo,5,10,15
+2623,2,5.29.2022,May,2022,21079,Cauliflower,Bermo,30,25,55
+2624,2,5.29.2022,May,2022,21079,Collard,TopBunch,40,56,96
+2625,2,5.29.2022,May,2022,21079,Kale,Darkibor,25,60,85
+3001,3,2.25.2022,February,2022,21085,Broccoli,Emrald crown,3,40,43
+3002,3,2.25.2022,February,2022,21085,Cabbage,Bravo,10,80,90
+3003,3,2.25.2022,February,2022,21085,Cauliflower,Bermo,0.1,5,5.1
+3004,3,2.25.2022,February,2022,21085,Collard,TopBunch,7,70,77
+3005,3,2.25.2022,February,2022,21085,Kale,Darkibor,3,35,38
+3006,3,2.25.2022,February,2022,21086,Broccoli,Emrald crown,1,40,41
+3007,3,2.25.2022,February,2022,21086,Cabbage,Bravo,4,20,24
+3008,3,2.25.2022,February,2022,21086,Cauliflower,Bermo,1,4,5
+3009,3,2.25.2022,February,2022,21086,Collard,TopBunch,0,9,9
+3010,3,2.25.2022,February,2022,21086,Kale,Darkibor,5,40,45
+3011,3,2.25.2022,February,2022,21089,Broccoli,Emrald crown,2,70,72
+3012,3,2.25.2022,February,2022,21089,Cabbage,Bravo,3,15,18
+3013,3,2.25.2022,February,2022,21089,Cauliflower,Bermo,1,2,3
+3014,3,2.25.2022,February,2022,21089,Collard,TopBunch,20,70,90
+3015,3,2.25.2022,February,2022,21089,Kale,Darkibor,0,3,3
+3016,3,2.25.2022,February,2022,21091,Broccoli,Emrald crown,5,50,55
+3017,3,2.25.2022,February,2022,21091,Cabbage,Bravo,5,5,10
+3018,3,2.25.2022,February,2022,21091,Cauliflower,Bermo,1,1,2
+3019,3,2.25.2022,February,2022,21091,Collard,TopBunch,3,7,10
+3020,3,2.25.2022,February,2022,21091,Kale,Darkibor,10,20,30
+3021,3,2.25.2022,February,2022,21120,Broccoli,Emrald crown,0,1,1
+3022,3,2.25.2022,February,2022,21120,Cabbage,Bravo,10,20,30
+3023,3,2.25.2022,February,2022,21120,Cauliflower,Bermo,2,5,7
+3024,3,2.25.2022,February,2022,21120,Collard,TopBunch,5,20,25
+3025,3,2.25.2022,February,2022,21120,Kale,Darkibor,4,10,14
+3026,3,2.25.2022,February,2022,21135,Broccoli,Emrald crown,4,7,11
+3027,3,2.25.2022,February,2022,21135,Cabbage,Bravo,2,3,5
+3028,3,2.25.2022,February,2022,21135,Cauliflower,Bermo,1,1,2
+3029,3,2.25.2022,February,2022,21135,Collard,TopBunch,2,20,22
+3030,3,2.25.2022,February,2022,21135,Kale,Darkibor,10,30,40
+3031,3,2.25.2022,February,2022,21180,Broccoli,Emrald crown,0.1,1,1.1
+3032,3,2.25.2022,February,2022,21180,Cabbage,Bravo,0.1,1,1.1
+3033,3,2.25.2022,February,2022,21180,Cauliflower,Bermo,0.1,2,2.1
+3034,3,2.25.2022,February,2022,21180,Collard,TopBunch,0.1,30,30.1
+3035,3,2.25.2022,February,2022,21180,Kale,Darkibor,0.5,3,3.5
+3036,3,2.25.2022,February,2022,21197,Broccoli,Emrald crown,5,40,45
+3037,3,2.25.2022,February,2022,21197,Cabbage,Bravo,2,2,4
+3038,3,2.25.2022,February,2022,21197,Cauliflower,Bermo,7,7,14
+3039,3,2.25.2022,February,2022,21197,Collard,TopBunch,3,5,8
+3040,3,2.25.2022,February,2022,21197,Kale,Darkibor,10,20,30
+3041,3,2.25.2022,February,2022,21124A,Broccoli,Emrald crown,7,30,37
+3042,3,2.25.2022,February,2022,21124A,Cabbage,Bravo,4,10,14
+3043,3,2.25.2022,February,2022,21124A,Cauliflower,Bermo,2,5,7
+3044,3,2.25.2022,February,2022,21124A,Collard,TopBunch,4,25,29
+3045,3,2.25.2022,February,2022,21124A,Kale,Darkibor,5,20,25
+3046,3,2.25.2022,February,2022,21235,Broccoli,Emrald crown,5,5,10
+3047,3,2.25.2022,February,2022,21235,Cabbage,Bravo,0,4,4
+3048,3,2.25.2022,February,2022,21235,Cauliflower,Bermo,5,40,45
+3049,3,2.25.2022,February,2022,21235,Collard,TopBunch,30,70,100
+3050,3,2.25.2022,February,2022,21235,Kale,Darkibor,15,40,55
+3051,3,2.25.2022,February,2022,18062,Broccoli,Emrald crown,5,40,45
+3052,3,2.25.2022,February,2022,18062,Cabbage,Bravo,7,30,37
+3053,3,2.25.2022,February,2022,18062,Cauliflower,Bermo,4,20,24
+3054,3,2.25.2022,February,2022,18062,Collard,TopBunch,2,15,17
+3055,3,2.25.2022,February,2022,18062,Kale,Darkibor,4,15,19
+3056,3,2.25.2022,February,2022,21259,Broccoli,Emrald crown,0,0,0
+3057,3,2.25.2022,February,2022,21259,Cabbage,Bravo,0,0,0
+3058,3,2.25.2022,February,2022,21259,Cauliflower,Bermo,0,0,0
+3059,3,2.25.2022,February,2022,21259,Collard,TopBunch,0,0,0
+3060,3,2.25.2022,February,2022,21259,Kale,Darkibor,0,0,0
+3061,3,2.25.2022,February,2022,no spray,Broccoli,Emrald crown,0,0,0
+3062,3,2.25.2022,February,2022,no spray,Cabbage,Bravo,0,0,0
+3063,3,2.25.2022,February,2022,no spray,Cauliflower,Bermo,0,0,0
+3064,3,2.25.2022,February,2022,no spray,Collard,TopBunch,0,0,0
+3065,3,2.25.2022,February,2022,no spray,Kale,Darkibor,0,0,0
+3066,3,3.23.2022,March,2022,21233,Broccoli,Emrald crown,0,0.1,0.1
+3067,3,3.23.2022,March,2022,21233,Cabbage,Bravo,1,1,2
+3068,3,3.23.2022,March,2022,21233,Cauliflower,Bermo,0,30,30
+3069,3,3.23.2022,March,2022,21233,Collard,TopBunch,1,2,3
+3070,3,3.23.2022,March,2022,21233,Kale,Darkibor,3,3,6
+3071,3,3.23.2022,March,2022,21227,Broccoli,Emrald crown,5,10,15
+3072,3,3.23.2022,March,2022,21227,Cabbage,Bravo,1,5,6
+3073,3,3.23.2022,March,2022,21227,Cauliflower,Bermo,2,10,12
+3074,3,3.23.2022,March,2022,21227,Collard,TopBunch,5,60,65
+3075,3,3.23.2022,March,2022,21227,Kale,Darkibor,1,5,6
+3076,3,3.23.2022,March,2022,21198,Broccoli,Emrald crown,3,25,28
+3077,3,3.23.2022,March,2022,21198,Cabbage,Bravo,5,26,31
+3078,3,3.23.2022,March,2022,21198,Cauliflower,Bermo,1,1,2
+3079,3,3.23.2022,March,2022,21198,Collard,TopBunch,10,30,40
+3080,3,3.23.2022,March,2022,21198,Kale,Darkibor,4,30,34
+3081,3,3.23.2022,March,2022,21130,Broccoli,Emrald crown,3,40,43
+3082,3,3.23.2022,March,2022,21130,Cabbage,Bravo,3,3,6
+3083,3,3.23.2022,March,2022,21130,Cauliflower,Bermo,2,4,6
+3084,3,3.23.2022,March,2022,21130,Collard,TopBunch,5,40,45
+3085,3,3.23.2022,March,2022,21130,Kale,Darkibor,5,30,35
+3086,3,3.23.2022,March,2022,21155,Broccoli,Emrald crown,5,25,30
+3087,3,3.23.2022,March,2022,21155,Cabbage,Bravo,5,25,30
+3088,3,3.23.2022,March,2022,21155,Cauliflower,Bermo,3,5,8
+3089,3,3.23.2022,March,2022,21155,Collard,TopBunch,5,35,40
+3090,3,3.23.2022,March,2022,21155,Kale,Darkibor,8,45,53
+3091,3,3.23.2022,March,2022,21108,Broccoli,Emrald crown,1,4,5
+3092,3,3.23.2022,March,2022,21108,Cabbage,Bravo,1,7,8
+3093,3,3.23.2022,March,2022,21108,Cauliflower,Bermo,3,4,7
+3094,3,3.23.2022,March,2022,21108,Collard,TopBunch,1,5,6
+3095,3,3.23.2022,March,2022,21108,Kale,Darkibor,4,5,9
+3096,3,3.23.2022,March,2022,21232,Broccoli,Emrald crown,1,8,9
+3097,3,3.23.2022,March,2022,21232,Cabbage,Bravo,2,2,4
+3098,3,3.23.2022,March,2022,21232,Cauliflower,Bermo,5,10,15
+3099,3,3.23.2022,March,2022,21232,Collard,TopBunch,10,50,60
+3100,3,3.23.2022,March,2022,21232,Kale,Darkibor,1,5,6
+3101,3,3.23.2022,March,2022,21109,Broccoli,Emrald crown,3,3,6
+3102,3,3.23.2022,March,2022,21109,Cabbage,Bravo,3,3,6
+3103,3,3.23.2022,March,2022,21109,Cauliflower,Bermo,0.1,5,5.1
+3104,3,3.23.2022,March,2022,21109,Collard,TopBunch,5,35,40
+3105,3,3.23.2022,March,2022,21109,Kale,Darkibor,2,7,9
+3106,3,3.23.2022,March,2022,21092,Broccoli,Emrald crown,4,40,44
+3107,3,3.23.2022,March,2022,21092,Cabbage,Bravo,8,20,28
+3108,3,3.23.2022,March,2022,21092,Cauliflower,Bermo,2,2,4
+3109,3,3.23.2022,March,2022,21092,Collard,TopBunch,1,1,2
+3110,3,3.23.2022,March,2022,21092,Kale,Darkibor,3,5,8
+3111,3,3.23.2022,March,2022,21075,Broccoli,Emrald crown,3,25,28
+3112,3,3.23.2022,March,2022,21075,Cabbage,Bravo,4,6,10
+3113,3,3.23.2022,March,2022,21075,Cauliflower,Bermo,3,40,43
+3114,3,3.23.2022,March,2022,21075,Collard,TopBunch,5,25,30
+3115,3,3.23.2022,March,2022,21075,Kale,Darkibor,5,15,20
+3116,3,3.23.2022,March,2022,21141,Broccoli,Emrald crown,10,60,70
+3117,3,3.23.2022,March,2022,21141,Cabbage,Bravo,5,25,30
+3118,3,3.23.2022,March,2022,21141,Cauliflower,Bermo,8,70,78
+3119,3,3.23.2022,March,2022,21141,Collard,TopBunch,2,2,4
+3120,3,3.23.2022,March,2022,21141,Kale,Darkibor,4,20,24
+3121,3,3.23.2022,March,2022,21157,Broccoli,Emrald crown,2,20,22
+3122,3,3.23.2022,March,2022,21157,Cabbage,Bravo,3,15,18
+3123,3,3.23.2022,March,2022,21157,Cauliflower,Bermo,2,15,17
+3124,3,3.23.2022,March,2022,21157,Collard,TopBunch,10,40,50
+3125,3,3.23.2022,March,2022,21157,Kale,Darkibor,5,20,25
+3126,3,3.25.2022,March,2022,21236,Broccoli,Emrald crown,0,2,2
+3127,3,3.25.2022,March,2022,21236,Cabbage,Bravo,3,7,10
+3128,3,3.25.2022,March,2022,21236,Cauliflower,Bermo,1,3,4
+3129,3,3.25.2022,March,2022,21236,Collard,TopBunch,4,18,22
+3130,3,3.25.2022,March,2022,21236,Kale,Darkibor,2,5,7
+3131,3,3.25.2022,March,2022,21165,Broccoli,Emrald crown,3,5,8
+3132,3,3.25.2022,March,2022,21165,Cabbage,Bravo,1,8,9
+3133,3,3.25.2022,March,2022,21165,Cauliflower,Bermo,0.1,3,3.1
+3134,3,3.25.2022,March,2022,21165,Collard,TopBunch,2,13,15
+3135,3,3.25.2022,March,2022,21165,Kale,Darkibor,0.1,10,10.1
+3136,3,3.25.2022,March,2022,21192,Broccoli,Emrald crown,7,20,27
+3137,3,3.25.2022,March,2022,21192,Cabbage,Bravo,3,8,11
+3138,3,3.25.2022,March,2022,21192,Cauliflower,Bermo,3,5,8
+3139,3,3.25.2022,March,2022,21192,Collard,TopBunch,5,28,33
+3140,3,3.25.2022,March,2022,21192,Kale,Darkibor,2,9,11
+3141,3,3.25.2022,March,2022,21125,Broccoli,Emrald crown,3,10,13
+3142,3,3.25.2022,March,2022,21125,Cabbage,Bravo,5,30,35
+3143,3,3.25.2022,March,2022,21125,Cauliflower,Bermo,2,3,5
+3144,3,3.25.2022,March,2022,21125,Collard,TopBunch,3,15,18
+3145,3,3.25.2022,March,2022,21125,Kale,Darkibor,5,18,23
+3146,3,3.25.2022,March,2022,21076,Broccoli,Emrald crown,2,6,8
+3147,3,3.25.2022,March,2022,21076,Cabbage,Bravo,2,5,7
+3148,3,3.25.2022,March,2022,21076,Cauliflower,Bermo,3,9,12
+3149,3,3.25.2022,March,2022,21076,Collard,TopBunch,7,25,32
+3150,3,3.25.2022,March,2022,21076,Kale,Darkibor,5,30,35
+3151,3,3.25.2022,March,2022,21143,Broccoli,Emrald crown,0.1,5,5.1
+3152,3,3.25.2022,March,2022,21143,Cabbage,Bravo,1,3,4
+3153,3,3.25.2022,March,2022,21143,Cauliflower,Bermo,0.1,0.1,0.2
+3154,3,3.25.2022,March,2022,21143,Collard,TopBunch,5,30,35
+3155,3,3.25.2022,March,2022,21143,Kale,Darkibor,2,8,10
+3156,3,3.25.2022,March,2022,21195,Broccoli,Emrald crown,40,60,100
+3157,3,3.25.2022,March,2022,21195,Cabbage,Bravo,3,45,48
+3158,3,3.25.2022,March,2022,21195,Cauliflower,Bermo,8,40,48
+3159,3,3.25.2022,March,2022,21195,Collard,TopBunch,4,45,49
+3160,3,3.25.2022,March,2022,21195,Kale,Darkibor,3,30,33
+3161,3,3.25.2022,March,2022,21125A,Broccoli,Emrald crown,30,70,100
+3162,3,3.25.2022,March,2022,21125A,Cabbage,Bravo,23,65,88
+3163,3,3.25.2022,March,2022,21125A,Cauliflower,Bermo,20,40,60
+3164,3,3.25.2022,March,2022,21125A,Collard,TopBunch,30,70,100
+3165,3,3.25.2022,March,2022,21125A,Kale,Darkibor,25,70,95
+3166,3,3.25.2022,March,2022,21121,Broccoli,Emrald crown,3,20,23
+3167,3,3.25.2022,March,2022,21121,Cabbage,Bravo,1,6,7
+3168,3,3.25.2022,March,2022,21121,Cauliflower,Bermo,7,20,27
+3169,3,3.25.2022,March,2022,21121,Collard,TopBunch,5,30,35
+3170,3,3.25.2022,March,2022,21121,Kale,Darkibor,4,25,29
+3171,3,3.25.2022,March,2022,21106,Broccoli,Emrald crown,1,1,2
+3172,3,3.25.2022,March,2022,21106,Cabbage,Bravo,3,20,23
+3173,3,3.25.2022,March,2022,21106,Cauliflower,Bermo,3,6,9
+3174,3,3.25.2022,March,2022,21106,Collard,TopBunch,5,20,25
+3175,3,3.25.2022,March,2022,21106,Kale,Darkibor,3,10,13
+3176,3,3.25.2022,March,2022,21112,Broccoli,Emrald crown,40,80,120
+3177,3,3.25.2022,March,2022,21112,Cabbage,Bravo,3,40,43
+3178,3,3.25.2022,March,2022,21112,Cauliflower,Bermo,7,35,42
+3179,3,3.25.2022,March,2022,21112,Collard,TopBunch,4,70,74
+3180,3,3.25.2022,March,2022,21112,Kale,Darkibor,9,85,94
+3181,3,3.25.2022,March,2022,21153,Broccoli,Emrald crown,1,2,3
+3182,3,3.25.2022,March,2022,21153,Cabbage,Bravo,4,4,8
+3183,3,3.25.2022,March,2022,21153,Cauliflower,Bermo,2,4,6
+3184,3,3.25.2022,March,2022,21153,Collard,TopBunch,1,5,6
+3185,3,3.25.2022,March,2022,21153,Kale,Darkibor,5,20,25
+3186,3,4.4.2022,April,2022,21237,Broccoli,Emrald crown,3,10,13
+3187,3,4.4.2022,April,2022,21237,Cabbage,Bravo,1,4,5
+3188,3,4.4.2022,April,2022,21237,Cauliflower,Bermo,1,10,11
+3189,3,4.4.2022,April,2022,21237,Collard,TopBunch,0.5,20,20.5
+3190,3,4.4.2022,April,2022,21237,Kale,Darkibor,1,5,6
+3191,3,4.4.2022,April,2022,21199,Broccoli,Emrald crown,2,55,57
+3192,3,4.4.2022,April,2022,21199,Cabbage,Bravo,4,20,24
+3193,3,4.4.2022,April,2022,21199,Cauliflower,Bermo,7,45,52
+3194,3,4.4.2022,April,2022,21199,Collard,TopBunch,3,10,13
+3195,3,4.4.2022,April,2022,21199,Kale,Darkibor,4,8,12
+3196,3,4.4.2022,April,2022,21129,Broccoli,Emrald crown,20,30,50
+3197,3,4.4.2022,April,2022,21129,Cabbage,Bravo,25,50,75
+3198,3,4.4.2022,April,2022,21129,Cauliflower,Bermo,15,40,55
+3199,3,4.4.2022,April,2022,21129,Collard,TopBunch,2,10,12
+3200,3,4.4.2022,April,2022,21129,Kale,Darkibor,40,60,100
+3201,3,4.4.2022,April,2022,21090,Broccoli,Emrald crown,2,15,17
+3202,3,4.4.2022,April,2022,21090,Cabbage,Bravo,7,30,37
+3203,3,4.4.2022,April,2022,21090,Cauliflower,Bermo,17,40,57
+3204,3,4.4.2022,April,2022,21090,Collard,TopBunch,3,8,11
+3205,3,4.4.2022,April,2022,21090,Kale,Darkibor,5,8,13
+3206,3,4.4.2022,April,2022,21182,Broccoli,Emrald crown,15,60,75
+3207,3,4.4.2022,April,2022,21182,Cabbage,Bravo,4,8,12
+3208,3,4.4.2022,April,2022,21182,Cauliflower,Bermo,3,80,83
+3209,3,4.4.2022,April,2022,21182,Collard,TopBunch,1,10,11
+3210,3,4.4.2022,April,2022,21182,Kale,Darkibor,5,10,15
+3211,3,4.4.2022,April,2022,21187,Broccoli,Emrald crown,2,10,12
+3212,3,4.4.2022,April,2022,21187,Cabbage,Bravo,5,5,10
+3213,3,4.4.2022,April,2022,21187,Cauliflower,Bermo,10,40,50
+3214,3,4.4.2022,April,2022,21187,Collard,TopBunch,5,30,35
+3215,3,4.4.2022,April,2022,21187,Kale,Darkibor,1,4,5
+3216,3,4.4.2022,April,2022,21118,Broccoli,Emrald crown,4,65,69
+3217,3,4.4.2022,April,2022,21118,Cabbage,Bravo,7,10,17
+3218,3,4.4.2022,April,2022,21118,Cauliflower,Bermo,25,50,75
+3219,3,4.4.2022,April,2022,21118,Collard,TopBunch,8,50,58
+3220,3,4.4.2022,April,2022,21118,Kale,Darkibor,4,50,54
+3221,3,4.4.2022,April,2022,21166,Broccoli,Emrald crown,5,30,35
+3222,3,4.4.2022,April,2022,21166,Cabbage,Bravo,2,20,22
+3223,3,4.4.2022,April,2022,21166,Cauliflower,Bermo,1,80,81
+3224,3,4.4.2022,April,2022,21166,Collard,TopBunch,4,10,14
+3225,3,4.4.2022,April,2022,21166,Kale,Darkibor,3,20,23
+3226,3,4.4.2022,April,2022,21138,Broccoli,Emrald crown,3,30,33
+3227,3,4.4.2022,April,2022,21138,Cabbage,Bravo,7,30,37
+3228,3,4.4.2022,April,2022,21138,Cauliflower,Bermo,1,5,6
+3229,3,4.4.2022,April,2022,21138,Collard,TopBunch,5,30,35
+3230,3,4.4.2022,April,2022,21138,Kale,Darkibor,3,5,8
+3231,3,4.4.2022,April,2022,21201,Broccoli,Emrald crown,12,60,72
+3232,3,4.4.2022,April,2022,21201,Cabbage,Bravo,4,10,14
+3233,3,4.4.2022,April,2022,21201,Cauliflower,Bermo,2,6,8
+3234,3,4.4.2022,April,2022,21201,Collard,TopBunch,4,35,39
+3235,3,4.4.2022,April,2022,21201,Kale,Darkibor,4,25,29
+3236,3,4.4.2022,April,2022,21229,Broccoli,Emrald crown,3,60,63
+3237,3,4.4.2022,April,2022,21229,Cabbage,Bravo,6,20,26
+3238,3,4.4.2022,April,2022,21229,Cauliflower,Bermo,5,5,10
+3239,3,4.4.2022,April,2022,21229,Collard,TopBunch,3,30,33
+3240,3,4.4.2022,April,2022,21229,Kale,Darkibor,7,25,32
+3241,3,4.4.2022,April,2022,21124,Broccoli,Emrald crown,20,80,100
+3242,3,4.4.2022,April,2022,21124,Cabbage,Bravo,3,10,13
+3243,3,4.4.2022,April,2022,21124,Cauliflower,Bermo,5,20,25
+3244,3,4.4.2022,April,2022,21124,Collard,TopBunch,10,45,55
+3245,3,4.4.2022,April,2022,21124,Kale,Darkibor,5,30,35
+3246,3,4.6.2022,April,2022,21158,Broccoli,Emrald crown,10,50,60
+3247,3,4.6.2022,April,2022,21158,Cabbage,Bravo,10,20,30
+3248,3,4.6.2022,April,2022,21158,Cauliflower,Bermo,12,30,42
+3249,3,4.6.2022,April,2022,21158,Collard,TopBunch,3,20,23
+3250,3,4.6.2022,April,2022,21158,Kale,Darkibor,20,40,60
+3251,3,4.6.2022,April,2022,21142,Broccoli,Emrald crown,3,40,43
+3252,3,4.6.2022,April,2022,21142,Cabbage,Bravo,1,5,6
+3253,3,4.6.2022,April,2022,21142,Cauliflower,Bermo,5,20,25
+3254,3,4.6.2022,April,2022,21142,Collard,TopBunch,3,10,13
+3255,3,4.6.2022,April,2022,21142,Kale,Darkibor,1,3,4
+3256,3,4.6.2022,April,2022,18062F,Broccoli,Emrald crown,1,20,21
+3257,3,4.6.2022,April,2022,18062F,Cabbage,Bravo,20,50,70
+3258,3,4.6.2022,April,2022,18062F,Cauliflower,Bermo,60,80,140
+3259,3,4.6.2022,April,2022,18062F,Collard,TopBunch,2,35,37
+3260,3,4.6.2022,April,2022,18062F,Kale,Darkibor,1,3,4
+3261,3,4.6.2022,April,2022,21181,Broccoli,Emrald crown,1,40,41
+3262,3,4.6.2022,April,2022,21181,Cabbage,Bravo,5,30,35
+3263,3,4.6.2022,April,2022,21181,Cauliflower,Bermo,1,5,6
+3264,3,4.6.2022,April,2022,21181,Collard,TopBunch,4,25,29
+3265,3,4.6.2022,April,2022,21181,Kale,Darkibor,5,10,15
+3266,3,4.6.2022,April,2022,21083,Broccoli,Emrald crown,0,1,1
+3267,3,4.6.2022,April,2022,21083,Cabbage,Bravo,3,4,7
+3268,3,4.6.2022,April,2022,21083,Cauliflower,Bermo,5,10,15
+3269,3,4.6.2022,April,2022,21083,Collard,TopBunch,8,12,20
+3270,3,4.6.2022,April,2022,21083,Kale,Darkibor,5,8,13
+3271,3,4.6.2022,April,2022,21161,Broccoli,Emrald crown,1,40,41
+3272,3,4.6.2022,April,2022,21161,Cabbage,Bravo,1,2,3
+3273,3,4.6.2022,April,2022,21161,Cauliflower,Bermo,1,2,3
+3274,3,4.6.2022,April,2022,21161,Collard,TopBunch,60,70,130
+3275,3,4.6.2022,April,2022,21161,Kale,Darkibor,1,5,6
+3276,3,4.6.2022,April,2022,21196,Broccoli,Emrald crown,1,40,41
+3277,3,4.6.2022,April,2022,21196,Cabbage,Bravo,6,6,12
+3278,3,4.6.2022,April,2022,21196,Cauliflower,Bermo,30,60,90
+3279,3,4.6.2022,April,2022,21196,Collard,TopBunch,3,20,23
+3280,3,4.6.2022,April,2022,21196,Kale,Darkibor,1,10,11
+3281,3,4.6.2022,April,2022,21184,Broccoli,Emrald crown,30,85,115
+3282,3,4.6.2022,April,2022,21184,Cabbage,Bravo,2,10,12
+3283,3,4.6.2022,April,2022,21184,Cauliflower,Bermo,5,40,45
+3284,3,4.6.2022,April,2022,21184,Collard,TopBunch,1,3,4
+3285,3,4.6.2022,April,2022,21184,Kale,Darkibor,10,30,40
+3286,3,4.6.2022,April,2022,21228,Broccoli,Emrald crown,75,95,170
+3287,3,4.6.2022,April,2022,21228,Cabbage,Bravo,7,10,17
+3288,3,4.6.2022,April,2022,21228,Cauliflower,Bermo,0,2,2
+3289,3,4.6.2022,April,2022,21228,Collard,TopBunch,5,30,35
+3290,3,4.6.2022,April,2022,21228,Kale,Darkibor,60,85,145
+3291,3,4.6.2022,April,2022,21140,Broccoli,Emrald crown,60,85,145
+3292,3,4.6.2022,April,2022,21140,Cabbage,Bravo,20,30,50
+3293,3,4.6.2022,April,2022,21140,Cauliflower,Bermo,85,90,175
+3294,3,4.6.2022,April,2022,21140,Collard,TopBunch,15,35,50
+3295,3,4.6.2022,April,2022,21140,Kale,Darkibor,30,45,75
+3296,3,4.6.2022,April,2022,21231,Broccoli,Emrald crown,15,60,75
+3297,3,4.6.2022,April,2022,21231,Cabbage,Bravo,20,25,45
+3298,3,4.6.2022,April,2022,21231,Cauliflower,Bermo,90,99,189
+3299,3,4.6.2022,April,2022,21231,Collard,TopBunch,15,30,45
+3300,3,4.6.2022,April,2022,21231,Kale,Darkibor,65,85,150
+3301,3,4.6.2022,April,2022,21191,Broccoli,Emrald crown,1,30,31
+3302,3,4.6.2022,April,2022,21191,Cabbage,Bravo,3,15,18
+3303,3,4.6.2022,April,2022,21191,Cauliflower,Bermo,50,70,120
+3304,3,4.6.2022,April,2022,21191,Collard,TopBunch,1,5,6
+3305,3,4.6.2022,April,2022,21191,Kale,Darkibor,5,10,15
+3306,3,4.15.2022,April,2022,21151,Broccoli,Emrald crown,1,15,16
+3307,3,4.15.2022,April,2022,21151,Cabbage,Bravo,1,3,4
+3308,3,4.15.2022,April,2022,21151,Cauliflower,Bermo,0,2,2
+3309,3,4.15.2022,April,2022,21151,Collard,TopBunch,15,40,55
+3310,3,4.15.2022,April,2022,21151,Kale,Darkibor,0,1,1
+3311,3,4.15.2022,April,2022,21186,Broccoli,Emrald crown,0,15,15
+3312,3,4.15.2022,April,2022,21186,Cabbage,Bravo,2,8,10
+3313,3,4.15.2022,April,2022,21186,Cauliflower,Bermo,3,6,9
+3314,3,4.15.2022,April,2022,21186,Collard,TopBunch,2,5,7
+3315,3,4.15.2022,April,2022,21186,Kale,Darkibor,1,1,2
+3316,3,4.15.2022,April,2022,21134,Broccoli,Emrald crown,3,15,18
+3317,3,4.15.2022,April,2022,21134,Cabbage,Bravo,2,1,3
+3318,3,4.15.2022,April,2022,21134,Cauliflower,Bermo,2,5,7
+3319,3,4.15.2022,April,2022,21134,Collard,TopBunch,1,4,5
+3320,3,4.15.2022,April,2022,21134,Kale,Darkibor,0,1,1
+3321,3,4.15.2022,April,2022,21238,Broccoli,Emrald crown,30,60,90
+3322,3,4.15.2022,April,2022,21238,Cabbage,Bravo,1,5,6
+3323,3,4.15.2022,April,2022,21238,Cauliflower,Bermo,1,3,4
+3324,3,4.15.2022,April,2022,21238,Collard,TopBunch,2,10,12
+3325,3,4.15.2022,April,2022,21238,Kale,Darkibor,5,12,17
+3326,3,4.15.2022,April,2022,21137,Broccoli,Emrald crown,1,30,31
+3327,3,4.15.2022,April,2022,21137,Cabbage,Bravo,2,8,10
+3328,3,4.15.2022,April,2022,21137,Cauliflower,Bermo,1,2,3
+3329,3,4.15.2022,April,2022,21137,Collard,TopBunch,1,15,16
+3330,3,4.15.2022,April,2022,21137,Kale,Darkibor,3,5,8
+3331,3,4.15.2022,April,2022,21183,Broccoli,Emrald crown,1,13,14
+3332,3,4.15.2022,April,2022,21183,Cabbage,Bravo,0,1,1
+3333,3,4.15.2022,April,2022,21183,Cauliflower,Bermo,2,4,6
+3334,3,4.15.2022,April,2022,21183,Collard,TopBunch,1,2,3
+3335,3,4.15.2022,April,2022,21183,Kale,Darkibor,0,1,1
+3336,3,4.15.2022,April,2022,21074,Broccoli,Emrald crown,15,30,45
+3337,3,4.15.2022,April,2022,21074,Cabbage,Bravo,5,10,15
+3338,3,4.15.2022,April,2022,21074,Cauliflower,Bermo,3,6,9
+3339,3,4.15.2022,April,2022,21074,Collard,TopBunch,2,6,8
+3340,3,4.15.2022,April,2022,21074,Kale,Darkibor,1,2,3
+3341,3,4.15.2022,April,2022,21207,Broccoli,Emrald crown,40,95,135
+3342,3,4.15.2022,April,2022,21207,Cabbage,Bravo,5,6,11
+3343,3,4.15.2022,April,2022,21207,Cauliflower,Bermo,5,15,20
+3344,3,4.15.2022,April,2022,21207,Collard,TopBunch,3,20,23
+3345,3,4.15.2022,April,2022,21207,Kale,Darkibor,4,5,9
+3346,3,4.15.2022,April,2022,21080,Broccoli,Emrald crown,60,75,135
+3347,3,4.15.2022,April,2022,21080,Cabbage,Bravo,6,15,21
+3348,3,4.15.2022,April,2022,21080,Cauliflower,Bermo,20,40,60
+3349,3,4.15.2022,April,2022,21080,Collard,TopBunch,15,40,55
+3350,3,4.15.2022,April,2022,21080,Kale,Darkibor,55,70,125
+3351,3,4.15.2022,April,2022,21185,Broccoli,Emrald crown,8,40,48
+3352,3,4.15.2022,April,2022,21185,Cabbage,Bravo,10,30,40
+3353,3,4.15.2022,April,2022,21185,Cauliflower,Bermo,4,10,14
+3354,3,4.15.2022,April,2022,21185,Collard,TopBunch,4,10,14
+3355,3,4.15.2022,April,2022,21185,Kale,Darkibor,10,15,25
+3356,3,4.15.2022,April,2022,21189,Broccoli,Emrald crown,40,80,120
+3357,3,4.15.2022,April,2022,21189,Cabbage,Bravo,2,6,8
+3358,3,4.15.2022,April,2022,21189,Cauliflower,Bermo,2,4,6
+3359,3,4.15.2022,April,2022,21189,Collard,TopBunch,3,30,33
+3360,3,4.15.2022,April,2022,21189,Kale,Darkibor,40,55,95
+3361,3,4.15.2022,April,2022,21123,Broccoli,Emrald crown,25,45,70
+3362,3,4.15.2022,April,2022,21123,Cabbage,Bravo,35,50,85
+3363,3,4.15.2022,April,2022,21123,Cauliflower,Bermo,15,20,35
+3364,3,4.15.2022,April,2022,21123,Collard,TopBunch,15,20,35
+3365,3,4.15.2022,April,2022,21123,Kale,Darkibor,8,12,20
+3366,3,4.20.2022,April,2022,21163,Broccoli,Emrald crown,0,3,3
+3367,3,4.20.2022,April,2022,21163,Cabbage,Bravo,0,0,0
+3368,3,4.20.2022,April,2022,21163,Cauliflower,Bermo,0.1,3,3.1
+3369,3,4.20.2022,April,2022,21163,Collard,TopBunch,1,5,6
+3370,3,4.20.2022,April,2022,21163,Kale,Darkibor,1,3,4
+3371,3,4.20.2022,April,2022,21194,Broccoli,Emrald crown,0,3,3
+3372,3,4.20.2022,April,2022,21194,Cabbage,Bravo,3,3,6
+3373,3,4.20.2022,April,2022,21194,Cauliflower,Bermo,8,8,16
+3374,3,4.20.2022,April,2022,21194,Collard,TopBunch,4,10,14
+3375,3,4.20.2022,April,2022,21194,Kale,Darkibor,0,1,1
+3376,3,4.20.2022,April,2022,21078,Broccoli,Emrald crown,0.5,5,5.5
+3377,3,4.20.2022,April,2022,21078,Cabbage,Bravo,1,1,2
+3378,3,4.20.2022,April,2022,21078,Cauliflower,Bermo,0.1,1,1.1
+3379,3,4.20.2022,April,2022,21078,Collard,TopBunch,0,3,3
+3380,3,4.20.2022,April,2022,21078,Kale,Darkibor,0,0,0
+3381,3,4.20.2022,April,2022,21107,Broccoli,Emrald crown,1,4,5
+3382,3,4.20.2022,April,2022,21107,Cabbage,Bravo,1,1,2
+3383,3,4.20.2022,April,2022,21107,Cauliflower,Bermo,0.5,1,1.5
+3384,3,4.20.2022,April,2022,21107,Collard,TopBunch,3,2,5
+3385,3,4.20.2022,April,2022,21107,Kale,Darkibor,2,2,4
+3386,3,4.20.2022,April,2022,21136,Broccoli,Emrald crown,1,4,5
+3387,3,4.20.2022,April,2022,21136,Cabbage,Bravo,8,10,18
+3388,3,4.20.2022,April,2022,21136,Cauliflower,Bermo,5,5,10
+3389,3,4.20.2022,April,2022,21136,Collard,TopBunch,4,10,14
+3390,3,4.20.2022,April,2022,21136,Kale,Darkibor,0,0.1,0.1
+3391,3,4.20.2022,April,2022,18062S,Broccoli,Emrald crown,0,0,0
+3392,3,4.20.2022,April,2022,18062S,Cabbage,Bravo,0.1,1,1.1
+3393,3,4.20.2022,April,2022,18062S,Cauliflower,Bermo,2,4,6
+3394,3,4.20.2022,April,2022,18062S,Collard,TopBunch,1,4,5
+3395,3,4.20.2022,April,2022,18062S,Kale,Darkibor,0.1,1,1.1
+3396,3,4.20.2022,April,2022,21082,Broccoli,Emrald crown,15,90,105
+3397,3,4.20.2022,April,2022,21082,Cabbage,Bravo,5,10,15
+3398,3,4.20.2022,April,2022,21082,Cauliflower,Bermo,50,70,120
+3399,3,4.20.2022,April,2022,21082,Collard,TopBunch,5,30,35
+3400,3,4.20.2022,April,2022,21082,Kale,Darkibor,8,15,23
+3401,3,4.20.2022,April,2022,21113,Broccoli,Emrald crown,5,15,20
+3402,3,4.20.2022,April,2022,21113,Cabbage,Bravo,3,3,6
+3403,3,4.20.2022,April,2022,21113,Cauliflower,Bermo,40,60,100
+3404,3,4.20.2022,April,2022,21113,Collard,TopBunch,5,20,25
+3405,3,4.20.2022,April,2022,21113,Kale,Darkibor,3,3,6
+3406,3,4.20.2022,April,2022,21139,Broccoli,Emrald crown,2,15,17
+3407,3,4.20.2022,April,2022,21139,Cabbage,Bravo,3,10,13
+3408,3,4.20.2022,April,2022,21139,Cauliflower,Bermo,55,90,145
+3409,3,4.20.2022,April,2022,21139,Collard,TopBunch,8,30,38
+3410,3,4.20.2022,April,2022,21139,Kale,Darkibor,10,25,35
+3411,3,4.20.2022,April,2022,21156,Broccoli,Emrald crown,20,60,80
+3412,3,4.20.2022,April,2022,21156,Cabbage,Bravo,30,35,65
+3413,3,4.20.2022,April,2022,21156,Cauliflower,Bermo,10,20,30
+3414,3,4.20.2022,April,2022,21156,Collard,TopBunch,5,15,20
+3415,3,4.20.2022,April,2022,21156,Kale,Darkibor,5,15,20
+3416,3,4.20.2022,April,2022,21159,Broccoli,Emrald crown,60,100,160
+3417,3,4.20.2022,April,2022,21159,Cabbage,Bravo,35,50,85
+3418,3,4.20.2022,April,2022,21159,Cauliflower,Bermo,10,15,25
+3419,3,4.20.2022,April,2022,21159,Collard,TopBunch,25,35,60
+3420,3,4.20.2022,April,2022,21159,Kale,Darkibor,20,30,50
+3421,3,4.20.2022,April,2022,21178,Broccoli,Emrald crown,15,55,70
+3422,3,4.20.2022,April,2022,21178,Cabbage,Bravo,10,20,30
+3423,3,4.20.2022,April,2022,21178,Cauliflower,Bermo,8,10,18
+3424,3,4.20.2022,April,2022,21178,Collard,TopBunch,7,20,27
+3425,3,4.20.2022,April,2022,21178,Kale,Darkibor,8,15,23
+3426,3,5.17.2022,May,2022,21162,Broccoli,Emrald crown,65,97,162
+3427,3,5.17.2022,May,2022,21162,Cabbage,Bravo,7,35,42
+3428,3,5.17.2022,May,2022,21162,Cauliflower,Bermo,4,20,24
+3429,3,5.17.2022,May,2022,21162,Collard,TopBunch,0.1,15,15.1
+3430,3,5.17.2022,May,2022,21162,Kale,Darkibor,5,20,25
+3431,3,5.17.2022,May,2022,21200,Broccoli,Emrald crown,30,80,110
+3432,3,5.17.2022,May,2022,21200,Cabbage,Bravo,0.1,10,10.1
+3433,3,5.17.2022,May,2022,21200,Cauliflower,Bermo,0,5,5
+3434,3,5.17.2022,May,2022,21200,Collard,TopBunch,1,3,4
+3435,3,5.17.2022,May,2022,21200,Kale,Darkibor,1,2,3
+3436,3,5.17.2022,May,2022,21175,Broccoli,Emrald crown,7,60,67
+3437,3,5.17.2022,May,2022,21175,Cabbage,Bravo,5,25,30
+3438,3,5.17.2022,May,2022,21175,Cauliflower,Bermo,3,20,23
+3439,3,5.17.2022,May,2022,21175,Collard,TopBunch,3,20,23
+3440,3,5.17.2022,May,2022,21175,Kale,Darkibor,5,15,20
+3441,3,5.17.2022,May,2022,21122,Broccoli,Emrald crown,5,35,40
+3442,3,5.17.2022,May,2022,21122,Cabbage,Bravo,10,30,40
+3443,3,5.17.2022,May,2022,21122,Cauliflower,Bermo,1,3,4
+3444,3,5.17.2022,May,2022,21122,Collard,TopBunch,4,40,44
+3445,3,5.17.2022,May,2022,21122,Kale,Darkibor,10,30,40
+3446,3,5.17.2022,May,2022,21088,Broccoli,Emrald crown,4,97,101
+3447,3,5.17.2022,May,2022,21088,Cabbage,Bravo,3,20,23
+3448,3,5.17.2022,May,2022,21088,Cauliflower,Bermo,3,30,33
+3449,3,5.17.2022,May,2022,21088,Collard,TopBunch,1,20,21
+3450,3,5.17.2022,May,2022,21088,Kale,Darkibor,3,10,13
+3451,3,5.17.2022,May,2022,21110,Broccoli,Emrald crown,30,55,85
+3452,3,5.17.2022,May,2022,21110,Cabbage,Bravo,40,60,100
+3453,3,5.17.2022,May,2022,21110,Cauliflower,Bermo,40,80,120
+3454,3,5.17.2022,May,2022,21110,Collard,TopBunch,10,45,55
+3455,3,5.17.2022,May,2022,21110,Kale,Darkibor,60,85,145
+3456,3,5.17.2022,May,2022,21190,Broccoli,Emrald crown,50,90,140
+3457,3,5.17.2022,May,2022,21190,Cabbage,Bravo,20,40,60
+3458,3,5.17.2022,May,2022,21190,Cauliflower,Bermo,60,80,140
+3459,3,5.17.2022,May,2022,21190,Collard,TopBunch,7,30,37
+3460,3,5.17.2022,May,2022,21190,Kale,Darkibor,40,70,110
+3461,3,5.17.2022,May,2022,21117,Broccoli,Emrald crown,55,95,150
+3462,3,5.17.2022,May,2022,21117,Cabbage,Bravo,45,45,90
+3463,3,5.17.2022,May,2022,21117,Cauliflower,Bermo,30,30,60
+3464,3,5.17.2022,May,2022,21117,Collard,TopBunch,55,90,145
+3465,3,5.17.2022,May,2022,21117,Kale,Darkibor,65,85,150
+3466,3,5.17.2022,May,2022,21131,Broccoli,Emrald crown,45,100,145
+3467,3,5.17.2022,May,2022,21131,Cabbage,Bravo,70,80,150
+3468,3,5.17.2022,May,2022,21131,Cauliflower,Bermo,10,30,40
+3469,3,5.17.2022,May,2022,21131,Collard,TopBunch,60,100,160
+3470,3,5.17.2022,May,2022,21131,Kale,Darkibor,25,30,55
+3471,3,5.17.2022,May,2022,21081,Broccoli,Emrald crown,35,80,115
+3472,3,5.17.2022,May,2022,21081,Cabbage,Bravo,30,35,65
+3473,3,5.17.2022,May,2022,21081,Cauliflower,Bermo,40,50,90
+3474,3,5.17.2022,May,2022,21081,Collard,TopBunch,60,80,140
+3475,3,5.17.2022,May,2022,21081,Kale,Darkibor,25,45,70
+3476,3,5.17.2022,May,2022,21230,Broccoli,Emrald crown,30,100,130
+3477,3,5.17.2022,May,2022,21230,Cabbage,Bravo,40,70,110
+3478,3,5.17.2022,May,2022,21230,Cauliflower,Bermo,75,90,165
+3479,3,5.17.2022,May,2022,21230,Collard,TopBunch,50,97,147
+3480,3,5.17.2022,May,2022,21230,Kale,Darkibor,35,65,100
+3481,3,5.17.2022,May,2022,21132,Broccoli,Emrald crown,40,85,125
+3482,3,5.17.2022,May,2022,21132,Cabbage,Bravo,25,30,55
+3483,3,5.17.2022,May,2022,21132,Cauliflower,Bermo,75,95,170
+3484,3,5.17.2022,May,2022,21132,Collard,TopBunch,20,20,40
+3485,3,5.17.2022,May,2022,21132,Kale,Darkibor,15,30,45
+3486,3,5.19.2022,May,2022,21114,Broccoli,Emrald crown,5,20,25
+3487,3,5.19.2022,May,2022,21114,Cabbage,Bravo,7,30,37
+3488,3,5.19.2022,May,2022,21114,Cauliflower,Bermo,10,30,40
+3489,3,5.19.2022,May,2022,21114,Collard,TopBunch,15,30,45
+3490,3,5.19.2022,May,2022,21114,Kale,Darkibor,3,5,8
+3491,3,5.19.2022,May,2022,21111,Broccoli,Emrald crown,25,30,55
+3492,3,5.19.2022,May,2022,21111,Cabbage,Bravo,20,20,40
+3493,3,5.19.2022,May,2022,21111,Cauliflower,Bermo,15,20,35
+3494,3,5.19.2022,May,2022,21111,Collard,TopBunch,10,30,40
+3495,3,5.19.2022,May,2022,21111,Kale,Darkibor,10,15,25
+3496,3,5.19.2022,May,2022,21084,Broccoli,Emrald crown,15,25,40
+3497,3,5.19.2022,May,2022,21084,Cabbage,Bravo,5,10,15
+3498,3,5.19.2022,May,2022,21084,Cauliflower,Bermo,25,30,55
+3499,3,5.19.2022,May,2022,21084,Collard,TopBunch,5,15,20
+3500,3,5.19.2022,May,2022,21084,Kale,Darkibor,5,10,15
+3501,3,5.19.2022,May,2022,21115,Broccoli,Emrald crown,25,35,60
+3502,3,5.19.2022,May,2022,21115,Cabbage,Bravo,4,20,24
+3503,3,5.19.2022,May,2022,21115,Cauliflower,Bermo,4,5,9
+3504,3,5.19.2022,May,2022,21115,Collard,TopBunch,10,10,20
+3505,3,5.19.2022,May,2022,21115,Kale,Darkibor,5,15,20
+3506,3,5.19.2022,May,2022,21188,Broccoli,Emrald crown,15,20,35
+3507,3,5.19.2022,May,2022,21188,Cabbage,Bravo,10,20,30
+3508,3,5.19.2022,May,2022,21188,Cauliflower,Bermo,5,10,15
+3509,3,5.19.2022,May,2022,21188,Collard,TopBunch,50,70,120
+3510,3,5.19.2022,May,2022,21188,Kale,Darkibor,40,50,90
+3511,3,5.19.2022,May,2022,21145,Broccoli,Emrald crown,1,3,4
+3512,3,5.19.2022,May,2022,21145,Cabbage,Bravo,3,5,8
+3513,3,5.19.2022,May,2022,21145,Cauliflower,Bermo,5,10,15
+3514,3,5.19.2022,May,2022,21145,Collard,TopBunch,2,2,4
+3515,3,5.19.2022,May,2022,21145,Kale,Darkibor,5,10,15
+3516,3,5.19.2022,May,2022,21127,Broccoli,Emrald crown,10,40,50
+3517,3,5.19.2022,May,2022,21127,Cabbage,Bravo,10,25,35
+3518,3,5.19.2022,May,2022,21127,Cauliflower,Bermo,7,15,22
+3519,3,5.19.2022,May,2022,21127,Collard,TopBunch,25,30,55
+3520,3,5.19.2022,May,2022,21127,Kale,Darkibor,20,35,55
+3521,3,5.19.2022,May,2022,21154,Broccoli,Emrald crown,35,45,80
+3522,3,5.19.2022,May,2022,21154,Cabbage,Bravo,55,60,115
+3523,3,5.19.2022,May,2022,21154,Cauliflower,Bermo,80,95,175
+3524,3,5.19.2022,May,2022,21154,Collard,TopBunch,80,85,165
+3525,3,5.19.2022,May,2022,21154,Kale,Darkibor,70,95,165
+3526,3,5.19.2022,May,2022,21128,Broccoli,Emrald crown,25,30,55
+3527,3,5.19.2022,May,2022,21128,Cabbage,Bravo,7,15,22
+3528,3,5.19.2022,May,2022,21128,Cauliflower,Bermo,10,20,30
+3529,3,5.19.2022,May,2022,21128,Collard,TopBunch,55,60,115
+3530,3,5.19.2022,May,2022,21128,Kale,Darkibor,30,50,80
+3531,3,5.19.2022,May,2022,21152,Broccoli,Emrald crown,5,15,20
+3532,3,5.19.2022,May,2022,21152,Cabbage,Bravo,30,45,75
+3533,3,5.19.2022,May,2022,21152,Cauliflower,Bermo,5,5,10
+3534,3,5.19.2022,May,2022,21152,Collard,TopBunch,80,95,175
+3535,3,5.19.2022,May,2022,21152,Kale,Darkibor,25,35,60
+3536,3,5.19.2022,May,2022,21239,Broccoli,Emrald crown,40,65,105
+3537,3,5.19.2022,May,2022,21239,Cabbage,Bravo,25,40,65
+3538,3,5.19.2022,May,2022,21239,Cauliflower,Bermo,30,50,80
+3539,3,5.19.2022,May,2022,21239,Collard,TopBunch,10,30,40
+3540,3,5.19.2022,May,2022,21239,Kale,Darkibor,50,65,115
+3541,3,5.19.2022,May,2022,21160,Broccoli,Emrald crown,20,35,55
+3542,3,5.19.2022,May,2022,21160,Cabbage,Bravo,60,80,140
+3543,3,5.19.2022,May,2022,21160,Cauliflower,Bermo,70,95,165
+3544,3,5.19.2022,May,2022,21160,Collard,TopBunch,60,80,140
+3545,3,5.19.2022,May,2022,21160,Kale,Darkibor,20,25,45
+3546,3,5.26.2022,May,2022,21258,Broccoli,Emrald crown,0,0,0
+3547,3,5.26.2022,May,2022,21258,Cabbage,Bravo,0,0,0
+3548,3,5.26.2022,May,2022,21258,Cauliflower,Bermo,0,0,0
+3549,3,5.26.2022,May,2022,21258,Collard,TopBunch,0,0,0
+3550,3,5.26.2022,May,2022,21258,Kale,Darkibor,0,0,0
+3551,3,5.26.2022,May,2022,21193,Broccoli,Emrald crown,30,70,100
+3552,3,5.26.2022,May,2022,21193,Cabbage,Bravo,40,45,85
+3553,3,5.26.2022,May,2022,21193,Cauliflower,Bermo,20,30,50
+3554,3,5.26.2022,May,2022,21193,Collard,TopBunch,25,85,110
+3555,3,5.26.2022,May,2022,21193,Kale,Darkibor,15,25,40
+3556,3,5.26.2022,May,2022,21087,Broccoli,Emrald crown,2,7,9
+3557,3,5.26.2022,May,2022,21087,Cabbage,Bravo,1,3,4
+3558,3,5.26.2022,May,2022,21087,Cauliflower,Bermo,40,40,80
+3559,3,5.26.2022,May,2022,21087,Collard,TopBunch,40,65,105
+3560,3,5.26.2022,May,2022,21087,Kale,Darkibor,10,30,40
+3561,3,5.26.2022,May,2022,21116,Broccoli,Emrald crown,60,80,140
+3562,3,5.26.2022,May,2022,21116,Cabbage,Bravo,35,50,85
+3563,3,5.26.2022,May,2022,21116,Cauliflower,Bermo,70,100,170
+3564,3,5.26.2022,May,2022,21116,Collard,TopBunch,40,80,120
+3565,3,5.26.2022,May,2022,21116,Kale,Darkibor,35,80,115
+3566,3,5.26.2022,May,2022,21234,Broccoli,Emrald crown,30,70,100
+3567,3,5.26.2022,May,2022,21234,Cabbage,Bravo,20,60,80
+3568,3,5.26.2022,May,2022,21234,Cauliflower,Bermo,10,25,35
+3569,3,5.26.2022,May,2022,21234,Collard,TopBunch,60,90,150
+3570,3,5.26.2022,May,2022,21234,Kale,Darkibor,5,10,15
+3571,3,5.26.2022,May,2022,21077,Broccoli,Emrald crown,7,95,102
+3572,3,5.26.2022,May,2022,21077,Cabbage,Bravo,10,35,45
+3573,3,5.26.2022,May,2022,21077,Cauliflower,Bermo,3,25,28
+3574,3,5.26.2022,May,2022,21077,Collard,TopBunch,40,60,100
+3575,3,5.26.2022,May,2022,21077,Kale,Darkibor,3,7,10
+3576,3,5.26.2022,May,2022,21176,Broccoli,Emrald crown,5,80,85
+3577,3,5.26.2022,May,2022,21176,Cabbage,Bravo,10,30,40
+3578,3,5.26.2022,May,2022,21176,Cauliflower,Bermo,50,90,140
+3579,3,5.26.2022,May,2022,21176,Collard,TopBunch,50,95,145
+3580,3,5.26.2022,May,2022,21176,Kale,Darkibor,5,20,25
+3581,3,5.26.2022,May,2022,21133,Broccoli,Emrald crown,5,35,40
+3582,3,5.26.2022,May,2022,21133,Cabbage,Bravo,1,20,21
+3583,3,5.26.2022,May,2022,21133,Cauliflower,Bermo,10,35,45
+3584,3,5.26.2022,May,2022,21133,Collard,TopBunch,3,20,23
+3585,3,5.26.2022,May,2022,21133,Kale,Darkibor,3,30,33
+3586,3,5.26.2022,May,2022,21179,Broccoli,Emrald crown,0.1,20,20.1
+3587,3,5.26.2022,May,2022,21179,Cabbage,Bravo,50,60,110
+3588,3,5.26.2022,May,2022,21179,Cauliflower,Bermo,1,35,36
+3589,3,5.26.2022,May,2022,21179,Collard,TopBunch,5,40,45
+3590,3,5.26.2022,May,2022,21179,Kale,Darkibor,7,45,52
+3591,3,5.26.2022,May,2022,21177,Broccoli,Emrald crown,0.1,5,5.1
+3592,3,5.26.2022,May,2022,21177,Cabbage,Bravo,15,20,35
+3593,3,5.26.2022,May,2022,21177,Cauliflower,Bermo,3,20,23
+3594,3,5.26.2022,May,2022,21177,Collard,TopBunch,20,50,70
+3595,3,5.26.2022,May,2022,21177,Kale,Darkibor,20,55,75
+3596,3,5.26.2022,May,2022,21164,Broccoli,Emrald crown,5,35,40
+3597,3,5.26.2022,May,2022,21164,Cabbage,Bravo,20,40,60
+3598,3,5.26.2022,May,2022,21164,Cauliflower,Bermo,10,40,50
+3599,3,5.26.2022,May,2022,21164,Collard,TopBunch,5,30,35
+3600,3,5.26.2022,May,2022,21164,Kale,Darkibor,3,10,13
+3601,3,5.26.2022,May,2022,21150,Broccoli,Emrald crown,10,45,55
+3602,3,5.26.2022,May,2022,21150,Cabbage,Bravo,5,10,15
+3603,3,5.26.2022,May,2022,21150,Cauliflower,Bermo,1,30,31
+3604,3,5.26.2022,May,2022,21150,Collard,TopBunch,60,80,140
+3605,3,5.26.2022,May,2022,21150,Kale,Darkibor,15,90,105
+3606,3,5.29.2022,May,2022,21206,Broccoli,Emrald crown,5,30,35
+3607,3,5.29.2022,May,2022,21206,Cabbage,Bravo,5,5,10
+3608,3,5.29.2022,May,2022,21206,Cauliflower,Bermo,20,20,40
+3609,3,5.29.2022,May,2022,21206,Collard,TopBunch,20,50,70
+3610,3,5.29.2022,May,2022,21206,Kale,Darkibor,15,35,50
+3611,3,5.29.2022,May,2022,21119,Broccoli,Emrald crown,0.1,10,10.1
+3612,3,5.29.2022,May,2022,21119,Cabbage,Bravo,50,100,150
+3613,3,5.29.2022,May,2022,21119,Cauliflower,Bermo,10,30,40
+3614,3,5.29.2022,May,2022,21119,Collard,TopBunch,10,20,30
+3615,3,5.29.2022,May,2022,21119,Kale,Darkibor,7,30,37
+3616,3,5.29.2022,May,2022,21144,Broccoli,Emrald crown,0.1,10,10.1
+3617,3,5.29.2022,May,2022,21144,Cabbage,Bravo,5,7,12
+3618,3,5.29.2022,May,2022,21144,Cauliflower,Bermo,10,15,25
+3619,3,5.29.2022,May,2022,21144,Collard,TopBunch,10,30,40
+3620,3,5.29.2022,May,2022,21144,Kale,Darkibor,3,7,10
+3621,3,5.29.2022,May,2022,21079,Broccoli,Emrald crown,3,10,13
+3622,3,5.29.2022,May,2022,21079,Cabbage,Bravo,3,5,8
+3623,3,5.29.2022,May,2022,21079,Cauliflower,Bermo,2,7,9
+3624,3,5.29.2022,May,2022,21079,Collard,TopBunch,10,25,35
+3625,3,5.29.2022,May,2022,21079,Kale,Darkibor,2,5,7
